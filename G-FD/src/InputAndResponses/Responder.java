@@ -113,7 +113,7 @@ public class Responder
      * @return foundGamer or generateResponse depending on input
      * 
      */
-    public String findGamerDesc2(HashSet<String> words)
+    public String findGamer(HashSet<String> words)
     {
         
         for(String word : words)
