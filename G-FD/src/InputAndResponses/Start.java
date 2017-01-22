@@ -75,7 +75,7 @@ public class Start
             
             else 
             {
-                String gamerReg = responder.findGamerDesc2(input);
+                String gamerReg = responder.findGamer(input);
                 System.out.println(gamerReg);   
             }
         }
