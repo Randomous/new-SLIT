@@ -32,7 +32,7 @@ public class Start
     /**
      * start initiates the inputReader for terminal input
      * "!EXIT" ends the application
-     * Anything else generates either a random respondernse or a match in responder
+     * Anything else generates either a random response or a match in responder
      * HashMap containing gamertag values.
      */
     private void start()
