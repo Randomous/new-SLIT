@@ -89,14 +89,14 @@ public class Start
     private void printWelcome()
     {
         System.out.println("################################################");
-        System.out.println("Welcome to CastleDev's GamerLookup interface.");
+        System.out.println("#######Welcome to CastleDev's G-FD System#######.");
         System.out.println("################################################");
         System.out.println("Please enter what you wish to do.");
-        System.out.println("Enter a friends name to get the stores info");
+        System.out.println("Enter a friends gamertag to get the stores info");
         responder.displayGamers();
         responder.displayCommands();
         System.out.println("At any time type !gamers or !commands to list available input");
-        System.out.println("Please type '!exit' to exit the system.");
+        System.out.println("Type '!exit' to exit the system.");
     }
     
         /**
