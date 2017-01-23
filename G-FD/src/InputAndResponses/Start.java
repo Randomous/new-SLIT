@@ -49,8 +49,7 @@ public class Start
         System.out.println("Enter a friends gamertag to get the stored info");
         responder.displayGamers();
         responder.displayCommands();
-        System.out.println("At any time type !gamers or !commands to list available input");
-        System.out.println("Or at any time type !help to show base commands");
+        help();
         System.out.println("Type '!exit' to exit the system.");
         
         while(!finished) 

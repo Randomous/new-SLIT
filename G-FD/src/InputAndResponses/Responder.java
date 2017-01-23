@@ -20,7 +20,7 @@ import java.util.HashSet;
  */
 public class Responder
 {
-    // Creates the HashMap for gamertags
+    // Creates the HashMap for gamers
     private final HashMap<String, String> gamerRegister;
     //Creates the HashMap for commands
     private final HashMap<String, String> commandRegister;
@@ -31,7 +31,7 @@ public class Responder
     //Stores the amount of successful matches of gamertags
     private static int gamerMatch;
     //Creates the ArrayList for answers
-    private final ArrayList<String> gamerArray;
+    private final ArrayList<String> answerArray;
     //Creates the ArrayList for questions
     private final ArrayList<String> questionArray;
     //Sets the maximum value for any instance of 100
@@ -49,7 +49,7 @@ public class Responder
         // initialise instance variables
         gamerRegister = new HashMap<>();
         commandRegister = new HashMap<>();
-        gamerArray = new ArrayList<>();
+        answerArray = new ArrayList<>();
         questionArray = new ArrayList<>();
         randomGenerator = new Random();
         fillGamers();
@@ -64,8 +64,8 @@ public class Responder
      */
     public String generateResponse()
     {
-        int respond = randomGenerator.nextInt(gamerArray.size());
-        String result = gamerArray.get(respond);
+        int respond = randomGenerator.nextInt(answerArray.size());
+        String result = answerArray.get(respond);
         //System.out.println(result);
         totalResponses++;
         return result;
@@ -129,19 +129,19 @@ public class Responder
         return generateResponse();
     }
     /**
-     * Fills the gamerArray with responses
+     * Fills the answerArray with responses
      * 
      */
     private void fillGamerArray()
     {
         // put your code here
-        gamerArray.add("Could not find that in the system");
-        gamerArray.add("Sorry, does not compute");
-        gamerArray.add("That sounds like a really cool, but i cannot find in the system");
-        gamerArray.add("Hmm, can you specify");
-        gamerArray.add("I do not think i can do that");
-        gamerArray.add("Please me more specific");
-        gamerArray.add("That could be done if you gave me more information");
+        answerArray.add("Could not find that in the system");
+        answerArray.add("Sorry, does not compute");
+        answerArray.add("That sounds like a really cool, but i cannot find in the system");
+        answerArray.add("Hmm, can you specify");
+        answerArray.add("I do not think i can do that");
+        answerArray.add("Please me more specific");
+        answerArray.add("That could be done if you gave me more information");
         
     }
     
@@ -184,8 +184,8 @@ public class Responder
                 String ask = questionArray.get(quest);
                 System.out.println(ask);
                 Thread.sleep(1000);
-                int randResp = randomGenerator.nextInt(gamerArray.size());
-                String response = gamerArray.get(randResp);
+                int randResp = randomGenerator.nextInt(answerArray.size());
+                String response = answerArray.get(randResp);
                 System.out.println(response);     
                 Thread.sleep(1000);
                 interactions++;
