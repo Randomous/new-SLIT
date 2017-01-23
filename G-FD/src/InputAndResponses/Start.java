@@ -1,6 +1,7 @@
 package InputAndResponses;
 
 import java.util.HashSet;
+import java.util.Scanner;
 /**
  * The Interface initiates the application with the constructor
  * It initiates the InputReader and responder
@@ -28,6 +29,7 @@ public class Start
        responder = new Responder();
        start();
     }
+    
 
     /**
      * start initiates the inputReader for terminal input
@@ -39,7 +41,17 @@ public class Start
     {
         boolean finished = false;
         
-        printWelcome();
+        //printWelcome();
+        System.out.println("################################################");
+        System.out.println("#######Welcome to CastleDev's G-FD System#######");
+        System.out.println("################################################");
+        System.out.println("Please enter what you wish to do.");
+        System.out.println("Enter a friends gamertag to get the stored info");
+        responder.displayGamers();
+        responder.displayCommands();
+        System.out.println("At any time type !gamers or !commands to list available input");
+        System.out.println("Or at any time type !help to show base commands");
+        System.out.println("Type '!exit' to exit the system.");
         
         while(!finished) 
         {
@@ -68,9 +80,9 @@ public class Start
             {
                 responder.gamertagsResolved();
             }
-            else if (input.contains("FUCK"))
+            else if (input.contains("!HELP"))
             {
-                System.out.println("Don't swear m8");
+                help();
             }
             
             else 
@@ -88,15 +100,7 @@ public class Start
      */
     private void printWelcome()
     {
-        System.out.println("################################################");
-        System.out.println("#######Welcome to CastleDev's G-FD System#######.");
-        System.out.println("################################################");
-        System.out.println("Please enter what you wish to do.");
-        System.out.println("Enter a friends gamertag to get the stores info");
-        responder.displayGamers();
-        responder.displayCommands();
-        System.out.println("At any time type !gamers or !commands to list available input");
-        System.out.println("Type '!exit' to exit the system.");
+       
     }
     
         /**
@@ -105,5 +109,11 @@ public class Start
     private void printGoodbye()
     {
         System.out.println("Have a nice day, bye!");
+    }
+    
+    private void help()
+    {
+        System.out.println("Type !gamers or !commands to list available input");
+        System.out.println("Type '!exit' to exit the system.");
     }
 }

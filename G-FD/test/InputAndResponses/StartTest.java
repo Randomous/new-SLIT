@@ -5,11 +5,13 @@
  */
 package InputAndResponses;
 
+import java.io.Reader;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import java.util.Scanner;
 import static org.junit.Assert.*;
 
 /**
@@ -19,28 +21,35 @@ import static org.junit.Assert.*;
 public class StartTest {
     
     public StartTest() {
+        
     }
     
     @BeforeClass
     public static void setUpClass() {
+        
+       // System.out.println("Setting up JUNIT test class");
     }
     
     @AfterClass
     public static void tearDownClass() {
+        //System.out.println("JUNIT initialized done");
     }
     
     @Before
     public void setUp() {
+        //new Start();
+  
     }
     
     @After
     public void tearDown() {
+        //System.out.println("tearing down class");
     }
 
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void inputTest() {
+        
+        fail("Did not return correct values");
     }
     
 }
