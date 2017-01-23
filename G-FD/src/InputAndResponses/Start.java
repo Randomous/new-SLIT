@@ -18,6 +18,7 @@ public class Start
     private final InputReader reader;
     // initiates the responder with maps, arrays and randomiser
     private final Responder responder;
+    private final GamerRegister gamerRegister;
 
     /**
      * Constructor for objects of class Interface
@@ -27,6 +28,7 @@ public class Start
         // initialise instance variables
        reader = new InputReader();
        responder = new Responder();
+       gamerRegister = new GamerRegister();
        start();
     }
     
@@ -47,10 +49,10 @@ public class Start
         System.out.println("################################################");
         System.out.println("Please enter what you wish to do.");
         System.out.println("Enter a friends gamertag to get the stored info");
-        responder.displayGamers();
+        gamerRegister.displayGamers();
         responder.displayCommands();
         help();
-        System.out.println("Type '!exit' to exit the system.");
+        
         
         while(!finished) 
         {
@@ -67,7 +69,7 @@ public class Start
                 
             else if (input.contains("!GAMERS"))
             {
-                responder.displayGamers();
+                gamerRegister.displayGamers();
             }
             
             else if(input.contains("!RESOLVEDREPLIES"))
@@ -77,7 +79,7 @@ public class Start
             
             else if(input.contains("!RESOLVEDGAMERS"))
             {
-                responder.gamertagsResolved();
+                gamerRegister.gamertagsResolved();
             }
             else if (input.contains("!HELP"))
             {
@@ -86,7 +88,7 @@ public class Start
             
             else 
             {
-                String gamerReg = responder.findGamer(input);
+                String gamerReg = gamerRegister.findGamer(input);
                 System.out.println(gamerReg);   
             }
         }
@@ -114,5 +116,6 @@ public class Start
     {
         System.out.println("Type !gamers or !commands to list available input");
         System.out.println("Type '!exit' to exit the system.");
+        System.out.println("Type '!help' at any time to get help");
     }
 }

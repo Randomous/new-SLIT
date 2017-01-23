@@ -18,18 +18,22 @@ public class Gamer {
     private String description;
     @SuppressWarnings("FieldMayBeFinal")
     private String rank;
+    private final int rankPoints;
     
-    public Gamer(String gamerTag, String description, String rank) {
+    public Gamer(String gamerTag, String description, String rank, int rankPoints) {
     
     this.gamerTag = gamerTag;
     this.description = description;
     this.rank = rank;
+    this.rankPoints = rankPoints;
     }
     
-    public void printInfo()
+    public String printInfo()
     {
-        System.out.println("GamerTag " + gamerTag + 
+        String gamerInfo = ("GamerTag " + gamerTag + 
                 " is registered in the system \n" + "With the following rank: " 
-                + rank + "\n And the following description: " + description);
+                + rank + " With: " + rankPoints + " rankPoints\n" 
+                + "And the following description: " + description);
+        return gamerInfo;
     }
 }

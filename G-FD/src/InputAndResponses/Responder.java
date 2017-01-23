@@ -20,16 +20,12 @@ import java.util.HashSet;
  */
 public class Responder
 {
-    // Creates the HashMap for gamers
-    private final HashMap<String, String> gamerRegister;
     //Creates the HashMap for commands
     private final HashMap<String, String> commandRegister;
     //Creates the random number generator
     private final Random randomGenerator;
     //Stores the amount of responses generated
     private static int totalResponses;
-    //Stores the amount of successful matches of gamertags
-    private static int gamerMatch;
     //Creates the ArrayList for answers
     private final ArrayList<String> answerArray;
     //Creates the ArrayList for questions
@@ -47,12 +43,10 @@ public class Responder
     public Responder()
     {
         // initialise instance variables
-        gamerRegister = new HashMap<>();
         commandRegister = new HashMap<>();
         answerArray = new ArrayList<>();
         questionArray = new ArrayList<>();
         randomGenerator = new Random();
-        fillGamers();
         fillCommands();
         fillQuestionArray();
         fillGamerArray();
@@ -71,24 +65,6 @@ public class Responder
         return result;
     }
         
-    /**
-     * Fills the gamerRegister HashMap
-     * 
-     */
-    private void fillGamers()
-    {
-        // put your code here
-        gamerRegister.put("SCOOPEX", "ScoopeX is the owner. \n" +
-            "ScoopeX has a cool PC and is from Norway \n" +
-            "ScoopeX is MLG");
-        gamerRegister.put("KAFFERAST", "Kafferast is from sweden \n" +
-            "He also understands norwegian");
-        gamerRegister.put("DERPINA", "This is a girl from Derpland" +
-            "She can derp and her, and then derp some more all day");
-        gamerRegister.put("SIRDERPALOT", "This derper is the derpiest \n" +
-            "He derps like no one else can do");
-                
-    }
     
        /**
      * Fills the commandRegister HashMap
@@ -113,21 +89,7 @@ public class Responder
      * @return foundGamer or generateResponse depending on input
      * 
      */
-    public String findGamer(HashSet<String> words)
-    {
-        
-        for(String word : words)
-        {
-          String foundGamer = gamerRegister.get(word);
-          if (foundGamer != null) 
-          {
-            gamerMatch++;
-            return foundGamer;
-          }
-     
-        }
-        return generateResponse();
-    }
+  
     /**
      * Fills the answerArray with responses
      * 
@@ -231,26 +193,6 @@ public class Responder
     public void amountOfResponses()
     {
         System.out.println("There has been generated: " + totalResponses + " generic responses by the system");
-    }
-    
-    /**
-     * Calls the printout of the amount of matches found
-     * Shows how many successful matches of gamertags have been returned
-     */
-    
-    public void gamertagsResolved()
-    {
-        System.out.println("There has been sucessful searches for: " + gamerMatch + " gamers found by the system");
-    }
-    
-    /**
-     * Prints the available gamertags
-     */
-    
-    public void displayGamers()
-    {
-        System.out.println("The registered gamers in this system is:\n" + gamerRegister.keySet());
-        System.out.println("These are not case sensitive");
     }
     
     /**
