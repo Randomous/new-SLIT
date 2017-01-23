@@ -5,6 +5,7 @@
  * and open the template in the editor.
  */
 package InputAndResponses;
+
 import java.util.Scanner;
 import java.util.HashSet;
 
