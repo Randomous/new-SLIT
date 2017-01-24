@@ -1,7 +1,7 @@
 package InputAndResponses;
 
 import java.util.HashSet;
-import java.util.Scanner;
+
 /**
  * The Interface initiates the application with the constructor
  * It initiates the InputReader and responder
@@ -9,8 +9,8 @@ import java.util.Scanner;
  * It takes input from the terminal in form of text.
  * All commands and instructions appear when start method is called
  * 
- * @author CastleDev / Tor Borgen 
- * @version 1.4
+ * @author CastleDev / Tor Borgen
+ * @version 1.09
  */
 public class Start
 {
@@ -58,28 +58,56 @@ public class Start
             switch (commands)
             {
                 case UNKNOWN :
-                String gamerReg = gamerRegister.findGamer(input);
-                System.out.println(gamerReg); 
-                break;
-            case COMMANDS :
-                 command.displayCommands();
-                 break;
-            case GAMERS :
-                gamerRegister.displayGamers();
-                break;
-            case RESOLVEDREPLIES :
-                responder.amountOfResponses();
-                break;
-            case RESOLVEDGAMERS :
-                gamerRegister.gamertagsResolved();
-                break;
-            case HELP :
-                help();
-                break;
-                
-            case EXIT :
-                finished = true; 
-                break;
+                    String gamerReg;
+                    gamerReg = gamerRegister.findGamer(input);
+                    System.out.println(gamerReg); 
+                    break;
+                case COMMANDS :
+                     command.displayCommands();
+                    break;
+                case GAMERS :
+                    gamerRegister.displayGamers();
+                    break;
+                case RESOLVEDREPLIES :
+                    System.out.println("There has been "
+                            + "generated: " + responder.amountOfResponses() 
+                            + " generic responses by the system");
+                    break;
+                case RESOLVEDGAMERS :
+                    System.out.println("There has been sucessful searches for: "
+                            + gamerRegister.gamertagsResolved() 
+                            + " gamers found by the system");
+                    break;
+                case ADD:
+                    String newName;
+                    String newDescription;
+                    String newRank;
+                    int newRankPoints;
+                    
+                    System.out.println("Please enter the gamer information\n" + 
+                            "Enter the gamertag assosiated with the gamer");
+                    newName = reader.getStringInput().toUpperCase();
+                    System.out.println(newName);
+                    System.out.println("Please enter the description you wish");
+                    newDescription = reader.getStringInput();
+                    System.out.println("Please enter the rank type");
+                    newRank = reader.getStringInput();
+                    System.out.println("Please enter the rankPoints");
+                    newRankPoints = reader.getIntInput();
+                    
+                    Gamer newGamer = new Gamer(newName, newDescription, 
+                            newRank, newRankPoints);
+                    
+                    gamerRegister.addGamer(newName, newGamer);
+                    
+                    break;
+                case HELP :
+                    command.displayHelp();
+                    break;
+
+                case EXIT :
+                    finished = true; 
+                    break;
             }
         }
         
@@ -96,9 +124,7 @@ public class Start
         System.out.println("################################################");
         System.out.println("Please enter what you wish to do.");
         System.out.println("Enter a friends gamertag to get the stored info");
-        gamerRegister.displayGamers();
-        command.displayCommands();
-        help();
+        command.displayHelp();
     }
     
         /**
@@ -108,15 +134,6 @@ public class Start
     {
         System.out.println("Have a nice day, bye!");
     }
-    
-    private void help()
-    {
-        System.out.println("Type !gamers or !commands to list available input");
-        System.out.println("Type !exit to exit the system.");
-        System.out.println("Type !help at any time to get help");
-    }
-    
-     
 }
 
    

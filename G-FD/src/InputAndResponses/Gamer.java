@@ -1,28 +1,39 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
  */
 package InputAndResponses;
 
 
 /**
- *
- * @author adm-tor
+ * This class is the gamer object class. Contains all information for a gamer
+ * As well as methods for returning information about the gamer
+ * @author CastleDev / Tor Borgen
+ * @version 1.09
  */
 public class Gamer {
   
-    
+    // the "name" or gamertag 
     private final String gamerTag;
     @SuppressWarnings("FieldMayBeFinal")
+    // the description of the gamer
     private String description;
     @SuppressWarnings("FieldMayBeFinal")
+    // the rank of the gamer
     private String rank;
-    private final int rankPoints;
+    @SuppressWarnings("FieldMayBeFinal")
+    // the rankpoints of the gamer
+    private int rankPoints;
     
+    /**
+     * Creates a gamer object, information stored in this object is:
+     * @param gamerTag Is the name which the system will search.
+     * @param description Is the description you wish to store for this gamer
+     * @param rank Is the stored type of rank
+     * @param rankPoints If applicable, is the rank points
+     */
     public Gamer(String gamerTag, String description, String rank, int rankPoints) {
     
-    this.gamerTag = gamerTag;
+    this.gamerTag = gamerTag.toUpperCase();
     this.description = description;
     this.rank = rank;
     this.rankPoints = rankPoints;

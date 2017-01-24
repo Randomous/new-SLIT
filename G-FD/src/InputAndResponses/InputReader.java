@@ -14,7 +14,7 @@ import java.util.HashSet;
  * The text typed by a user is returned.
  * 
  * @author     CastleDev / Tor Borgen
- * @version    0.1
+ * @version    0.4
  */
 public class InputReader
 {
@@ -28,6 +28,10 @@ public class InputReader
         reader = new Scanner(System.in);
     }
     
+    /**
+     *  Input method for searching strings for trigger words
+     * @return words which is a HashSet of the phrase entered
+     */
     public HashSet<String> getInput()
     {
         System.out.print("> "); // print prompt
@@ -40,6 +44,30 @@ public class InputReader
         words.add(word);
         }
         return words;
+    }
+    
+    /**
+     * Basic String input
+     * @return inputLine string with value
+     */
+    public String getStringInput()
+    {
+        System.out.print("> "); // print prompt
+        String inputLine;
+        inputLine = reader.nextLine().trim();
+        return inputLine;
+    }
+    
+    /**
+     * Basic integer input
+     * @return inputLine with integer value
+     */
+    public int getIntInput()
+    {
+        System.out.print("> "); // print prompt
+        int inputLine;
+        inputLine = reader.nextInt();
+        return inputLine;
     }
    
     

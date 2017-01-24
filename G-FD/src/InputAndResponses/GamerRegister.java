@@ -1,7 +1,4 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
  */
 package InputAndResponses;
 
@@ -9,8 +6,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 /**
- *
- * @author adm-tor
+ * GamerRegister contains the HashMap that stores all Gamer objects
+ * Contains methods for searching a gamer and returning it if successfull
+ * Also contains method for displaying all gamers regisrered
+ * 
+ * @author CastleDev / Tor Borgen
+ * @version 1.09
  */
 public class GamerRegister {
     // Creates the HashMap for gamers
@@ -29,7 +30,7 @@ public class GamerRegister {
             }
 
     /**
-     * fills gamer array with abrtitrary gamers for testing
+     * fills gamer array with arbitrary gamers for testing
      */
     public final void fillGamers()
     {
@@ -49,7 +50,9 @@ public class GamerRegister {
     
     /**
      *
-     * @param words
+     * @param words the expected parameter from Start method
+     * Will result in success and gamer returned
+     * Or If unsuccessful, return generic respond method
      * @return
      */
     public String findGamer(HashSet<String> words)
@@ -69,14 +72,27 @@ public class GamerRegister {
         return responder.generateResponse();
     }
      
-    public void gamertagsResolved()
+    /**
+     * Just returns the number of searches that resulted in gamer returned
+     * @return gamerMatch integer that counts the successful gamer lookups
+     */
+    public int gamertagsResolved()
     {
-        System.out.println("There has been sucessful searches for: " + gamerMatch + " gamers found by the system");
+        return gamerMatch;
     }
+    
+    /**
+     * Just prints out the gamers in the system.
+     */
     public void displayGamers()
     {
         System.out.println("The registered gamers in this system is:\n" + gamerRegister.keySet());
         System.out.println("These are not case sensitive");
+    }
+    
+    public void addGamer(String name, Gamer newGamer)
+    {
+        gamerRegister.put(name, newGamer);
     }
     
 }

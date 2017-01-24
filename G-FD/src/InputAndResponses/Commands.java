@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
  */
 package InputAndResponses;
 
@@ -9,8 +7,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 /**
- *
- * @author adm-tor
+ * Commands contains the HashMap for commands as well as methods for retruning
+ * returning them 
+ * 
+ * @author CastleDev / Tor Borgen
+ * @version 1.09
  */
 public class Commands {
     
@@ -24,6 +25,9 @@ public class Commands {
     
     }
     
+    /**
+     * This fills the commandRegister with all commands 
+    */
     private void fillCommands()
     {
         commandRegister.put("!EXIT",CommandWords.EXIT); 
@@ -32,12 +36,13 @@ public class Commands {
         commandRegister.put("!RESOLVEDGAMERS", CommandWords.RESOLVEDGAMERS);
         commandRegister.put("!RESOLVEDREPLIES", CommandWords.RESOLVEDREPLIES);
         commandRegister.put("!HELP", CommandWords.HELP);
+        commandRegister.put("!ADD", CommandWords.ADD);
     }
     
     /**
      *
-     * @param input
-     * @return
+     * @param input expected input from user, searches for command and
+     * @return Either found command or default unknown command
      */
     public CommandWords getCommand(HashSet<String> input)
     {
@@ -54,7 +59,7 @@ public class Commands {
         return CommandWords.UNKNOWN;
     }
       /**
-     * Prints out the available commands and a corresponding description
+     * Shows the available commands and a corresponding description
      */
     
     public void displayCommands()
@@ -63,6 +68,29 @@ public class Commands {
             System.out.println(display);
         });
         System.out.println("These are not case sensitive");
+    }
+    
+    /**
+     * Displays the help commands if they are registered in the system
+     */
+    public void displayHelp()
+    {
+        if (commandRegister.containsKey("!GAMERS"))
+        {
+        System.out.println("Type !gamers to see registered gamers in the system");
+        }
+        if (commandRegister.containsKey("!COMMANDS"))
+        {
+        System.out.println("Type !commands to list all available commands");
+        }
+        if (commandRegister.containsKey("!EXIT"))
+        {
+        System.out.println("Type !exit to exit the system.");
+        }
+        if (commandRegister.containsKey("!HELP"))
+        {
+        System.out.println("Type !help at any time to get help");
+        }
     }
     
 }
