@@ -78,28 +78,8 @@ public class Start
                             + gamerRegister.gamertagsResolved() 
                             + " gamers found by the system");
                     break;
-                case ADD:
-                    String newName;
-                    String newDescription;
-                    String newRank;
-                    int newRankPoints;
-                    
-                    System.out.println("Please enter the gamer information\n" + 
-                            "Enter the gamertag assosiated with the gamer");
-                    newName = reader.getStringInput().toUpperCase();
-                    System.out.println(newName);
-                    System.out.println("Please enter the description you wish");
-                    newDescription = reader.getStringInput();
-                    System.out.println("Please enter the rank type");
-                    newRank = reader.getStringInput();
-                    System.out.println("Please enter the rankPoints");
-                    newRankPoints = reader.getIntInput();
-                    
-                    Gamer newGamer = new Gamer(newName, newDescription, 
-                            newRank, newRankPoints);
-                    
-                    gamerRegister.addGamer(newName, newGamer);
-                    
+                case ADDGAMER:
+                    gamerRegister.createNewGamer();
                     break;
                 case HELP :
                     command.displayHelp();

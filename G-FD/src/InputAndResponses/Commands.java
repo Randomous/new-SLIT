@@ -36,7 +36,7 @@ public class Commands {
         commandRegister.put("!RESOLVEDGAMERS", CommandWords.RESOLVEDGAMERS);
         commandRegister.put("!RESOLVEDREPLIES", CommandWords.RESOLVEDREPLIES);
         commandRegister.put("!HELP", CommandWords.HELP);
-        commandRegister.put("!ADD", CommandWords.ADD);
+        commandRegister.put("!ADDGAMER", CommandWords.ADDGAMER);
     }
     
     /**

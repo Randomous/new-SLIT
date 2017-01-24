@@ -18,6 +18,8 @@ public class GamerRegister {
     private final HashMap<String, Gamer> gamerRegister;
     // Initialize the responder for access
     private final Responder responder;
+    // Initialize the reader
+    private final InputReader reader;
     //Stores the amount of successful matches of gamertags
     private static int gamerMatch;
     
@@ -25,6 +27,7 @@ public class GamerRegister {
             {
               gamerRegister = new HashMap<>();
               responder = new Responder();
+              reader = new InputReader();
               fillGamers();
     
             }
@@ -95,4 +98,33 @@ public class GamerRegister {
         gamerRegister.put(name, newGamer);
     }
     
+    /**
+     * Creates a new gamer object and adds it to the HashMap of gamers
+     * Takes input from InputReader both string and integer readers
+     */
+    public void createNewGamer()
+    {
+        String newName;
+                    String newDescription;
+                    String newRank;
+                    int newRankPoints;
+                    
+                    System.out.println("Please enter the gamer information\n" + 
+                            "Enter the gamertag assosiated with the gamer");
+                    newName = reader.getStringInput().toUpperCase();
+                    System.out.println("Please enter the description you wish");
+                    newDescription = reader.getStringInput();
+                    System.out.println("Please enter the rank type");
+                    newRank = reader.getStringInput();
+                    System.out.println("Please enter the rankPoints");
+                    newRankPoints = reader.getIntInput();
+                    
+                    Gamer newGamer = new Gamer(newName, newDescription, 
+                            newRank, newRankPoints);
+                    
+                    addGamer(newName, newGamer);
+                    
+                    System.out.println("Gamer: > " + newName + " < was successfully"
+                            + " added to the system");
+    }
 }

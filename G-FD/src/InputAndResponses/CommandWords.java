@@ -11,7 +11,7 @@ package InputAndResponses;
  */
 public enum CommandWords {  
     
-    EXIT, GAMERS, COMMANDS, RESOLVEDGAMERS, RESOLVEDREPLIES, HELP, ADD,
+    EXIT, GAMERS, COMMANDS, RESOLVEDGAMERS, RESOLVEDREPLIES, HELP, ADDGAMER,
 
     /**
      * Unknown if any other commands are not recognized
