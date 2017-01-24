@@ -15,11 +15,9 @@ import java.util.HashSet;
 public class GamerRegister {
     // Creates the HashMap for gamers
     private final HashMap<String, Gamer> gamerRegister;
-    //private Gamer Scoopex;
-    //private Gamer Derpina;
-    //private Gamer SirDerpALot;
+    // Initialize the responder for access
     private final Responder responder;
-        //Stores the amount of successful matches of gamertags
+    //Stores the amount of successful matches of gamertags
     private static int gamerMatch;
     
     public GamerRegister()

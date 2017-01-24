@@ -31,7 +31,8 @@ public class InputReader
     public HashSet<String> getInput()
     {
         System.out.print("> "); // print prompt
-        String inputLine = reader.nextLine().trim().toUpperCase();
+        String inputLine;
+        inputLine = reader.nextLine().trim().toUpperCase();
         String[] wordArray = inputLine.split(" ");
         // add words from array into hashset
         HashSet<String> words = new HashSet<>();

@@ -1,10 +1,10 @@
 package InputAndResponses;
 
-import java.util.HashMap;
+
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.HashSet;
+
 
 /**
  * GameRegister contains all maps and lists of the application.
@@ -20,8 +20,6 @@ import java.util.HashSet;
  */
 public class Responder
 {
-    //Creates the HashMap for commands
-    private final HashMap<String, String> commandRegister;
     //Creates the random number generator
     private final Random randomGenerator;
     //Stores the amount of responses generated
@@ -43,11 +41,9 @@ public class Responder
     public Responder()
     {
         // initialise instance variables
-        commandRegister = new HashMap<>();
         answerArray = new ArrayList<>();
         questionArray = new ArrayList<>();
         randomGenerator = new Random();
-        fillCommands();
         fillQuestionArray();
         fillGamerArray();
     }
@@ -64,31 +60,6 @@ public class Responder
         totalResponses++;
         return result;
     }
-        
-    
-       /**
-     * Fills the commandRegister HashMap
-     * 
-     */
-    private void fillCommands()
-    {
-        // put your code here
-        commandRegister.put("!EXIT", "Terminates the system");
-        commandRegister.put("!GAMERS", "Displays the gamertags available");
-        commandRegister.put("!COMMANDS", "Shows all available commands");
-        commandRegister.put("!RESOLVEDGAMERS", "Displays the amount of gamers "
-        + "successfully returned by the system");
-        commandRegister.put("!RESOLVEDREPLIES", "Displays the amount of replies "
-        + "returned by the system");
-    }
-
-       /**
-     * Checks if text input contains a gamertag that is successfully returned
-     * If not, it calls the generic response method
-     * @param words are of words form input HashSet
-     * @return foundGamer or generateResponse depending on input
-     * 
-     */
   
     /**
      * Fills the answerArray with responses
@@ -193,18 +164,6 @@ public class Responder
     public void amountOfResponses()
     {
         System.out.println("There has been generated: " + totalResponses + " generic responses by the system");
-    }
-    
-    /**
-     * Prints out the available commands and a corresponding description
-     */
-    
-    public void displayCommands()
-    {      
-        commandRegister.keySet().forEach((display) -> {
-            System.out.println(display + " does: " + commandRegister.get(display));
-        });
-        System.out.println("These are not case sensitive");
     }
 }
     
