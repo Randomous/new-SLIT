@@ -25,7 +25,7 @@ public class Responder
     //Stores the amount of responses generated
     private static int totalResponses;
     //Creates the ArrayList for answers
-    private final ArrayList<String> answerArray;
+    public ArrayList<String> answerArray;
     //Creates the ArrayList for questions
     private final ArrayList<String> questionArray;
     //Sets the maximum value for any instance of 100

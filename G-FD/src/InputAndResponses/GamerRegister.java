@@ -15,7 +15,7 @@ import java.util.HashSet;
  */
 public class GamerRegister {
     // Creates the HashMap for gamers
-    private final HashMap<String, Gamer> gamerRegister;
+    public final HashMap<String, Gamer> gamerRegister;
     // Initialize the responder for access
     private final Responder responder;
     // Initialize the reader
