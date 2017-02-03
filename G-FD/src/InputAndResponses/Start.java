@@ -1,3 +1,19 @@
+/*
+ * Copyright 2017 Tor Borgen <Tor Borgen at CastleDev>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package InputAndResponses;
 
 import java.util.HashSet;
@@ -14,20 +30,22 @@ import java.util.HashSet;
  */
 public class Start
 {
-    // initiates the inputReader for terminal input
+    // InputReader for terminal input
     private final InputReader reader;
-    // initiates the responder with maps, arrays and randomiser
+    // Responder with maps, arrays and randomiser
     private final Responder responder;
+    // gamerRegister with gamermap
     private final GamerRegister gamerRegister;
+    // enum commands
     private final Commands command;
     
 
     /**
-     * Constructor for objects of class Interface
+     * Constructor for objects of class Start
      */
     public Start()
     {
-        // initialise instance variables
+       // Initialize objects needed and start application method
        reader = new InputReader();
        responder = new Responder();
        gamerRegister = new GamerRegister();
@@ -58,9 +76,14 @@ public class Start
             switch (commands)
             {
                 case UNKNOWN :
-                    String gamerReg;
+                    Gamer gamerReg;
                     gamerReg = gamerRegister.findGamer(input);
-                    System.out.println(gamerReg); 
+                    if (gamerReg != null) {
+                        System.out.println(gamerReg.printInfo());
+                    }
+                    else {
+                    System.out.println(responder.generateResponse());
+                    }
                     break;
                 case COMMANDS :
                      command.displayCommands();

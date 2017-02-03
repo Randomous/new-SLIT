@@ -1,4 +1,17 @@
 /*
+ * Copyright 2017 Tor Borgen <Tor Borgen at CastleDev>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package InputAndResponses;
 
@@ -7,26 +20,23 @@ import java.util.HashSet;
 
 /**
  * GamerRegister contains the HashMap that stores all Gamer objects
- * Contains methods for searching a gamer and returning it if successfull
- * Also contains method for displaying all gamers regisrered
+ * Contains methods for searching a gamer and returning it if successful
+ * Also contains method for displaying all gamers registered
  * 
  * @author CastleDev / Tor Borgen
  * @version 1.09
  */
 public class GamerRegister {
-    // Creates the HashMap for gamers
+    // HashMap for gamers
     public final HashMap<String, Gamer> gamerRegister;
-    // Initialize the responder for access
-    private final Responder responder;
-    // Initialize the reader
+    // Reader for input
     private final InputReader reader;
     //Stores the amount of successful matches of gamertags
     private static int gamerMatch;
     
-    public GamerRegister()
-            {
+    public GamerRegister() {
+              // Initialize the needed elements and fill gamer map
               gamerRegister = new HashMap<>();
-              responder = new Responder();
               reader = new InputReader();
               fillGamers();
     
@@ -58,7 +68,7 @@ public class GamerRegister {
      * Or If unsuccessful, return generic respond method
      * @return
      */
-    public String findGamer(HashSet<String> words)
+    public Gamer findGamer(HashSet<String> words)
     {
         
         for(String word : words)
@@ -68,11 +78,11 @@ public class GamerRegister {
           if (foundGamer != null) 
           {
             gamerMatch++;
-            return foundGamer.printInfo();
+            return foundGamer;
           }
      
         }
-        return responder.generateResponse();
+        return null;
     }
      
     /**
@@ -82,6 +92,13 @@ public class GamerRegister {
     public int gamertagsResolved()
     {
         return gamerMatch;
+    }
+    
+    /**
+     * Resets gamerMatch counter
+     */
+    public void gamerMatchReset() {
+        gamerMatch = 0;
     }
     
     /**
