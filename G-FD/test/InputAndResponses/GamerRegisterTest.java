@@ -90,7 +90,7 @@ public class GamerRegisterTest {
         
         GamerRegister instance = new GamerRegister();
         String expResult = "SCOOPEX";
-        Gamer objExpected = instance.gamerRegister.get("scoopex");
+        Gamer objExpected = instance.gamerRegister.get("SCOOPEX");
         HashSet<String> words = new HashSet<>();
         words.add(expResult);
         Gamer objResult = instance.findGamer(words);
@@ -120,6 +120,9 @@ public class GamerRegisterTest {
     public void testMultipleGamertagsResolved() {
         System.out.println("Testing multiple gamertagsResolved");
         GamerRegister instance = new GamerRegister();
+        //System.out.println(instance.gamertagsResolved());
+        //instance.gamerMatchReset();
+        //System.out.println(instance.gamertagsResolved());
         String firstTest = "SCOOPEX";
         HashSet<String> words = new HashSet<>();
         words.add(firstTest);

@@ -70,7 +70,8 @@ public class ResponderTest {
     @Test
     public void testAmountOfResponses() {
         System.out.println("Testing amountOfResponses");
-        Responder instance = new Responder();
+        Responder instance;
+        instance = new Responder();
         instance.generateResponse();
         int expResult = 1;
         int result = instance.amountOfResponses();
@@ -84,9 +85,10 @@ public class ResponderTest {
     @Test
     public void testMultipleAmountOfResponses() {
         System.out.println("Testing multiple amountOfResponses");
-        Responder instance = new Responder();
-        //System.out.println(instance.amountOfResponses());
-        //instance.resetTotalResponses();
+        Responder instance;
+        instance = new Responder();
+        System.out.println(instance.amountOfResponses());
+        instance.resetTotalResponses();
         int responseAmount = 0;
         while (responseAmount < 11) {
         instance.generateResponse();
@@ -96,8 +98,7 @@ public class ResponderTest {
         int result = instance.amountOfResponses();
         
         //Result becomes 13 due to 2 generated responses by previous tests
-        // Var does not reset due to private static
-        // Implemented loop to calculate for difference but chosing to keep err
+        // Var does not reset due to static
         
         assertEquals(expResult, result);
     }
