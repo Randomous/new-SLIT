@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package InputAndResponses;
+package Content;
 
 
 /**
@@ -51,12 +51,28 @@ public class Gamer {
     this.rankPoints = rankPoints;
     }
     
-    public String printInfo()
+    public String getInfo()
     {
         String gamerInfo = ("GamerTag " + gamerTag + 
                 " is registered in the system \n" + "With the following rank: " 
                 + rank + " With: " + rankPoints + " rankPoints\n" 
                 + "And the following description: " + description);
         return gamerInfo;
+    }
+    
+    public String getGamertag() {
+        return gamerTag;
+    }
+    
+    public String getDiscription() {
+        return description;
+    }
+    
+    public String getRank() {
+        return rank;
+    }
+    
+    public int getRankPoints() {
+        return rankPoints;
     }
 }

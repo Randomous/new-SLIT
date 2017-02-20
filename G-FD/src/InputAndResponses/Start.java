@@ -16,6 +16,12 @@
 
 package InputAndResponses;
 
+import Content.GamerRegister;
+import Content.Gamer;
+import Content.LeaderboardRegister;
+import Content.ContentHandler;
+import InputAndResponses.CommandFolder.Commands;
+import InputAndResponses.CommandFolder.CommandWords;
 import java.util.HashSet;
 
 /**
@@ -36,6 +42,10 @@ public class Start
     private final Responder responder;
     // gamerRegister with gamermap
     private final GamerRegister gamerRegister;
+    // leaderboardregister with leaderboard content
+    private final LeaderboardRegister leaderboard;
+    // ContentHandler with full content list
+    private final ContentHandler content;
     // enum commands
     private final Commands command;
     
@@ -49,7 +59,9 @@ public class Start
        reader = new InputReader();
        responder = new Responder();
        gamerRegister = new GamerRegister();
+       leaderboard = new LeaderboardRegister();
        command = new Commands();
+       content = new ContentHandler();
        
        start();
     }
@@ -79,7 +91,7 @@ public class Start
                     Gamer gamerReg;
                     gamerReg = gamerRegister.findGamer(input);
                     if (gamerReg != null) {
-                        System.out.println(gamerReg.printInfo());
+                        System.out.println(gamerReg.getInfo());
                     }
                     else {
                     System.out.println(responder.generateResponse());
@@ -101,8 +113,15 @@ public class Start
                             + gamerRegister.gamertagsResolved() 
                             + " gamers found by the system");
                     break;
-                case ADDGAMER:
+                case ADDGAMER :
                     gamerRegister.createNewGamer();
+                    break;
+                case LEADERBOARD :
+                    leaderboard.displayLeaderboard();
+                    break;
+                case CONTENT :
+                    //content.printAllContent();
+                    content.fullContentPrint();
                     break;
                 case HELP :
                     command.displayHelp();
