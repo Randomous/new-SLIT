@@ -1,6 +1,23 @@
+/*
+ * Copyright 2017 Tor Borgen <Tor Borgen at CastleDev>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package InputAndResponses;
 
 import java.util.HashSet;
+
 /**
  * The Interface initiates the application with the constructor
  * It initiates the InputReader and responder
@@ -8,26 +25,35 @@ import java.util.HashSet;
  * It takes input from the terminal in form of text.
  * All commands and instructions appear when start method is called
  * 
- * @author CastleDev / Tor Borgen 
- * @version 1.4
+ * @author CastleDev / Tor Borgen
+ * @version 1.09
  */
 public class Start
 {
-    // initiates the inputReader for terminal input
+    // InputReader for terminal input
     private final InputReader reader;
-    // initiates the responder with maps, arrays and randomiser
+    // Responder with maps, arrays and randomiser
     private final Responder responder;
+    // gamerRegister with gamermap
+    private final GamerRegister gamerRegister;
+    // enum commands
+    private final Commands command;
+    
 
     /**
-     * Constructor for objects of class Interface
+     * Constructor for objects of class Start
      */
     public Start()
     {
-        // initialise instance variables
+       // Initialize objects needed and start application method
        reader = new InputReader();
        responder = new Responder();
+       gamerRegister = new GamerRegister();
+       command = new Commands();
+       
        start();
     }
+    
 
     /**
      * start initiates the inputReader for terminal input
@@ -40,43 +66,51 @@ public class Start
         boolean finished = false;
         
         printWelcome();
+       
+        
         
         while(!finished) 
         {
             HashSet<String> input = reader.getInput();
-                        
-            if(input.contains("!EXIT"))
+            CommandWords commands = command.getCommand(input);
+            switch (commands)
             {
-                finished = true;
-            }
-            
-            else if(input.contains("!COMMANDS")){
-                responder.displayCommands();
-            }
-                
-            else if (input.contains("!GAMERS"))
-            {
-                responder.displayGamers();
-            }
-            
-            else if(input.contains("!RESOLVEDREPLIES"))
-            {
-                responder.amountOfResponses();
-            }
-            
-            else if(input.contains("!RESOLVEDGAMERS"))
-            {
-                responder.gamertagsResolved();
-            }
-            else if (input.contains("FUCK"))
-            {
-                System.out.println("Don't swear m8");
-            }
-            
-            else 
-            {
-                String gamerReg = responder.findGamer(input);
-                System.out.println(gamerReg);   
+                case UNKNOWN :
+                    Gamer gamerReg;
+                    gamerReg = gamerRegister.findGamer(input);
+                    if (gamerReg != null) {
+                        System.out.println(gamerReg.printInfo());
+                    }
+                    else {
+                    System.out.println(responder.generateResponse());
+                    }
+                    break;
+                case COMMANDS :
+                     command.displayCommands();
+                    break;
+                case GAMERS :
+                    gamerRegister.displayGamers();
+                    break;
+                case RESOLVEDREPLIES :
+                    System.out.println("There has been "
+                            + "generated: " + responder.amountOfResponses() 
+                            + " generic responses by the system");
+                    break;
+                case RESOLVEDGAMERS :
+                    System.out.println("There has been sucessful searches for: "
+                            + gamerRegister.gamertagsResolved() 
+                            + " gamers found by the system");
+                    break;
+                case ADDGAMER:
+                    gamerRegister.createNewGamer();
+                    break;
+                case HELP :
+                    command.displayHelp();
+                    break;
+
+                case EXIT :
+                    finished = true; 
+                    break;
             }
         }
         
@@ -89,14 +123,11 @@ public class Start
     private void printWelcome()
     {
         System.out.println("################################################");
-        System.out.println("#######Welcome to CastleDev's G-FD System#######.");
+        System.out.println("#######Welcome to CastleDev's G-FD System#######");
         System.out.println("################################################");
         System.out.println("Please enter what you wish to do.");
-        System.out.println("Enter a friends gamertag to get the stores info");
-        responder.displayGamers();
-        responder.displayCommands();
-        System.out.println("At any time type !gamers or !commands to list available input");
-        System.out.println("Type '!exit' to exit the system.");
+        System.out.println("Enter a friends gamertag to get the stored info");
+        command.displayHelp();
     }
     
         /**
@@ -107,3 +138,5 @@ public class Start
         System.out.println("Have a nice day, bye!");
     }
 }
+
+   

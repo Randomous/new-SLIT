@@ -1,10 +1,26 @@
+/*
+ * Copyright 2017 Tor Borgen <Tor Borgen at CastleDev>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package InputAndResponses;
 
-import java.util.HashMap;
+
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.HashSet;
+
 
 /**
  * GameRegister contains all maps and lists of the application.
@@ -16,22 +32,16 @@ import java.util.HashSet;
  * Various methods are to be called from within interface text input
  * 
  * @author CastleDev / Tor Borgen
- * @version 1.6
+ * @version 1.09
  */
 public class Responder
 {
-    // Creates the HashMap for gamertags
-    private final HashMap<String, String> gamerRegister;
-    //Creates the HashMap for commands
-    private final HashMap<String, String> commandRegister;
     //Creates the random number generator
     private final Random randomGenerator;
     //Stores the amount of responses generated
     private static int totalResponses;
-    //Stores the amount of successful matches of gamertags
-    private static int gamerMatch;
     //Creates the ArrayList for answers
-    private final ArrayList<String> gamerArray;
+    public ArrayList<String> answerArray;
     //Creates the ArrayList for questions
     private final ArrayList<String> questionArray;
     //Sets the maximum value for any instance of 100
@@ -46,102 +56,41 @@ public class Responder
      */
     public Responder()
     {
-        // initialise instance variables
-        gamerRegister = new HashMap<>();
-        commandRegister = new HashMap<>();
-        gamerArray = new ArrayList<>();
+        // initialise needed elements
+        answerArray = new ArrayList<>();
         questionArray = new ArrayList<>();
         randomGenerator = new Random();
-        fillGamers();
-        fillCommands();
         fillQuestionArray();
         fillGamerArray();
     }
     
     /**
-     * Generate a response.
-     * @return   A string that should be displayed as the response
+     * Generate a random response.
+     * @return   A string that could be displayed as the response
      */
     public String generateResponse()
     {
-        int respond = randomGenerator.nextInt(gamerArray.size());
-        String result = gamerArray.get(respond);
+        int respond = randomGenerator.nextInt(answerArray.size());
+        String result = answerArray.get(respond);
         //System.out.println(result);
         totalResponses++;
         return result;
     }
-        
+  
     /**
-     * Fills the gamerRegister HashMap
-     * 
-     */
-    private void fillGamers()
-    {
-        // put your code here
-        gamerRegister.put("SCOOPEX", "ScoopeX is the owner. \n" +
-            "ScoopeX has a cool PC and is from Norway \n" +
-            "ScoopeX is MLG");
-        gamerRegister.put("KAFFERAST", "Kafferast is from sweden \n" +
-            "He also understands norwegian");
-        gamerRegister.put("DERPINA", "This is a girl from Derpland" +
-            "She can derp and her, and then derp some more all day");
-        gamerRegister.put("SIRDERPALOT", "This derper is the derpiest \n" +
-            "He derps like no one else can do");
-                
-    }
-    
-       /**
-     * Fills the commandRegister HashMap
-     * 
-     */
-    private void fillCommands()
-    {
-        // put your code here
-        commandRegister.put("!EXIT", "Terminates the system");
-        commandRegister.put("!GAMERS", "Displays the gamertags available");
-        commandRegister.put("!COMMANDS", "Shows all available commands");
-        commandRegister.put("!RESOLVEDGAMERS", "Displays the amount of gamers "
-        + "successfully returned by the system");
-        commandRegister.put("!RESOLVEDREPLIES", "Displays the amount of replies "
-        + "returned by the system");
-    }
-
-       /**
-     * Checks if text input contains a gamertag that is successfully returned
-     * If not, it calls the generic response method
-     * @param words are of words form input HashSet
-     * @return foundGamer or generateResponse depending on input
-     * 
-     */
-    public String findGamer(HashSet<String> words)
-    {
-        
-        for(String word : words)
-        {
-          String foundGamer = gamerRegister.get(word);
-          if (foundGamer != null) 
-          {
-            gamerMatch++;
-            return foundGamer;
-          }
-     
-        }
-        return generateResponse();
-    }
-    /**
-     * Fills the gamerArray with responses
+     * Fills the answerArray with responses
      * 
      */
     private void fillGamerArray()
     {
         // put your code here
-        gamerArray.add("Could not find that in the system");
-        gamerArray.add("Sorry, does not compute");
-        gamerArray.add("That sounds like a really cool, but i cannot find in the system");
-        gamerArray.add("Hmm, can you specify");
-        gamerArray.add("I do not think i can do that");
-        gamerArray.add("Please me more specific");
-        gamerArray.add("That could be done if you gave me more information");
+        answerArray.add("Could not find that in the system");
+        answerArray.add("Sorry, does not compute");
+        answerArray.add("That sounds like a really cool, but i cannot find in the system");
+        answerArray.add("Hmm, can you specify");
+        answerArray.add("I do not think i can do that");
+        answerArray.add("Please me more specific");
+        answerArray.add("That could be done if you gave me more information");
         
     }
     
@@ -184,8 +133,8 @@ public class Responder
                 String ask = questionArray.get(quest);
                 System.out.println(ask);
                 Thread.sleep(1000);
-                int randResp = randomGenerator.nextInt(gamerArray.size());
-                String response = gamerArray.get(randResp);
+                int randResp = randomGenerator.nextInt(answerArray.size());
+                String response = answerArray.get(randResp);
                 System.out.println(response);     
                 Thread.sleep(1000);
                 interactions++;
@@ -226,43 +175,19 @@ public class Responder
     /**
      * Calls the printout of the amount of responses generated
      * In turn, this also tracks how many entries have been entered to the system
+     * @return totalResponses generated by the system
      */
     
-    public void amountOfResponses()
+    public int amountOfResponses()
     {
-        System.out.println("There has been generated: " + totalResponses + " generic responses by the system");
+        return totalResponses;
     }
     
     /**
-     * Calls the printout of the amount of matches found
-     * Shows how many successful matches of gamertags have been returned
+     * Resets the totalResponses int
      */
-    
-    public void gamertagsResolved()
-    {
-        System.out.println("There has been sucessful searches for: " + gamerMatch + " gamers found by the system");
-    }
-    
-    /**
-     * Prints the available gamertags
-     */
-    
-    public void displayGamers()
-    {
-        System.out.println("The registered gamers in this system is:\n" + gamerRegister.keySet());
-        System.out.println("These are not case sensitive");
-    }
-    
-    /**
-     * Prints out the available commands and a corresponding description
-     */
-    
-    public void displayCommands()
-    {      
-        commandRegister.keySet().forEach((display) -> {
-            System.out.println(display + " does: " + commandRegister.get(display));
-        });
-        System.out.println("These are not case sensitive");
+    public void resetTotalResponses() {
+        totalResponses = 0;
     }
 }
     
