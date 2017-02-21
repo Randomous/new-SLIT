@@ -51,6 +51,11 @@ public class Gamer {
     this.rankPoints = rankPoints;
     }
     
+    /**
+     * Get the full information about the gamer object
+     * @return gamerInfo in form of string
+     * 
+     */
     public String getInfo()
     {
         String gamerInfo = ("GamerTag " + gamerTag + 
@@ -60,18 +65,34 @@ public class Gamer {
         return gamerInfo;
     }
     
+    /**
+     * Get the gamerTag from field of object
+     * @return gamerTag
+     */
     public String getGamertag() {
         return gamerTag;
     }
     
+    /**
+     * get the description from field of object
+     * @return description
+     */
     public String getDiscription() {
         return description;
     }
     
+    /**
+     * get the rank from field of object
+     * @return rank
+     */
     public String getRank() {
         return rank;
     }
     
+    /**
+     * get the rankPoints from field of object
+     * @return rankPoints
+     */
     public int getRankPoints() {
         return rankPoints;
     }

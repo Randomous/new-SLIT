@@ -25,8 +25,9 @@ import java.util.Map;
  */
 public class LeaderboardRegister {
     
-        // HashMap for Leaderboard
+    // HashMap for Leaderboard
     public final HashMap<String, Leaderboard> leaderboardRegister;
+    // gamerRegister for access to gamers
     public GamerRegister gamerReg;
     
     public LeaderboardRegister() {
@@ -34,7 +35,9 @@ public class LeaderboardRegister {
         gamerReg = new GamerRegister();
         fillLeaderboard();
     }
-    
+    /**
+     * Fills the leaderboard with gamers from the gamerRegister
+    */
     public void fillLeaderboard(){
          int rankPlacer = 1;
         int previRank = 0;
@@ -52,6 +55,9 @@ public class LeaderboardRegister {
            previRank ++;
         }
     }
+    /**
+     * Prints the leaderboard
+     */
      public void displayLeaderboard() {
         System.out.println("The Leaderboard is as standing:");
         Map<String, Leaderboard> map = leaderboardRegister;
@@ -60,5 +66,4 @@ public class LeaderboardRegister {
         });
 
     }
-    
 }

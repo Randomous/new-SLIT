@@ -123,6 +123,8 @@ public class Start
                     //content.printAllContent();
                     content.fullContentPrint();
                     break;
+                case SUPER :
+                    content.superPrint();
                 case HELP :
                     command.displayHelp();
                     break;

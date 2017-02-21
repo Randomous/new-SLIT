@@ -69,11 +69,10 @@ public class Leaderboard extends Gamer{
     }
     
     /**
-     *
-     * @return info
+     *  Collects the information of super and subclass and merge them into string
+     * @return leaderboardInfo in form of string
      */
-    public String getInfo()
-    {
+    public String getInfo() {
         String leaderboardInfo = ("Gamer " + super.getGamertag() + 
                 "\nHas the following rank: " + super.getRank() + " With: " + 
                 super.getRankPoints() + " rankPoints\n" 
@@ -81,5 +80,11 @@ public class Leaderboard extends Gamer{
                 + "His previous placement was at spot number: " + previousPlacement);
         return leaderboardInfo;
     }
-    
+    /**
+     * Simple call to check that the super method of 
+     * overridden getInfo can be called
+     */
+    public void checkSubSuper() {
+        System.out.println(super.getInfo());
+    }
 }

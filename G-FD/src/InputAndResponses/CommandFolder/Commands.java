@@ -39,6 +39,7 @@ public class Commands {
         commandRegister.put("!ADDGAMER", CommandWords.ADDGAMER);
         commandRegister.put("!LEADERBOARD", CommandWords.LEADERBOARD);
         commandRegister.put("!CONTENT", CommandWords.CONTENT);
+        commandRegister.put("!SUPER", CommandWords.SUPER);
     }
     
     /**

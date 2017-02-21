@@ -113,6 +113,9 @@ public class GamerRegister {
         System.out.println("These are not case sensitive");
     }
     
+    /**
+     * Prints the full gamerInfo of all gamers in register
+     */
     public void fullGamerInfo() {
         System.out.println("The gamers in the system is: ");
         Map<String, Gamer> map = gamerRegister;
@@ -121,6 +124,12 @@ public class GamerRegister {
         });
     }
     
+    /**
+     * Adds a gamer to the register
+     * 
+     * @param name is the name of the gamer object to be added
+     * @param newGamer Is the object corresponding to the name to be added
+     */
     public void addGamer(String name, Gamer newGamer)
     {
         gamerRegister.put(name, newGamer);

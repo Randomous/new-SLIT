@@ -23,8 +23,11 @@ import java.util.ArrayList;
  */
 public class ContentHandler {
     
+    // access to the GamerRegister
     private GamerRegister gamerReg;
+    // access to the leaderboardRegister
     private LeaderboardRegister leaderboard;
+    // Arraylist to contain all objects of both registers
     private ArrayList<Gamer> contentList;
     
     public ContentHandler() {
@@ -34,6 +37,9 @@ public class ContentHandler {
         fillContent();
     }
     
+    /**
+     * Fills the array with content from all registers
+     */
     public void fillContent() {
         leaderboard.leaderboardRegister.values().forEach((gamer) -> {
             contentList.add(gamer);
@@ -44,11 +50,17 @@ public class ContentHandler {
         });
     }
     
+    /**
+     * Manually print the hashMaps of both maps
+     */
     public void printAllContentPrimitive() {
         gamerReg.fullGamerInfo();
         leaderboard.displayLeaderboard();
     }
     
+    /**
+     * Full printout of both lists using the information method of objects
+     */
     public void fullContentPrint() {
         int size = 0;
         //System.out.println(size);
@@ -61,4 +73,12 @@ public class ContentHandler {
         }
     }
     
+    /**
+     * Just a simple test to ensure that the super method of subclass can be called
+     */
+    public void superPrint() {
+
+        Leaderboard leader = leaderboard.leaderboardRegister.get("SCOOPEX");
+        leader.checkSubSuper();
+    }
 }
