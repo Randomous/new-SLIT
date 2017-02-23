@@ -4,13 +4,13 @@
         <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
     </listener>
     <servlet>
-        <servlet-name>Test</servlet-name>
+        <servlet-name>Input</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Test</servlet-name>
-        <url-pattern>/Test</url-pattern>
+        <servlet-name>Input</servlet-name>
+        <url-pattern>/Input</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

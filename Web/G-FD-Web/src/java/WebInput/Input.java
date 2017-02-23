@@ -1,29 +1,22 @@
-package Test;
-import javax.jws.WebMethod;
+package WebInput;
 import javax.jws.WebService;
 import InputAndResponses.Start;
 import java.util.HashSet;
 import InputAndResponses.CommandFolder.Commands;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
  * @author Tor Borgen <Tor Borgen at CastleDev>
  */
     @WebService
-public class Test {
+public class Input {
         
         public String name;
         public String help;
         public Start start;
         public Commands com;
         public String commands;
-    public Test() {
+    public Input() {
         name = null;
         help = null;
        commands = null;

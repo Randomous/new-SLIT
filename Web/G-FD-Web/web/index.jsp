@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:useBean id="mybean2" scope="session" class="Test.Test"/>
+        <jsp:useBean id="mybean2" scope="session" class="WebInput.Input"/>
         <h2><jsp:getProperty name="mybean2" property="help" /></h2>
         <h3> 
         </h3>
