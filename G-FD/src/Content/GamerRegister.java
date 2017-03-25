@@ -13,10 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package InputAndResponses;
+package Content;
 
+
+import InputAndResponses.InputReader;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 /**
  * GamerRegister contains the HashMap that stores all Gamer objects
@@ -104,12 +107,29 @@ public class GamerRegister {
     /**
      * Just prints out the gamers in the system.
      */
-    public void displayGamers()
+    public void displayGamers() 
     {
         System.out.println("The registered gamers in this system is:\n" + gamerRegister.keySet());
         System.out.println("These are not case sensitive");
     }
     
+    /**
+     * Prints the full gamerInfo of all gamers in register
+     */
+    public void fullGamerInfo() {
+        System.out.println("The gamers in the system is: ");
+        Map<String, Gamer> map = gamerRegister;
+        map.values().forEach((value) -> {
+            System.out.println(value.getInfo());
+        });
+    }
+    
+    /**
+     * Adds a gamer to the register
+     * 
+     * @param name is the name of the gamer object to be added
+     * @param newGamer Is the object corresponding to the name to be added
+     */
     public void addGamer(String name, Gamer newGamer)
     {
         gamerRegister.put(name, newGamer);

@@ -23,6 +23,7 @@ import Content.ContentHandler;
 import InputAndResponses.CommandFolder.Commands;
 import InputAndResponses.CommandFolder.CommandWords;
 import java.util.HashSet;
+import java.util.ListIterator;
 
 /**
  * The Interface initiates the application with the constructor
@@ -48,6 +49,7 @@ public class Start
     private final ContentHandler content;
     // enum commands
     private final Commands command;
+    public String returnedGamer;
     
 
     /**
@@ -63,7 +65,6 @@ public class Start
        command = new Commands();
        content = new ContentHandler();
        
-       start();
     }
     
 
@@ -73,17 +74,16 @@ public class Start
      * Anything else generates either a random response or a match in responder
      * HashMap containing gamertag values.
      */
-    private void start()
+    public String start(HashSet<String> input)
     {
         boolean finished = false;
         
         printWelcome();
        
         
-        
         while(!finished) 
         {
-            HashSet<String> input = reader.getInput();
+            
             CommandWords commands = command.getCommand(input);
             switch (commands)
             {
@@ -91,43 +91,46 @@ public class Start
                     Gamer gamerReg;
                     gamerReg = gamerRegister.findGamer(input);
                     if (gamerReg != null) {
-                        System.out.println(gamerReg.getInfo());
+                        returnedGamer = gamerReg.getInfo();
+                        return gamerReg.getInfo();
                     }
                     else {
-                    System.out.println(responder.generateResponse());
+                    return responder.generateResponse();
                     }
-                    break;
+                    
                 case COMMANDS :
-                     command.displayCommands();
-                    break;
+                     return command.displayCommands();
+                   // break;
                 case GAMERS :
-                    gamerRegister.displayGamers();
-                    break;
+                    return gamerRegister.displayGamers();
+                    //break;
                 case RESOLVEDREPLIES :
-                    System.out.println("There has been "
+                    String replies = ("There has been "
                             + "generated: " + responder.amountOfResponses() 
                             + " generic responses by the system");
-                    break;
+                    return replies;
+                    //break;
                 case RESOLVEDGAMERS :
-                    System.out.println("There has been sucessful searches for: "
+                    String resolvedGamers = ("There has been sucessful searches for: "
                             + gamerRegister.gamertagsResolved() 
                             + " gamers found by the system");
-                    break;
+                    return resolvedGamers;
+                    //break;
                 case ADDGAMER :
                     gamerRegister.createNewGamer();
                     break;
                 case LEADERBOARD :
-                    leaderboard.displayLeaderboard();
-                    break;
+                    return leaderboard.displayLeaderboard();
+                    //break;
                 case CONTENT :
                     //content.printAllContent();
-                    content.fullContentPrint();
-                    break;
+                    return content.fullContentPrint();
+                    //break;
                 case SUPER :
                     content.superPrint();
                 case HELP :
-                    command.displayHelp();
-                    break;
+                    return command.displayHelp();
+                    //break;
 
                 case EXIT :
                     finished = true; 
@@ -135,28 +138,29 @@ public class Start
             }
         }
         
-        printGoodbye();
+        return printGoodbye();
     }
     
        /**
      * Print the welcome message and instructions
      */
-    private void printWelcome()
-    {
-        System.out.println("################################################");
-        System.out.println("#######Welcome to CastleDev's G-FD System#######");
-        System.out.println("################################################");
-        System.out.println("Please enter what you wish to do.");
-        System.out.println("Enter a friends gamertag to get the stored info");
-        command.displayHelp();
+    public String printWelcome()
+    {   //String help = command.displayHelp();
+        StringBuilder ret = new StringBuilder();
+        ret.append("<center>################################################<br>" +
+        "#######Welcome to CastleDev's G-FD System##########<br>" +
+        "################################################<br>" +
+        "Please enter what you wish to do.<br>" +
+        "Enter a friends gamertag to get the stored info<br></center>");
+        return ret.toString();
     }
     
         /**
      * Print a good-bye message to the screen.
      */
-    private void printGoodbye()
+    private String printGoodbye()
     {
-        System.out.println("Have a nice day, bye!");
+        return "Have a nice day, bye!";
     }
 }
 

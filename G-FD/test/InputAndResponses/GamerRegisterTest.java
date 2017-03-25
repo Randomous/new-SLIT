@@ -16,6 +16,8 @@
 
 package InputAndResponses;
 
+import Content.GamerRegister;
+import Content.Gamer;
 import java.util.HashSet;
 import org.junit.After;
 import org.junit.AfterClass;

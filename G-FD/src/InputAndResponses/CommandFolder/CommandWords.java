@@ -1,7 +1,7 @@
 /*
  * 
  */
-package InputAndResponses;
+package InputAndResponses.CommandFolder;
 
 /**
  * Just contains all the enums for commands
@@ -12,6 +12,7 @@ package InputAndResponses;
 public enum CommandWords {  
     
     EXIT, GAMERS, COMMANDS, RESOLVEDGAMERS, RESOLVEDREPLIES, HELP, ADDGAMER,
+    LEADERBOARD, CONTENT, SUPER,
 
     /**
      * Unknown if any other commands are not recognized

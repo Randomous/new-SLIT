@@ -1,7 +1,7 @@
 /*
  * 
  */
-package InputAndResponses;
+package InputAndResponses.CommandFolder;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -37,6 +37,9 @@ public class Commands {
         commandRegister.put("!RESOLVEDREPLIES", CommandWords.RESOLVEDREPLIES);
         commandRegister.put("!HELP", CommandWords.HELP);
         commandRegister.put("!ADDGAMER", CommandWords.ADDGAMER);
+        commandRegister.put("!LEADERBOARD", CommandWords.LEADERBOARD);
+        commandRegister.put("!CONTENT", CommandWords.CONTENT);
+        commandRegister.put("!SUPER", CommandWords.SUPER);
     }
     
     /**
