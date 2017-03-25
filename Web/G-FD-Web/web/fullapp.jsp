@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Buttons
+    Document   : FullApp
     Created on : Feb 23, 2017, 1:36:52 AM
     Author     : Tor Borgen <Tor Borgen at CastleDev>
 --%>
@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
         <title>JSP Page</title>
     </head>
+    
     <body>
         <jsp:useBean id="mybean2" scope="session" class="WebInput.Input"/>
         <h2><jsp:getProperty name="mybean2" property="help" /></h2>
@@ -20,7 +20,8 @@
         <input type="submit" name="Search" value="Search" /></center>
     <br>
 </form>
-        <form action="${pageContext.request.contextPath}/InputHandler" method="post">
+        
+    <form action="${pageContext.request.contextPath}/InputHandler" method="post">
     <center><input type="submit" name="Commands" value="Text Input Commands" />
     <input type="submit" name="Leaderboard" value="Leaderboard" />
     <input type="submit" name="Gamers" value="Registered Gamers" />
@@ -38,6 +39,7 @@
     Enter rank points <input type="number" name="rankPoints" min="0" step="1"/>
     <br>
     <input type="submit" name="AddGamer" value="Submit new gamer" />
+    
     </form>
         <br>
         <button onclick="asd(1)">Close without submitting</button>
@@ -45,7 +47,7 @@
 
     <button onclick="asd(2)">Add new Gamer</button>
 
-    <script>
+    <script type="text/javascript">
     function asd(a)
     {
         if(a===1)
@@ -58,6 +60,4 @@
         </center>
 
         </body>
-
-
     </html>

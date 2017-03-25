@@ -13,7 +13,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import WebInput.Input;
 import Content.GamerRegister;
 
 
@@ -41,23 +40,31 @@ public class InputHandler extends HttpServlet {
         Input input = new Input();
         
         GamerRegister gamerReg = new GamerRegister();
-        String goBack = "<center><form name=\"Go back\" action=\"buttons.jsp\">\n" +
+        String goBack = "<center><form name=\"Go back\" action=\"fullapp.jsp\">\n" +
             "<input type=\"submit\" value=\"Go back\" />\n" +
             "</form></center>";
         
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet InputHandler</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<center><h1>Servlet InputHandler at " + request.getContextPath() + "</h1></center>");
           if (request.getParameter("Commands") != null) {
             //out.println("<h3>Works!</h3>");
             out.println("<h1>" + input.getCommands() + "</h1>");
-            out.println(goBack);
+            
         } else if (request.getParameter("Leaderboard") != null) {
             out.println("<center><h1>" + input.getLeaderboard() + "</h1></center>");
-            out.println(goBack);
+            
         } else if (request.getParameter("Gamers") != null) {
             input.setName("!GAMERS");
             out.println("<center><h1>" + input.getName() + "</h1></center>");
-            out.println(goBack);
+            
         } else if (request.getParameter("AddGamer") != null) {
              //out.println("Please enter the gamer information\n" + 
                //             "Enter the gamertag assosiated with the gamer");
@@ -69,21 +76,15 @@ public class InputHandler extends HttpServlet {
              gamerReg.webCreateGamer(newname,description, rank, result);
              out.println("Gamer: > " + newname + " < was successfully"
                             + " added to the system");
-             out.println(goBack);
-        }else if (request.getParameter("Search") != null) {
+             
+        } else if (request.getParameter("Search") != null) {
             input.setName(request.getParameter("name"));
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet InputHandler</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<center><h1>Servlet InputHandler at " + request.getContextPath() + "</h1></center>");
+           
+            //out.println("<center><h1>Servlet InputHandler at " + request.getContextPath() + "</h1></center>");
             out.println("<center><h2> Response form system: <br>" + input.getName() + "</h2></center>");
             
-            out.println(goBack);
-            out.println("</body>");
-            out.println("</html>");
+            
+            
         } else {
             // out.
         }
@@ -91,7 +92,9 @@ public class InputHandler extends HttpServlet {
             //String returned;
             //returned = request.getParameter("name");
            
-          
+            out.println("</body>");
+            out.println("</html>");
+            out.println(goBack);
         
     }
     
