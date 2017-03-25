@@ -39,6 +39,7 @@ public class InputHandler extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Input input = new Input();
+        
         GamerRegister gamerReg = new GamerRegister();
         String goBack = "<center><form name=\"Go back\" action=\"buttons.jsp\">\n" +
             "<input type=\"submit\" value=\"Go back\" />\n" +
