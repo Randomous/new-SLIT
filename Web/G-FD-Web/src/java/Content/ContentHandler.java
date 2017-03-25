@@ -45,7 +45,7 @@ public class ContentHandler {
             contentList.add(gamer);
             //System.out.println("");
         });
-        gamerReg.gamerRegister.values().forEach((gamer) -> {
+        gamerReg.GAMERREGISTER.values().forEach((gamer) -> {
             contentList.add(gamer);
         });
     }

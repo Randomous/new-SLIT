@@ -27,7 +27,7 @@ public class LeaderboardRegister {
     
     // HashMap for Leaderboard
     public final HashMap<String, Leaderboard> leaderboardRegister;
-    // gamerRegister for access to gamers
+    // GAMERREGISTER for access to gamers
     public GamerRegister gamerReg;
     
     public LeaderboardRegister() {
@@ -36,7 +36,7 @@ public class LeaderboardRegister {
         fillLeaderboard();
     }
     /**
-     * Fills the leaderboard with gamers from the gamerRegister
+     * Fills the leaderboard with gamers from the GAMERREGISTER
     */
     public void fillLeaderboard(){
          int rankPlacer = 1;
@@ -45,7 +45,7 @@ public class LeaderboardRegister {
         Iterator entries = map.entrySet().iterator();
         while (entries.hasNext()) {
         **/
-        for (Gamer gamer : gamerReg.gamerRegister.values()){
+        for (Gamer gamer : gamerReg.GAMERREGISTER.values()){
            Leaderboard leaderboard = new Leaderboard(gamer.getGamertag(),
                    gamer.getDiscription(), gamer.getRank(), gamer.getRankPoints(),
                    rankPlacer, previRank);

@@ -32,7 +32,7 @@ import java.util.Map;
 //@WebService
 public class GamerRegister {
     // HashMap for gamers
-    public final HashMap<String, Gamer> gamerRegister;
+    public static final HashMap<String, Gamer> GAMERREGISTER = new HashMap<>();
     // Reader for input
     private final InputReader reader;
     //Stores the amount of successful matches of gamertags
@@ -40,7 +40,7 @@ public class GamerRegister {
     
     public GamerRegister() {
               // Initialize the needed elements and fill gamer map
-              gamerRegister = new HashMap<>();
+              //GAMERREGISTER = new HashMap<>();
               reader = new InputReader();
               fillGamers();
     
@@ -60,9 +60,9 @@ public class GamerRegister {
         Gamer SirDerpALot;
         SirDerpALot = new Gamer("SIRDERPALOT", "Derp 4 teh lulz",
               "SR", 2900);
-        gamerRegister.put("SCOOPEX", Scoopex);
-        gamerRegister.put("DERPINA", Derpina);
-        gamerRegister.put("SIRDERPALOT", SirDerpALot);
+        GAMERREGISTER.put("SCOOPEX", Scoopex);
+        GAMERREGISTER.put("DERPINA", Derpina);
+        GAMERREGISTER.put("SIRDERPALOT", SirDerpALot);
     }
     
     /**
@@ -78,7 +78,7 @@ public class GamerRegister {
         
         for(String word : words)
         {
-          Gamer foundGamer = gamerRegister.get(word);
+          Gamer foundGamer = GAMERREGISTER.get(word);
           
           if (foundGamer != null) 
           {
@@ -112,7 +112,7 @@ public class GamerRegister {
     public String displayGamers() 
     {
         String gamers = ("The registered gamers in this system is:" + "<br>"
-                + gamerRegister.keySet()
+                + GAMERREGISTER.keySet()
                 + "<br>" + "These are not case sensitive");
         return gamers;
     }
@@ -122,7 +122,7 @@ public class GamerRegister {
      */
     public void fullGamerInfo() {
         System.out.println("The gamers in the system is: ");
-        Map<String, Gamer> map = gamerRegister;
+        Map<String, Gamer> map = GAMERREGISTER;
         map.values().forEach((value) -> {
             System.out.println(value.getInfo());
         });
@@ -136,7 +136,7 @@ public class GamerRegister {
      */
     public void addGamer(String name, Gamer newGamer)
     {
-        gamerRegister.put(name, newGamer);
+        GAMERREGISTER.put(name, newGamer);
     }
     
     /**
@@ -166,6 +166,16 @@ public class GamerRegister {
                     addGamer(newName, newGamer);
                     
                     System.out.println("Gamer: > " + newName + " < was successfully"
+                            + " added to the system");
+    }
+     public void webCreateGamer(String name, String description, String newRank, int newRankPoints)
+    {
+
+                    String newname = name.toUpperCase();
+                    Gamer newGamer = new Gamer(newname, description, 
+                            newRank, newRankPoints);
+                    addGamer(newname, newGamer); 
+                    System.out.println("Gamer: > " + newname + " < was successfully"
                             + " added to the system");
     }
 }

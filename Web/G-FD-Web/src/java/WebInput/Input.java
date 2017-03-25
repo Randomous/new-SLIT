@@ -1,8 +1,10 @@
 package WebInput;
+import Content.GamerRegister;
 import javax.jws.WebService;
 import InputAndResponses.Start;
 import java.util.HashSet;
 import InputAndResponses.CommandFolder.Commands;
+import Content.LeaderboardRegister;
 
 /**
  *
@@ -16,17 +18,24 @@ public class Input {
         public Start start;
         public Commands com;
         public String commands;
+        public LeaderboardRegister leaderboard;
+        
     public Input() {
         name = null;
         help = null;
        commands = null;
        start = new Start();
        com = new Commands();
+       leaderboard = new LeaderboardRegister();
+       
+       
         
         
     }
  
-
+    public String getLeaderboard() {
+        return leaderboard.displayLeaderboard();
+    }
     public String getName() {
        return name;
     }
