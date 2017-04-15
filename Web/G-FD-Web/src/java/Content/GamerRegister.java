@@ -30,7 +30,8 @@ import java.util.Map;
  * @version 1.09
  */
 //@WebService
-public class GamerRegister {
+public class GamerRegister extends Register{
+    
     // HashMap for gamers
     public static final HashMap<String, Gamer> GAMERREGISTER = new HashMap<>();
     // Reader for input
@@ -42,14 +43,14 @@ public class GamerRegister {
               // Initialize the needed elements and fill gamer map
               //GAMERREGISTER = new HashMap<>();
               reader = new InputReader();
-              fillGamers();
+              fillRegister();
     
             }
 
     /**
      * fills gamer array with arbitrary gamers for testing
      */
-    public final void fillGamers()
+    public final void fillRegister()
     {
         Gamer Scoopex;
         Scoopex = new Gamer("SCOOPEX", "Scoopex is the owner",
@@ -109,7 +110,7 @@ public class GamerRegister {
     /**
      * Just prints out the gamers in the system.
      */
-    public String displayGamers() 
+    public String getRegister() 
     {
         String gamers = ("The registered gamers in this system is:" + "<br>"
                 + GAMERREGISTER.keySet()

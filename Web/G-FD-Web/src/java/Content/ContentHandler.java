@@ -55,7 +55,7 @@ public class ContentHandler {
      */
     public void printAllContentPrimitive() {
         gamerReg.fullGamerInfo();
-        leaderboard.displayLeaderboard();
+        leaderboard.getRegister();
     }
     
     /**

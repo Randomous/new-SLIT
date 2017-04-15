@@ -34,7 +34,7 @@ public class Input {
     }
  
     public String getLeaderboard() {
-        return leaderboard.displayLeaderboard();
+        return leaderboard.getRegister();
     }
     public String getName() {
        return name;

@@ -23,7 +23,7 @@ import java.util.Map;
  *
  * @author Tor Borgen <Tor Borgen at CastleDev>
  */
-public class LeaderboardRegister {
+public class LeaderboardRegister extends Register {
     
     // HashMap for Leaderboard
     public final HashMap<String, Leaderboard> leaderboardRegister;
@@ -33,12 +33,12 @@ public class LeaderboardRegister {
     public LeaderboardRegister() {
         leaderboardRegister = new HashMap<>();
         gamerReg = new GamerRegister();
-        fillLeaderboard();
+        fillRegister();
     }
     /**
      * Fills the leaderboard with gamers from the GAMERREGISTER
     */
-    public void fillLeaderboard(){
+    public void fillRegister(){
          int rankPlacer = 1;
         int previRank = 0;
         /**Map map = gamerRegister;
@@ -58,7 +58,7 @@ public class LeaderboardRegister {
     /**
      * Prints the leaderboard
      */
-     public String displayLeaderboard() {
+     public String getRegister() {
         StringBuilder leaderboard = new StringBuilder();
         leaderboard.append("The Leaderboard is as standing:");
         Map<String, Leaderboard> map = leaderboardRegister;

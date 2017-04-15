@@ -102,7 +102,7 @@ public class Start
                      return command.displayCommands();
                    // break;
                 case GAMERS :
-                    return gamerRegister.displayGamers();
+                    return gamerRegister.getRegister();
                     //break;
                 case RESOLVEDREPLIES :
                     String replies = ("There has been "
@@ -120,7 +120,7 @@ public class Start
                     gamerRegister.createNewGamer();
                     break;
                 case LEADERBOARD :
-                    return leaderboard.displayLeaderboard();
+                    return leaderboard.getRegister();
                     //break;
                 case CONTENT :
                     //content.printAllContent();
