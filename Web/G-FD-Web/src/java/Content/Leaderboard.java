@@ -21,7 +21,7 @@ package Content;
  *
  * @author Tor Borgen <Tor Borgen at CastleDev>
  */
-public class Leaderboard extends Gamer{
+public class Leaderboard extends Gamer implements InformationInterface{
     
     //Gamers placement in leaderboard
     private int placement;

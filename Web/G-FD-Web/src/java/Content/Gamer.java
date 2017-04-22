@@ -22,7 +22,7 @@ package Content;
  * @author CastleDev / Tor Borgen
  * @version 1.09
  */
-public class Gamer {
+public class Gamer implements InformationInterface{
   
     // the "name" or gamertag 
     private final String gamerTag;
@@ -56,6 +56,7 @@ public class Gamer {
      * @return gamerInfo in form of string
      * 
      */
+    @Override
     public String getInfo()
     {
         String gamerInfo = ("GamerTag " + gamerTag + 
@@ -77,6 +78,7 @@ public class Gamer {
      * get the description from field of object
      * @return description
      */
+    @Override
     public String getDiscription() {
         return description;
     }
