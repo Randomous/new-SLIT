@@ -42,14 +42,14 @@ public class Input {
     
     public String getHelp() {
         
-        return help = start.printWelcome();
+        return help = start.printWelcomeHTML();
     }
     public String getCommands() {
         return commands = com.displayCommands();
     }
     public void setHelp(String help) {
          
-         help = start.printWelcome();
+         help = start.printWelcomeHTML();
          //help = "tettet";
          //this.help = help;
     }

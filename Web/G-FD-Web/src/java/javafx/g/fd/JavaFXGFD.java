@@ -5,15 +5,24 @@
  */
 package javafx.g.fd;
 
+import InputAndResponses.Start;
+import WebInput.Input;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -21,32 +30,79 @@ import javafx.stage.Stage;
  * @author Tor Borgen <Tor Borgen at CastleDev>
  */
 public class JavaFXGFD extends Application {
+    public Start startRef;
+    public Input inputter;
     
     @Override
     public void start(Stage primaryStage) {
-        Label label1 = new Label("Name:");
-        TextField textField = new TextField ();
-        HBox hb = new HBox();
-        hb.getChildren().addAll(label1, textField);
-        hb.setSpacing(10);
-        Button btn = new Button();
+        //Initialise the refs needed
+        startRef = new Start();
+        inputter = new Input();
         
+        //Creating a grid for form
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25,25,25,25));
         
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
+        //Create the scene
+        Scene scene = new Scene(grid, 700, 500);
+        //Creating new VBox for layout of text
+        VBox layout = new VBox(25);
+        
+        //Set content variables
+        Text scenetitle = new Text(startRef.printWelcome());
+        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL,20));
+        Label gamer = new Label("Enter the command or gamer");
+        
+        //Creating new HBox container for autowrapping of text
+        HBox container = new HBox(scenetitle);
+        container.setAlignment(Pos.CENTER);
+        container.setPadding(new Insets(10));
+        
+        //Adding the scenetitle to layout and set wrapping
+        layout.getChildren().add(scenetitle);
+        scenetitle.wrappingWidthProperty().bind(scene.widthProperty().subtract(15));
+        
+        //Adding scenetitle to HBox for rezizing
+        HBox.setHgrow(scenetitle, Priority.ALWAYS);
+        BorderPane pane = new BorderPane();
+        pane.setCenter(container);
+        
+        //Input text field
+        TextField inputText = new TextField();
+        
+        //Setup the grid positions layout
+        grid.add(scenetitle,0,0,2,1);
+        grid.add(gamer,0,1);
+        grid.add(inputText,1,1);
+        grid.setGridLinesVisible(false);
+        
+        //Creating button and positioning it in layout
+        Button btn = new Button("Search");
+        HBox hdBtn = new HBox(10);
+        hdBtn.setAlignment(Pos.BOTTOM_RIGHT);
+        hdBtn.getChildren().add(btn);
+        grid.add(hdBtn,1,4);
+        
+        //Setting actiontarget
+        final Text actiontarget = new Text();
+        grid.add(actiontarget,1,6);
+        
+        //using lamda expressions. Instead of overriding inner classes
+        btn.setOnAction(event ->
+        {
+           actiontarget.setFill(Color.BLACK);
+           //actiontarget.setText("Search intialized");
+           inputter.setName(inputText.getText());
+           
+           actiontarget.setText(inputter.getName());
+           actiontarget.setFont(Font.font("Tahoma", FontWeight.NORMAL,18));
         });
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
+        scene.getStylesheets().add(JavaFXGFD.class.getResource("css/javaFxStyling.css").toExternalForm());
+        primaryStage.setTitle("G-FD Application");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

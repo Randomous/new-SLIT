@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 24, 2017, 1:18:15 AM
+    Author     : Tor Borgen <Tor Borgen at CastleDev>
+*/
+/*.root{-fx-background-image: url("../img/background.jpg")}
+*/
+.root{
+    -fx-background-image: url("../img/greyback.jpg");
+    -fx-background-size: cover;
+
+}
+.label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: brown;
+}
+
+#login-text {
+    -fx-font-size: 32px;
+    -fx-font-family: "Arial Black";
+    -fx-fill: brown;
+}
+
+#actiontarget {
+    -fx-fill: azure;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1,#2a5058)
+}

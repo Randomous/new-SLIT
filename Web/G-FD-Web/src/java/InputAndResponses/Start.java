@@ -78,7 +78,7 @@ public class Start
     {
         boolean finished = false;
         
-        printWelcome();
+        printWelcomeHTML();
        
         
         while(!finished) 
@@ -144,7 +144,7 @@ public class Start
        /**
      * Print the welcome message and instructions
      */
-    public String printWelcome()
+    public String printWelcomeHTML()
     {   //String help = command.displayHelp();
         StringBuilder ret = new StringBuilder();
         ret.append("<center>################################################<br>" +
@@ -153,6 +153,14 @@ public class Start
         "Please enter what you wish to do.<br>" +
         "Enter a friends gamertag to get the stored info<br></center>");
         return ret.toString();
+    }
+     public String printWelcome()
+    {   //String help = command.displayHelp();
+        //StringBuilder ret = new StringBuilder();
+        String ret = ("Welcome to CastleDev's G-FD System." +
+        " Please enter what you wish to do." +
+        " Enter a friends gamertag to get the stored info");
+        return ret;
     }
     
         /**
