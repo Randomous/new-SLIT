@@ -40,7 +40,7 @@ public class InputHandler extends HttpServlet {
         Input input = new Input();
         
         GamerRegister gamerReg = new GamerRegister();
-        String goBack = "<center><form name=\"Go back\" action=\"fullapp.jsp\">\n" +
+        String goBack = "<center><form name=\"Go back\" action=\"webServletStart.jsp\">\n" +
             "<input type=\"submit\" value=\"Go back\" />\n" +
             "</form></center>";
         

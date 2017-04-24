@@ -19,9 +19,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -53,7 +50,7 @@ public class JavaFXGFD extends Application {
         
         //Set content variables
         Text scenetitle = new Text(startRef.printWelcome());
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL,20));
+        scenetitle.setId("scenetitle");
         Label gamer = new Label("Enter the command or gamer");
         
         //Creating new HBox container for autowrapping of text
@@ -93,12 +90,13 @@ public class JavaFXGFD extends Application {
         //using lamda expressions. Instead of overriding inner classes
         btn.setOnAction(event ->
         {
-           actiontarget.setFill(Color.BLACK);
+           //actiontarget.setFill(Color.WHITE);
            //actiontarget.setText("Search intialized");
            inputter.setName(inputText.getText());
            
            actiontarget.setText(inputter.getName());
-           actiontarget.setFont(Font.font("Tahoma", FontWeight.NORMAL,18));
+           actiontarget.setId("actiontarget");
+      
         });
         
         scene.getStylesheets().add(JavaFXGFD.class.getResource("css/javaFxStyling.css").toExternalForm());
