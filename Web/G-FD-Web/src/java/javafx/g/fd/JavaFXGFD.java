@@ -49,7 +49,7 @@ public class JavaFXGFD extends Application {
         //Create the scene
         Scene scene = new Scene(grid, 700, 500);
         //Creating new VBox for layout of text
-        VBox layout = new VBox(25);
+        VBox layout = new VBox(25); 
         
         //Set content variables
         Text scenetitle = new Text(startRef.printWelcome());
