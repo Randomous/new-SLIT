@@ -50,6 +50,7 @@ public class GamerRegister extends Register{
     /**
      * fills gamer array with arbitrary gamers for testing
      */
+    @Override
     public final void fillRegister()
     {
         Gamer Scoopex;
@@ -109,7 +110,9 @@ public class GamerRegister extends Register{
     
     /**
      * Just prints out the gamers in the system.
+     * @return gamer string with info
      */
+    @Override
     public String getRegister() 
     {
         String gamers = ("The registered gamers in this system is:" + "<br>"
