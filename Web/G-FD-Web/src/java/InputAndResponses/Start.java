@@ -85,8 +85,11 @@ public class Start
         {
             
             CommandWords commands = command.getCommand(input);
+            // Switch over enums from input parameter
             switch (commands)
             {
+                //Default switch if no hit on commands, either find gamer or
+                // generic general response
                 case UNKNOWN :
                     Gamer gamerReg;
                     gamerReg = gamerRegister.findGamer(input);
