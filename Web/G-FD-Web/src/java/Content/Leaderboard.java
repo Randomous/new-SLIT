@@ -21,6 +21,8 @@ package Content;
  *
  * @author Tor Borgen <Tor Borgen at CastleDev>
  */
+
+// Interface implementation not really needed, but showcased for specification
 public class Leaderboard extends Gamer implements InformationInterface{
     
     //Gamers placement in leaderboard
@@ -72,6 +74,7 @@ public class Leaderboard extends Gamer implements InformationInterface{
      *  Collects the information of super and subclass and merge them into string
      * @return leaderboardInfo in form of string
      */
+    @Override
     public String getInfo() {
         String leaderboardInfo = ("Gamer " + super.getGamertag() + 
                 "\nHas the following rank: " + super.getRank() + " With: " + 
@@ -80,6 +83,7 @@ public class Leaderboard extends Gamer implements InformationInterface{
                 + "His previous placement was at spot number: " + previousPlacement);
         return leaderboardInfo;
     }
+    
     /**
      * Simple call to check that the super method of 
      * overridden getInfo can be called

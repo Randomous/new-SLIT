@@ -38,6 +38,7 @@ public class LeaderboardRegister extends Register {
     /**
      * Fills the leaderboard with gamers from the GAMERREGISTER
     */
+    @Override
     public void fillRegister(){
          int rankPlacer = 1;
         int previRank = 0;
@@ -57,7 +58,9 @@ public class LeaderboardRegister extends Register {
     }
     /**
      * Prints the leaderboard
+     * @return complete leaderboard as string
      */
+    @Override
      public String getRegister() {
         StringBuilder leaderboard = new StringBuilder();
         leaderboard.append("The Leaderboard is as standing:");

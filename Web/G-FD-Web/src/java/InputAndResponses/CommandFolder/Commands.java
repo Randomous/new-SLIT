@@ -18,8 +18,7 @@ public class Commands {
         //Creates the HashMap for commands
     private final HashMap<String, CommandWords> commandRegister;
    
-    public Commands() 
-    {
+    public Commands() {
         commandRegister = new HashMap<>();
         fillCommands();
     
@@ -28,8 +27,7 @@ public class Commands {
     /**
      * This fills the commandRegister with all commands 
     */
-    private void fillCommands()
-    {
+    private void fillCommands(){
         commandRegister.put("!EXIT",CommandWords.EXIT); 
         commandRegister.put("!GAMERS", CommandWords.GAMERS);
         commandRegister.put("!COMMANDS", CommandWords.COMMANDS);
@@ -47,17 +45,14 @@ public class Commands {
      * @param input expected input from user, searches for command and
      * @return Either found command or default unknown command
      */
-    public CommandWords getCommand(HashSet<String> input)
-    {
+    public CommandWords getCommand(HashSet<String> input){
         CommandWords command;
         
-        for (String commands : input)
-        {
+        for (String commands : input){
             command = commandRegister.get(commands);
-        if (command != null)
-        {
+        if (command != null){
             return command;
-        }
+            }
         }
         return CommandWords.UNKNOWN;
     }
@@ -78,23 +73,18 @@ public class Commands {
     /**
      * Displays the help commands if they are registered in the system
      */
-    public String displayHelp()
-    {
+    public String displayHelp(){
         StringBuilder help = new StringBuilder();
-        if (commandRegister.containsKey("!GAMERS"))
-        {
+        if (commandRegister.containsKey("!GAMERS")){
         help.append("Type !gamers to see registered gamers in the system" + "<br>");
         }
-        if (commandRegister.containsKey("!COMMANDS"))
-        {
+        if (commandRegister.containsKey("!COMMANDS")){
         help.append("Type !commands to list all available commands" + "<br>");
         }
-        if (commandRegister.containsKey("!EXIT"))
-        {
+        if (commandRegister.containsKey("!EXIT")){
         help.append("Type !exit to exit the system." + "<br>");
         }
-        if (commandRegister.containsKey("!HELP"))
-        {
+        if (commandRegister.containsKey("!HELP")){
         help.append("Type !help at any time to get help" + "<br>");
         }
         String helpString = help.toString();

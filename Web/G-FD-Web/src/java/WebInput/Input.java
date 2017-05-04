@@ -1,5 +1,4 @@
 package WebInput;
-import Content.GamerRegister;
 import javax.jws.WebService;
 import InputAndResponses.Start;
 import java.util.HashSet;
@@ -20,40 +19,40 @@ public class Input {
         public String commands;
         public LeaderboardRegister leaderboard;
         
-    public Input() {
+public Input() {
         name = null;
         help = null;
        commands = null;
        start = new Start();
        com = new Commands();
        leaderboard = new LeaderboardRegister();
-       
-       
-        
-        
     }
- 
+    
+    //Get and return the leaderboard as string
     public String getLeaderboard() {
         return leaderboard.getRegister();
     }
+    //get name returned as string
     public String getName() {
        return name;
     }
-    
+    //get help from method, returns string
     public String getHelp() {
         
-        return help = start.printWelcomeHTML();
+        return help = start.GetWebWelcome();
     }
+    //get commands returned as string
     public String getCommands() {
         return commands = com.displayCommands();
     }
+    //set help
     public void setHelp(String help) {
          
-         help = start.printWelcomeHTML();
+         help = start.GetWebWelcome();
          //help = "tettet";
          //this.help = help;
     }
-
+    //Set name from input
     public void setName(String name) {
        //this.name = name;
         //Start start = new Start();
@@ -68,9 +67,7 @@ public class Input {
         //find.add(name);
         name = start.start(find);
         this.name = name;
-       
     }
-
 }
     
 

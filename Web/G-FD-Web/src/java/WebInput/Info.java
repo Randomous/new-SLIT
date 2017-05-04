@@ -18,7 +18,7 @@ public class Info {
         public String help;
     public Info() {
         Start start = new Start();
-        help = start.printWelcomeHTML();
+        help = start.GetWebWelcome();
        
         
         

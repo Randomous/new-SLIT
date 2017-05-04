@@ -49,7 +49,7 @@ public class JavaFXGFD extends Application {
         VBox layout = new VBox(25); 
         
         //Set content variables
-        Text scenetitle = new Text(startRef.printWelcome());
+        Text scenetitle = new Text(startRef.GetWelcome());
         scenetitle.setId("scenetitle");
         Label gamer = new Label("Enter the command or gamer");
         

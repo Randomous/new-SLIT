@@ -29,7 +29,6 @@ import java.util.Map;
  * @author CastleDev / Tor Borgen
  * @version 1.09
  */
-//@WebService
 public class GamerRegister extends Register{
     
     // HashMap for gamers
@@ -51,8 +50,7 @@ public class GamerRegister extends Register{
      * fills gamer array with arbitrary gamers for testing
      */
     @Override
-    public final void fillRegister()
-    {
+    public final void fillRegister(){
         Gamer Scoopex;
         Scoopex = new Gamer("SCOOPEX", "Scoopex is the owner",
                 "Platinum", 2500);
@@ -74,16 +72,12 @@ public class GamerRegister extends Register{
      * Or If unsuccessful, return generic respond method
      * @return
      */
-    //@WebMethod
-    public Gamer findGamer(HashSet<String> words)
-    {
+    public Gamer findGamer(HashSet<String> words){
         
-        for(String word : words)
-        {
+        for(String word : words){
           Gamer foundGamer = GAMERREGISTER.get(word);
           
-          if (foundGamer != null) 
-          {
+          if (foundGamer != null) {
             gamerMatch++;
             return foundGamer;
           }
@@ -96,8 +90,7 @@ public class GamerRegister extends Register{
      * Just returns the number of searches that resulted in gamer returned
      * @return gamerMatch integer that counts the successful gamer lookups
      */
-    public int gamertagsResolved()
-    {
+    public int gamertagsResolved(){
         return gamerMatch;
     }
     
@@ -113,8 +106,7 @@ public class GamerRegister extends Register{
      * @return gamer string with info
      */
     @Override
-    public String getRegister() 
-    {
+    public String getRegister() {
         String gamers = ("The registered gamers in this system is:" + "<br>"
                 + GAMERREGISTER.keySet()
                 + "<br>" + "These are not case sensitive");
@@ -138,8 +130,7 @@ public class GamerRegister extends Register{
      * @param name is the name of the gamer object to be added
      * @param newGamer Is the object corresponding to the name to be added
      */
-    public void addGamer(String name, Gamer newGamer)
-    {
+    public void addGamer(String name, Gamer newGamer){
         GAMERREGISTER.put(name, newGamer);
     }
     
@@ -147,8 +138,7 @@ public class GamerRegister extends Register{
      * Creates a new gamer object and adds it to the HashMap of gamers
      * Takes input from InputReader both string and integer readers
      */
-    public void createNewGamer()
-    {
+    public void createNewGamer(){
         String newName;
                     String newDescription;
                     String newRank;
@@ -172,8 +162,7 @@ public class GamerRegister extends Register{
                     System.out.println("Gamer: > " + newName + " < was successfully"
                             + " added to the system");
     }
-     public void webCreateGamer(String name, String description, String newRank, int newRankPoints)
-    {
+     public void webCreateGamer(String name, String description, String newRank, int newRankPoints){
 
                     String newname = name.toUpperCase();
                     Gamer newGamer = new Gamer(newname, description, 

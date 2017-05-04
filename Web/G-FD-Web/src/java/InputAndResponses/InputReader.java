@@ -25,15 +25,13 @@ import java.util.HashSet;
  * @author     CastleDev / Tor Borgen
  * @version    0.4
  */
-public class InputReader
-{
+public class InputReader{
     private final Scanner reader;
 
     /**
      * Create a new InputReader that reads text from the text terminal.
      */
-    public InputReader()
-    {
+    public InputReader(){
         reader = new Scanner(System.in);
     }
     
@@ -41,8 +39,7 @@ public class InputReader
      *  Input method for searching strings for trigger words
      * @return words which is a HashSet of the phrase entered
      */
-    public HashSet<String> getInput()
-    {
+    public HashSet<String> getInput(){
         System.out.print("> "); // print prompt
         String inputLine;
         inputLine = reader.nextLine().trim().toUpperCase();
@@ -59,8 +56,7 @@ public class InputReader
      * Basic String input
      * @return inputLine string with value
      */
-    public String getStringInput()
-    {
+    public String getStringInput(){
         System.out.print("> "); // print prompt
         String inputLine;
         inputLine = reader.nextLine().trim();
@@ -71,13 +67,10 @@ public class InputReader
      * Basic integer input
      * @return inputLine with integer value
      */
-    public int getIntInput()
-    {
+    public int getIntInput(){
         System.out.print("> "); // print prompt
         int inputLine;
         inputLine = reader.nextInt();
         return inputLine;
     }
-   
-    
 }

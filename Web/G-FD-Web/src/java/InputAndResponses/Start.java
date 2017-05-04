@@ -23,7 +23,6 @@ import Content.ContentHandler;
 import InputAndResponses.CommandFolder.Commands;
 import InputAndResponses.CommandFolder.CommandWords;
 import java.util.HashSet;
-import java.util.ListIterator;
 
 /**
  * The Interface initiates the application with the constructor
@@ -38,7 +37,8 @@ import java.util.ListIterator;
 public class Start
 {
     // InputReader for terminal input
-    private final InputReader reader;
+    //private final InputReader reader;
+    
     // Responder with maps, arrays and randomiser
     private final Responder responder;
     // gamerRegister with gamermap
@@ -58,7 +58,7 @@ public class Start
     public Start()
     {
        // Initialize objects needed and start application method
-       reader = new InputReader();
+       //reader = new InputReader();
        responder = new Responder();
        gamerRegister = new GamerRegister();
        leaderboard = new LeaderboardRegister();
@@ -71,14 +71,16 @@ public class Start
     /**
      * start initiates the inputReader for terminal input
      * "!EXIT" ends the application
-     * Anything else generates either a random response or a match in responder
+     * Recognized input matching either enum command words returns string
+     * Valid gamer in system from input returns string of map object
+     * Anything else returns generic random string from responder
      * HashMap containing gamertag values.
      */
     public String start(HashSet<String> input)
     {
         boolean finished = false;
         
-        printWelcomeHTML();
+        GetWebWelcome();
        
         
         while(!finished) 
@@ -141,13 +143,13 @@ public class Start
             }
         }
         
-        return printGoodbye();
+        return GetGoodbye();
     }
     
        /**
      * Print the welcome message and instructions
      */
-    public String printWelcomeHTML()
+    public String GetWebWelcome()
     {   //String help = command.displayHelp();
         StringBuilder ret = new StringBuilder();
         ret.append("<center>################################################<br>" +
@@ -157,7 +159,7 @@ public class Start
         "Enter a friends gamertag to get the stored info<br></center>");
         return ret.toString();
     }
-     public String printWelcome()
+     public String GetWelcome()
     {   //String help = command.displayHelp();
         //StringBuilder ret = new StringBuilder();
         String ret = ("Welcome to CastleDev's G-FD System." +
@@ -169,7 +171,7 @@ public class Start
         /**
      * Print a good-bye message to the screen.
      */
-    private String printGoodbye()
+    private String GetGoodbye()
     {
         return "Have a nice day, bye!";
     }
