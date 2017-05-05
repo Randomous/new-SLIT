@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 24, 2017, 1:18:15 AM
+    Author     : Tor Borgen <Tor Borgen at CastleDev>
+*/
+/*.root{-fx-background-image: url("../img/background.jpg")}
+*/
+.root{
+    -fx-background-image: url("../img/bg-gradient.png");
+    -fx-background-size: cover;
+
+}
+.label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: red;
+}
+
+#scenetitle {
+    -fx-font-size: 20px;
+    -fx-font-family: "Tahoma";
+    -fx-fill: white;
+    -fx-font-weight: normal
+}
+
+#actiontarget {
+    -fx-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-font-family: "Tahoma";
+    -fx-font-weight: NORMAL
+}
+
+.button {
+    -fx-text-fill: lightcyan;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(brown,red)
+}
