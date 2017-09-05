@@ -153,7 +153,7 @@ public class Start
     {   //String help = command.displayHelp();
         StringBuilder ret = new StringBuilder();
         ret.append("<center>################################################<br>" +
-        "#######Welcome to CastleDev's G-FD System##########<br>" +
+        "#######Dette er en test tittel, lol##########<br>" +
         "################################################<br>" +
         "Please enter what you wish to do.<br>" +
         "Enter a friends gamertag to get the stored info<br></center>");

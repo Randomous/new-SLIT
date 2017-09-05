@@ -32,7 +32,7 @@
         <br>
     <div id="asd">
     <form action="InputHandler" method="post">
-    Enter gamer name <input type="text" name="gamerTag" />
+    Foreløpig Test Tittel <input type="text" name="gamerTag" />
     Enter a description of the gamer <input type="text" name="gamerDesc" />
     <br>
     Enter the rank type <input type="text" name="rankType" />
