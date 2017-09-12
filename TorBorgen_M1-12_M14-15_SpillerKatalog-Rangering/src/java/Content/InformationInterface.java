@@ -19,6 +19,6 @@ public interface InformationInterface {
     Full abstraction, public omitted since not needed with interface
     */
     String getInfo();
-    String getDiscription();
+    String getsurname();
     
 }

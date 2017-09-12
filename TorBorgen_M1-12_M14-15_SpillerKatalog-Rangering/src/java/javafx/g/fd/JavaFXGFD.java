@@ -51,7 +51,7 @@ public class JavaFXGFD extends Application {
         //Set content variables
         Text scenetitle = new Text(startRef.GetWelcome());
         scenetitle.setId("scenetitle");
-        Label gamer = new Label("Enter the command or gamer");
+        Label student = new Label("Enter the command or student");
         
         //Creating new HBox container for autowrapping of text
         HBox container = new HBox(scenetitle);
@@ -61,7 +61,7 @@ public class JavaFXGFD extends Application {
         //Adding the scenetitle to layout and set wrapping
         layout.getChildren().add(scenetitle);
         scenetitle.wrappingWidthProperty().bind(scene.widthProperty().subtract(15));
-        layout.getChildren().add(gamer);
+        layout.getChildren().add(student);
         
         //Adding scenetitle to HBox for rezizing
         HBox.setHgrow(scenetitle, Priority.ALWAYS);
@@ -73,7 +73,7 @@ public class JavaFXGFD extends Application {
         
         //Setup the grid positions layout
         grid.add(scenetitle,0,0,2,1);
-        grid.add(gamer,0,1);
+        grid.add(student,0,1);
         grid.add(inputText,1,1);
         grid.setGridLinesVisible(false);
         

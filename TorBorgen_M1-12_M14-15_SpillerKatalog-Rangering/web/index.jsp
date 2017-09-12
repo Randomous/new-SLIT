@@ -17,7 +17,7 @@
         <h2><jsp:getProperty name="mybean2" property="help" /></h2>
         <h3> 
         </h3>
-        <h1><center>Enter a gamertag to search for</center></h1>
+        <h1><center>Enter a firstname to search for</center></h1>
     <center><form name="Name input form" action="response.jsp">
             <input type="text" name="name" />
             <input type="submit" value="OK" />

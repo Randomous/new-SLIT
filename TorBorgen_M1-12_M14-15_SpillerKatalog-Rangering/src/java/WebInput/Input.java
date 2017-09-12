@@ -3,7 +3,7 @@ import javax.jws.WebService;
 import InputAndResponses.Start;
 import java.util.HashSet;
 import InputAndResponses.CommandFolder.Commands;
-import Content.LeaderboardRegister;
+import Content.ModuleRegister;
 
 /**
  *
@@ -17,7 +17,7 @@ public class Input {
         public Start start;
         public Commands com;
         public String commands;
-        public LeaderboardRegister leaderboard;
+        public ModuleRegister module;
         
 public Input() {
         name = null;
@@ -25,12 +25,12 @@ public Input() {
        commands = null;
        start = new Start();
        com = new Commands();
-       leaderboard = new LeaderboardRegister();
+       module = new ModuleRegister();
     }
     
-    //Get and return the leaderboard as string
-    public String getLeaderboard() {
-        return leaderboard.getRegister();
+    //Get and return the module as string
+    public String getModule() {
+        return module.getRegister();
     }
     //get name returned as string
     public String getName() {

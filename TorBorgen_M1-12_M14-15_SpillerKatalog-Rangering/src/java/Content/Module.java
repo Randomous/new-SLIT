@@ -23,21 +23,21 @@ package Content;
  */
 
 // Interface implementation not really needed, but showcased for specification
-public class Leaderboard extends Gamer implements InformationInterface{
+public class Module extends student implements InformationInterface{
     
-    //Gamers placement in leaderboard
+    //Students placement in module
     private int placement;
-    //Gamers previous placement for displaying climbs
+    //Students previous placement for displaying climbs
     private final int previousPlacement;
     
-    public Leaderboard(String gamerTag, String description, String rank, int rankPoints,
+    public Module(String firstname, String description, String mail, int studentID,
             int placement, int previousPlacement) {
-        super(gamerTag, description, rank, rankPoints);
+        super(firstname, description, mail, studentID);
         this.placement = placement;
         this.previousPlacement = previousPlacement;
     }
     /*
-    Gets the current placement of the gamer
+    Gets the current placement of the student
     @return placement
     */
     public int getPlacement(){
@@ -46,7 +46,7 @@ public class Leaderboard extends Gamer implements InformationInterface{
     }
     
     /*
-    Gets the previous placement of the gamer in order to visualise climb
+    Gets the previous placement of the student in order to visualise climb
     @return Previousplacement
     */
     public int getPreviousPlacement(){
@@ -55,14 +55,14 @@ public class Leaderboard extends Gamer implements InformationInterface{
     }
     
     /*
-    Move the gamer up the leaderboard
+    Move the student up the module
     */
     public void placementUp() {
         placement ++;
     }
     
     /*
-    Move the gamer down the leaderboard
+    Move the student down the module
     */
     public void placementDown() {
         if (placement > 0)  {
@@ -72,16 +72,16 @@ public class Leaderboard extends Gamer implements InformationInterface{
     
     /**
      *  Collects the information of super and subclass and merge them into string
-     * @return leaderboardInfo in form of string
+     * @return moduleInfo in form of string
      */
     @Override
     public String getInfo() {
-        String leaderboardInfo = ("Gamer " + super.getGamertag() + 
-                "\nHas the following rank: " + super.getRank() + " With: " + 
-                super.getRankPoints() + " rankPoints\n" 
-                + "Which puts him on number " + placement+ " in the leaderboard\n"
+        String moduleInfo = ("Student " + super.getstudentfirstname() + 
+                "\nHas the following mail: " + super.getMail() + " With: " + 
+                super.getStudentID() + " studentID\n" 
+                + "Which puts him on number " + placement+ " in the module\n"
                 + "His previous placement was at spot number: " + previousPlacement);
-        return leaderboardInfo;
+        return moduleInfo;
     }
     
     /**

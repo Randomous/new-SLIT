@@ -23,16 +23,16 @@ import java.util.ArrayList;
  */
 public class ContentHandler {
     
-    // access to the GamerRegister
-    private GamerRegister gamerReg;
-    // access to the leaderboardRegister
-    private LeaderboardRegister leaderboard;
+    // access to the StudentRegister
+    private StudentRegister studentReg;
+    // access to the moduleRegister
+    private ModuleRegister module;
     // Arraylist to contain all objects of both registers
-    private ArrayList<Gamer> contentList;
+    private ArrayList<student> contentList;
     
     public ContentHandler() {
-        gamerReg = new GamerRegister();
-        leaderboard = new LeaderboardRegister();
+        studentReg = new StudentRegister();
+        module = new ModuleRegister();
         contentList = new ArrayList();
         fillContent();
     }
@@ -41,12 +41,12 @@ public class ContentHandler {
      * Fills the array with content from all registers
      */
     public void fillContent() {
-        leaderboard.leaderboardRegister.values().forEach((gamer) -> {
-            contentList.add(gamer);
+        module.moduleRegister.values().forEach((student) -> {
+            contentList.add(student);
             //System.out.println("");
         });
-        gamerReg.GAMERREGISTER.values().forEach((gamer) -> {
-            contentList.add(gamer);
+        studentReg.STUDENTREGISTER.values().forEach((student) -> {
+            contentList.add(student);
         });
     }
     
@@ -54,8 +54,8 @@ public class ContentHandler {
      * Manually print the hashMaps of both maps
      */
     public void printAllContentPrimitive() {
-        gamerReg.fullGamerInfo();
-        leaderboard.getRegister();
+        studentReg.fullStudentInfo();
+        module.getRegister();
     }
     
     /**
@@ -66,9 +66,9 @@ public class ContentHandler {
         StringBuilder content = new StringBuilder();
         //System.out.println(size);
         while (size < contentList.size()) {
-            Gamer gamer = contentList.get(size);
+            student student = contentList.get(size);
             
-            content.append(gamer.getInfo() + "<br> + <br>");
+            content.append(student.getInfo() + "<br> + <br>");
         size ++;
         //System.out.println("");
         //System.out.println(size);
@@ -81,7 +81,7 @@ public class ContentHandler {
      */
     public void superPrint() {
 
-        Leaderboard leader = leaderboard.leaderboardRegister.get("SCOOPEX");
+        Module leader = module.moduleRegister.get("EIRIK");
         leader.checkSubSuper();
     }
 }

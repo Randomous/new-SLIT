@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Content.GamerRegister;
+import Content.StudentRegister;
 
 
 /**
@@ -39,7 +39,7 @@ public class InputHandler extends HttpServlet {
             throws ServletException, IOException {
         Input input = new Input();
         
-        GamerRegister gamerReg = new GamerRegister();
+        StudentRegister studentReg = new StudentRegister();
         String goBack = "<center><form name=\"Go back\" action=\"webServletStart.jsp\">\n" +
             "<input type=\"submit\" value=\"Go back\" />\n" +
             "</form></center>";
@@ -58,23 +58,23 @@ public class InputHandler extends HttpServlet {
             //out.println("<h3>Works!</h3>");
             out.println("<h1>" + input.getCommands() + "</h1>");
             
-        } else if (request.getParameter("Leaderboard") != null) {
-            out.println("<center><h1>" + input.getLeaderboard() + "</h1></center>");
+        } else if (request.getParameter("Module") != null) {
+            out.println("<center><h1>" + input.getModule() + "</h1></center>");
             
-        } else if (request.getParameter("Gamers") != null) {
-            input.setName("!GAMERS");
+        } else if (request.getParameter("Students") != null) {
+            input.setName("!STUDENTS");
             out.println("<center><h1>" + input.getName() + "</h1></center>");
             
-        } else if (request.getParameter("AddGamer") != null) {
-             //out.println("Please enter the gamer information\n" + 
-               //             "Enter the gamertag assosiated with the gamer");
-             String newname = request.getParameter("gamerTag");
-             String description = request.getParameter("gamerDesc");
-             String rank = request.getParameter("rankType");
-             String rankP = request.getParameter("rankPoints");
-             int result = Integer.valueOf(rankP);
-             gamerReg.webCreateGamer(newname,description, rank, result);
-             out.println("Gamer: > " + newname + " < was successfully"
+        } else if (request.getParameter("AddStudent") != null) {
+             //out.println("Please enter the student information\n" + 
+               //             "Enter the firstname assosiated with the student");
+             String newname = request.getParameter("firstname");
+             String surename = request.getParameter("studentDesc" );
+             String mail = request.getParameter("mailType");
+             String mailP = request.getParameter("studentID");
+             int result = Integer.valueOf(mailP);
+             studentReg.webCreateStudent(newname,surename, mail, result);
+             out.println("Student: > " + newname + " < was successfully"
                             + " added to the system");
              
         } else if (request.getParameter("Search") != null) {
@@ -129,9 +129,9 @@ public class InputHandler extends HttpServlet {
     }
 
     /**
-     * Returns a short description of the servlet.
+     * Returns a short surename of the servlet.
      *
-     * @return a String containing servlet description
+     * @return a String containing servlet surename
      */
     @Override
     public String getServletInfo() {

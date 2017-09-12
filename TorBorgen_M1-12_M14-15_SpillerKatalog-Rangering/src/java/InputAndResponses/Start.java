@@ -16,9 +16,9 @@
 
 package InputAndResponses;
 
-import Content.GamerRegister;
-import Content.Gamer;
-import Content.LeaderboardRegister;
+import Content.StudentRegister;
+import Content.student;
+import Content.ModuleRegister;
 import Content.ContentHandler;
 import InputAndResponses.CommandFolder.Commands;
 import InputAndResponses.CommandFolder.CommandWords;
@@ -41,15 +41,15 @@ public class Start
     
     // Responder with maps, arrays and randomiser
     private final Responder responder;
-    // gamerRegister with gamermap
-    private final GamerRegister gamerRegister;
-    // leaderboardregister with leaderboard content
-    private final LeaderboardRegister leaderboard;
+    // studentRegister with studentmap
+    private final StudentRegister studentRegister;
+    // moduleregister with module content
+    private final ModuleRegister module;
     // ContentHandler with full content list
     private final ContentHandler content;
     // enum commands
     private final Commands command;
-    public String returnedGamer;
+    public String returnedStudent;
     
 
     /**
@@ -60,8 +60,8 @@ public class Start
        // Initialize objects needed and start application method
        //reader = new InputReader();
        responder = new Responder();
-       gamerRegister = new GamerRegister();
-       leaderboard = new LeaderboardRegister();
+       studentRegister = new StudentRegister();
+       module = new ModuleRegister();
        command = new Commands();
        content = new ContentHandler();
        
@@ -72,9 +72,9 @@ public class Start
      * start initiates the inputReader for terminal input
      * "!EXIT" ends the application
      * Recognized input matching either enum command words returns string
-     * Valid gamer in system from input returns string of map object
+     * Valid student in system from input returns string of map object
      * Anything else returns generic random string from responder
-     * HashMap containing gamertag values.
+     * HashMap containing firstname values.
      */
     public String start(HashSet<String> input)
     {
@@ -90,14 +90,14 @@ public class Start
             // Switch over enums from input parameter
             switch (commands)
             {
-                //Default switch if no hit on commands, either find gamer or
+                //Default switch if no hit on commands, either find student or
                 // generic general response
                 case UNKNOWN :
-                    Gamer gamerReg;
-                    gamerReg = gamerRegister.findGamer(input);
-                    if (gamerReg != null) {
-                        returnedGamer = gamerReg.getInfo();
-                        return gamerReg.getInfo();
+                    student studentReg;
+                    studentReg = studentRegister.findStudent(input);
+                    if (studentReg != null) {
+                        returnedStudent = studentReg.getInfo();
+                        return studentReg.getInfo();
                     }
                     else {
                     return responder.generateResponse();
@@ -106,8 +106,8 @@ public class Start
                 case COMMANDS :
                      return command.displayCommands();
                    // break;
-                case GAMERS :
-                    return gamerRegister.getRegister();
+                case STUDENTS :
+                    return studentRegister.getRegister();
                     //break;
                 case RESOLVEDREPLIES :
                     String replies = ("There has been "
@@ -115,17 +115,17 @@ public class Start
                             + " generic responses by the system");
                     return replies;
                     //break;
-                case RESOLVEDGAMERS :
-                    String resolvedGamers = ("There has been sucessful searches for: "
-                            + gamerRegister.gamertagsResolved() 
-                            + " gamers found by the system");
-                    return resolvedGamers;
+                case RESOLVEDSTUDENTS :
+                    String resolvedStudents = ("There has been sucessful searches for: "
+                            + studentRegister.firstnamesResolved() 
+                            + " students found by the system");
+                    return resolvedStudents;
                     //break;
-                case ADDGAMER :
-                    gamerRegister.createNewGamer();
+                case ADDSTUDENT :
+                    studentRegister.createNewStudent();
                     break;
-                case LEADERBOARD :
-                    return leaderboard.getRegister();
+                case MODULE :
+                    return module.getRegister();
                     //break;
                 case CONTENT :
                     //content.printAllContent();
@@ -156,7 +156,7 @@ public class Start
         "#######Welcome to CastleDev's G-FD System##########<br>" +
         "################################################<br>" +
         "Please enter what you wish to do.<br>" +
-        "Enter a friends gamertag to get the stored info<br></center>");
+        "Enter a friends firstname to get the stored info<br></center>");
         return ret.toString();
     }
      public String GetWelcome()
@@ -164,7 +164,7 @@ public class Start
         //StringBuilder ret = new StringBuilder();
         String ret = ("Welcome to CastleDev's G-FD System." +
         " Please enter what you wish to do." +
-        " Enter a friends gamertag to get the stored info");
+        " Enter a friends firstname to get the stored info");
         return ret;
     }
     

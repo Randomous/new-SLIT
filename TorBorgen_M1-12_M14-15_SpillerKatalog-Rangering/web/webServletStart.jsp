@@ -23,8 +23,8 @@
         
     <form action="${pageContext.request.contextPath}/InputHandler" method="post">
     <center><input type="submit" name="Commands" value="Text Input Commands" />
-    <input type="submit" name="Leaderboard" value="Leaderboard" />
-    <input type="submit" name="Gamers" value="Registered Gamers" />
+    <input type="submit" name="Module" value="Module" />
+    <input type="submit" name="Students" value="Registered Students" />
     </center>
 </form>
 
@@ -32,20 +32,20 @@
         <br>
     <div id="asd">
     <form action="InputHandler" method="post">
-    Enter gamer name <input type="text" name="gamerTag" />
-    Enter a description of the gamer <input type="text" name="gamerDesc" />
+    Enter student name <input type="text" name="firstname" />
+    Enter a description of the student <input type="text" name="studentDesc" />
     <br>
-    Enter the rank type <input type="text" name="rankType" />
-    Enter rank points <input type="number" name="rankPoints" min="0" step="1"/>
+    Enter the mail type <input type="text" name="mailType" />
+    Enter mail points <input type="number" name="studentID" min="0" step="1"/>
     <br>
-    <input type="submit" name="AddGamer" value="Submit new gamer" />
+    <input type="submit" name="AddStudent" value="Submit new student" />
     
     </form>
         <br>
         <button onclick="asd(1)">Close without submitting</button>
     </div>
 
-    <button onclick="asd(2)">Add new Gamer</button>
+    <button onclick="asd(2)">Add new Student</button>
 
     <script type="text/javascript">
     function asd(a)

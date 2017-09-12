@@ -23,9 +23,9 @@ import java.util.Iterator;
 
 
 /**
- * GameRegister contains all maps and lists of the application.
+ * Studentegister contains all maps and lists of the application.
  * It also holds the random generator.
- * There are methods for generating random response, searching for a gamertag
+ * There are methods for generating random response, searching for a firstname
  * and to initiate a random automatic "conversation"
  * StaticAutoConversation is iterator for fast iteration over question array.
  * Other methods can fill HashMap and ArrayLiasts manually.
@@ -48,7 +48,7 @@ public class Responder{
     private static final int ABSOLUTEMAX = 100;
     
     /**
-     * Constructor for objects of class GamerRegister
+     * Constructor for objects of class StudentRegister
      * Creates HashMap and ArrayList
      * Creates a random generator
      * And fills all Hash Maps and Arrays
@@ -59,7 +59,7 @@ public class Responder{
         questionArray = new ArrayList<>();
         randomGenerator = new Random();
         fillQuestionArray();
-        fillGamerArray();
+        fillStudentArray();
     }
     
     /**
@@ -78,7 +78,7 @@ public class Responder{
      * Fills the answerArray with responses
      * 
      */
-    private void fillGamerArray(){
+    private void fillStudentArray(){
         // put your code here
         answerArray.add("Could not find that in the system");
         answerArray.add("Sorry, does not compute");
