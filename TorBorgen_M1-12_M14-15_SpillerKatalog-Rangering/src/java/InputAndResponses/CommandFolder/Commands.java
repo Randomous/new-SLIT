@@ -29,13 +29,13 @@ public class Commands {
     */
     private void fillCommands(){
         commandRegister.put("!EXIT",CommandWords.EXIT); 
-        commandRegister.put("!GAMERS", CommandWords.GAMERS);
+        commandRegister.put("!STUDENTS", CommandWords.STUDENTS);
         commandRegister.put("!COMMANDS", CommandWords.COMMANDS);
-        commandRegister.put("!RESOLVEDGAMERS", CommandWords.RESOLVEDGAMERS);
+        commandRegister.put("!RESOLVEDSTUDENTS", CommandWords.RESOLVEDSTUDENTS);
         commandRegister.put("!RESOLVEDREPLIES", CommandWords.RESOLVEDREPLIES);
         commandRegister.put("!HELP", CommandWords.HELP);
-        commandRegister.put("!ADDGAMER", CommandWords.ADDGAMER);
-        commandRegister.put("!LEADERBOARD", CommandWords.LEADERBOARD);
+        commandRegister.put("!ADDSTUDENT", CommandWords.ADDSTUDENT);
+        commandRegister.put("!MODULE", CommandWords.MODULE);
         commandRegister.put("!CONTENT", CommandWords.CONTENT);
         commandRegister.put("!SUPER", CommandWords.SUPER);
     }
@@ -75,8 +75,8 @@ public class Commands {
      */
     public String displayHelp(){
         StringBuilder help = new StringBuilder();
-        if (commandRegister.containsKey("!GAMERS")){
-        help.append("Type !gamers to see registered gamers in the system" + "<br>");
+        if (commandRegister.containsKey("!STUDENTS")){
+        help.append("Type !students to see registered students in the system" + "<br>");
         }
         if (commandRegister.containsKey("!COMMANDS")){
         help.append("Type !commands to list all available commands" + "<br>");

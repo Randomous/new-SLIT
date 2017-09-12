@@ -11,8 +11,8 @@ package InputAndResponses.CommandFolder;
  */
 public enum CommandWords {  
     
-    EXIT, GAMERS, COMMANDS, RESOLVEDGAMERS, RESOLVEDREPLIES, HELP, ADDGAMER,
-    LEADERBOARD, CONTENT, SUPER,
+    EXIT, STUDENTS, COMMANDS, RESOLVEDSTUDENTS, RESOLVEDREPLIES, HELP, ADDSTUDENT,
+    MODULE, CONTENT, SUPER,
 
     /**
      * Unknown if any other commands are not recognized
