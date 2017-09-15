@@ -77,10 +77,10 @@ public class Module extends student implements InformationInterface{
     @Override
     public String getInfo() {
         String moduleInfo = ("Student " + super.getstudentfirstname() + 
-                "\nHas the following mail: " + super.getMail() + " With: " + 
-                super.getStudentID() + " studentID\n" 
-                + "Which puts him on number " + placement+ " in the module\n"
-                + "His previous placement was at spot number: " + previousPlacement);
+                "\nhar fullført moduler: " + super.getMail() + " og har: " + 
+                super.getStudentID() + " modul poeng\n" 
+                + "som setter han på plass " + placement+ " i student listen\n"
+                + "forrige plassering var på : " + previousPlacement);
         return moduleInfo;
     }
     

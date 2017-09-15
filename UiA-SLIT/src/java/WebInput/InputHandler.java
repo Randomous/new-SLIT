@@ -41,7 +41,7 @@ public class InputHandler extends HttpServlet {
         
         StudentRegister studentReg = new StudentRegister();
         String goBack = "<center><form name=\"Go back\" action=\"index.jsp\">\n" +
-            "<input type=\"submit\" value=\"Go back\" />\n" +
+            "<input type=\"submit\" value=\"Gå tilbake\" />\n" +
             "</form></center>";
         
         response.setContentType("text/html;charset=UTF-8");
@@ -68,14 +68,14 @@ public class InputHandler extends HttpServlet {
         } else if (request.getParameter("AddStudent") != null) {
              //out.println("Please enter the student information\n" + 
                //             "Enter the firstname assosiated with the student");
-             String newname = request.getParameter("firstname");
-             String surename = request.getParameter("studentDesc" );
-             String mail = request.getParameter("mailType");
-             String mailP = request.getParameter("studentID");
-             int result = Integer.valueOf(mailP);
-             studentReg.webCreateStudent(newname,surename, mail, result);
-             out.println("Student: > " + newname + " < was successfully"
-                            + " added to the system");
+             String Courses = request.getParameter("Courses");
+             String Modules = request.getParameter("Modules" );
+             String Delivery = request.getParameter("Delivery");
+             String Mark = request.getParameter("Mark");
+             int result = Integer.valueOf(Mark);
+             studentReg.webCreateStudent(Courses,Modules, Delivery, result);
+             out.println("Student: > " + Courses + " < har blitt"
+                            + " lagt til systemet");
              
         } else if (request.getParameter("Search") != null) {
             input.setName(request.getParameter("name"));

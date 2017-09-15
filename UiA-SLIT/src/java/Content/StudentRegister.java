@@ -53,13 +53,13 @@ public class StudentRegister extends Register{
     public final void fillRegister(){
         student Eirik;
         Eirik = new student("EIRIK", " Stålesen",
-                "eirik@uia.no", 2002);
+                "5 ", 50);
         student Helle;
-        Helle = new student("HELLE", "Trygesla",
-              "helle@uia.no", 2008);
+        Helle = new student("HELLE", " Trygesla",
+              "8 ", 76);
         student Daniel;
         Daniel = new student("DANIEL", "Pettersen",
-              "daniel@uia.no", 2004);
+              "3 ", 0);
         STUDENTREGISTER.put("EIRIK", Eirik);
         STUDENTREGISTER.put("HELLE", Helle);
         STUDENTREGISTER.put("DANIEL", Daniel);
@@ -107,9 +107,9 @@ public class StudentRegister extends Register{
      */
     @Override
     public String getRegister() {
-        String students = ("The registered students in this system is:" + "<br>"
+        String students = ("registrerte studenter i systemet er :" + "<br>"
                 + STUDENTREGISTER.keySet()
-                + "<br>" + "These are not case sensitive");
+                + "<br>" );
         return students;
     }
     
@@ -159,16 +159,16 @@ public class StudentRegister extends Register{
                     
                     addStudent(newName, newStudent);
                     
-                    System.out.println("Student: > " + newName + " < was successfully"
-                            + " added to the system");
+                    System.out.println("Student: > " + newName + " < ble vellykket"
+                            + " lagt til i systemet");
     }
-     public void webCreateStudent(String name, String description, String newMail, int newStudentID){
+     public void webCreateStudent(String name, String Studentid, String newCourses, int newModule){
 
                     String newname = name.toUpperCase();
-                    student newStudent = new student(newname, description, 
-                            newMail, newStudentID);
+                    student newStudent = new student(newname, Studentid, 
+                            newCourses, newModule);
                     addStudent(newname, newStudent); 
-                    System.out.println("Student: > " + newname + " < was successfully"
-                            + " added to the system");
+                    System.out.println("Student: > " + newname + " < har blitt"
+                            + " lagt til i systemet");
     }
 }

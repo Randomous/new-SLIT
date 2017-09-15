@@ -59,9 +59,9 @@ public class student implements InformationInterface{
     @Override
     public String getInfo()
     {
-        String studentInfo = ("studentens navn " + firstname + surename +
-                " er registrert i systemet \n" + "med følgende studentID: " 
-                + studentID + "\n studentensmail " + Mail);  
+        String studentInfo = ("student " + firstname + surename +
+                " er registrert i systemet med \n" + " fullført moduler " 
+                + studentID + "\n og har " + Mail + "modul poeng\n");  
                 
         return studentInfo;
     }
