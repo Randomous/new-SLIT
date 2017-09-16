@@ -1,6 +1,4 @@
 /*
- * Copyright 2017 Tor Borgen <Tor Borgen at CastleDev>.
- *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,13 +51,13 @@ public class StudentRegister extends Register{
     public final void fillRegister(){
         student Eirik;
         Eirik = new student("EIRIK", " Stålesen",
-                "5 ", 50);
+                "eirik@uia.no ", 123123);
         student Helle;
         Helle = new student("HELLE", " Trygesla",
-              "8 ", 76);
+              "helle@uia.no ", 123456);
         student Daniel;
         Daniel = new student("DANIEL", "Pettersen",
-              "3 ", 0);
+              "daniel@uia.no ", 123789);
         STUDENTREGISTER.put("EIRIK", Eirik);
         STUDENTREGISTER.put("HELLE", Helle);
         STUDENTREGISTER.put("DANIEL", Daniel);
@@ -117,7 +115,7 @@ public class StudentRegister extends Register{
      * Prints the full studentInfo of all students in register
      */
     public void fullStudentInfo() {
-        System.out.println("The students in the system is: ");
+        System.out.println("Full studentinfo er: ");
         Map<String, student> map = STUDENTREGISTER;
         map.values().forEach((value) -> {
             System.out.println(value.getInfo());
@@ -162,11 +160,11 @@ public class StudentRegister extends Register{
                     System.out.println("Student: > " + newName + " < ble vellykket"
                             + " lagt til i systemet");
     }
-     public void webCreateStudent(String name, String Studentid, String newCourses, int newModule){
+     public void webCreateStudent(String name, String surname, String mail, int studentID){
 
                     String newname = name.toUpperCase();
-                    student newStudent = new student(newname, Studentid, 
-                            newCourses, newModule);
+                    student newStudent = new student(newname, surname, 
+                            mail, studentID);
                     addStudent(newname, newStudent); 
                     System.out.println("Student: > " + newname + " < har blitt"
                             + " lagt til i systemet");

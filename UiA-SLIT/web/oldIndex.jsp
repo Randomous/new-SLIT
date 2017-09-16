@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Feb 22, 2017, 7:18:02 PM
-    Author     : Tor Borgen <Tor Borgen at CastleDev>
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="InputAndResponses.Start"%>

@@ -1,6 +1,4 @@
 /*
- * Copyright 2017 Tor Borgen <Tor Borgen at CastleDev>.
- *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,8 +58,8 @@ public class student implements InformationInterface{
     public String getInfo()
     {
         String studentInfo = ("student " + firstname + surename +
-                " er registrert i systemet med \n" + " fullført moduler " 
-                + studentID + "\n og har " + Mail + "modul poeng\n");  
+                " er registrert i systemet med \n" + " student ID " 
+                + studentID + "\n og med " + Mail + "skole epost\n");  
                 
         return studentInfo;
     }

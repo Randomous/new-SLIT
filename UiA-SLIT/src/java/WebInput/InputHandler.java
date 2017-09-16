@@ -68,13 +68,13 @@ public class InputHandler extends HttpServlet {
         } else if (request.getParameter("AddStudent") != null) {
              //out.println("Please enter the student information\n" + 
                //             "Enter the firstname assosiated with the student");
-             String Courses = request.getParameter("Courses");
-             String Modules = request.getParameter("Modules" );
-             String Delivery = request.getParameter("Delivery");
-             String Mark = request.getParameter("Mark");
-             int result = Integer.valueOf(Mark);
-             studentReg.webCreateStudent(Courses,Modules, Delivery, result);
-             out.println("Student: > " + Courses + " < har blitt"
+             String Name = request.getParameter("Firstname");
+             String Surname = request.getParameter("Surname" );
+             String Mail = request.getParameter("Mail");
+             String StudentID = request.getParameter("StudentID");
+             int result = Integer.valueOf(StudentID);
+             studentReg.webCreateStudent(Name,Surname, Mail, result);
+             out.println("Student: > " + Name + " < har blitt"
                             + " lagt til systemet");
              
         } else if (request.getParameter("Search") != null) {
