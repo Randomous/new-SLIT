@@ -1,6 +1,4 @@
 /*
- * Copyright 2017 Tor Borgen <Tor Borgen at CastleDev>.
- *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,7 +39,7 @@ public class ModuleRegister extends Register {
     @Override
     public void fillRegister(){
          int mailPlacer = 1;
-        int previMail = 0;
+        int previMail = 1;
         /**Map map = studentRegister;
         Iterator entries = map.entrySet().iterator();
         while (entries.hasNext()) {
@@ -63,7 +61,7 @@ public class ModuleRegister extends Register {
     @Override
      public String getRegister() {
         StringBuilder module = new StringBuilder();
-        module.append("Modul informasjon:");
+        module.append("Siste godkjente moduler er:");
         Map<String, Module> map = moduleRegister;
         map.values().forEach((value) -> {
             module.append("<br>" + value.getInfo());

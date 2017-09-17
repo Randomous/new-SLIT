@@ -1,9 +1,3 @@
-<%-- 
-    Document   : response
-    Created on : Feb 22, 2017, 8:15:20 PM
-    Author     : Tor Borgen <Tor Borgen at CastleDev>
---%>
-
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

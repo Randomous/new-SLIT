@@ -1,6 +1,4 @@
 /*
- * Copyright 2017 Tor Borgen <Tor Borgen at CastleDev>.
- *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,7 +29,7 @@ public class student implements InformationInterface{
     private String surename;
     @SuppressWarnings("FieldMayBeFinal")
     // the mail of the student
-    private String Mail;
+    private String mail;
     @SuppressWarnings("FieldMayBeFinal")
     // the studentid of the student
     private int studentID;
@@ -47,7 +45,7 @@ public class student implements InformationInterface{
     
     this.firstname = firstname.toUpperCase();
     this.surename = surename;
-    this.Mail = mail;
+    this.mail = mail;
     this.studentID = studentID;
     }
     
@@ -59,9 +57,9 @@ public class student implements InformationInterface{
     @Override
     public String getInfo()
     {
-        String studentInfo = ("studentens navn " + firstname + surename +
-                " er registrert i systemet \n" + "med følgende studentID: " 
-                + studentID + "\n studentensmail " + Mail);  
+        String studentInfo = ("student " + firstname + surename +
+                " er registrert i systemet med \n" + " student ID " 
+                + studentID + "\n og med " + mail + "skole epost\n");  
                 
         return studentInfo;
     }
@@ -88,7 +86,7 @@ public class student implements InformationInterface{
      * @return mail
      */
     public String getMail() {
-        return Mail;
+        return mail;
     }
     
     /**

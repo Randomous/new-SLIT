@@ -1,6 +1,4 @@
 /*
- * Copyright 2017 Tor Borgen <Tor Borgen at CastleDev>.
- *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,48 +23,48 @@ package Content;
 // Interface implementation not really needed, but showcased for specification
 public class Module extends student implements InformationInterface{
     
-    //Students placement in module
-    private int placement;
-    //Students previous placement for displaying climbs
-    private final int previousPlacement;
+    //M oduleNumber in module
+    private int moduleNumber;
+    // Points on a module
+    private final int modulePoints;
     
     public Module(String firstname, String description, String mail, int studentID,
-            int placement, int previousPlacement) {
+            int moduleNumber, int modulePoints) {
         super(firstname, description, mail, studentID);
-        this.placement = placement;
-        this.previousPlacement = previousPlacement;
+        this.moduleNumber = moduleNumber;
+        this.modulePoints = modulePoints;
     }
     /*
-    Gets the current placement of the student
-    @return placement
+    Gets the current moduleNumber of the student
+    @return moduleNumber
     */
     public int getPlacement(){
         
-        return placement;
+        return moduleNumber;
     }
     
     /*
-    Gets the previous placement of the student in order to visualise climb
+    Gets the previous moduleNumber of the student in order to visualise climb
     @return Previousplacement
     */
     public int getPreviousPlacement(){
         
-        return previousPlacement;
+        return modulePoints;
     }
     
     /*
     Move the student up the module
     */
     public void placementUp() {
-        placement ++;
+        moduleNumber ++;
     }
     
     /*
     Move the student down the module
     */
     public void placementDown() {
-        if (placement > 0)  {
-                placement --;
+        if (moduleNumber > 0)  {
+                moduleNumber --;
         }
     }
     
@@ -76,11 +74,11 @@ public class Module extends student implements InformationInterface{
      */
     @Override
     public String getInfo() {
-        String moduleInfo = ("Student " + super.getstudentfirstname() + 
-                "\nHas the following mail: " + super.getMail() + " With: " + 
-                super.getStudentID() + " studentID\n" 
-                + "Which puts him on number " + placement+ " in the module\n"
-                + "His previous placement was at spot number: " + previousPlacement);
+        String moduleInfo = ("Student " + super.getstudentfirstname() + super.getsurname() + 
+                "\ner registrert med: " + super.getMail() + " og har: " + 
+                super.getStudentID() + " som studentid\n" 
+                + "Sist godkjent mdoul " + moduleNumber
+                + " Med: " + modulePoints + " poeng");
         return moduleInfo;
     }
     

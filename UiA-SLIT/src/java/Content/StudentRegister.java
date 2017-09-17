@@ -1,6 +1,4 @@
 /*
- * Copyright 2017 Tor Borgen <Tor Borgen at CastleDev>.
- *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -53,13 +51,13 @@ public class StudentRegister extends Register{
     public final void fillRegister(){
         student Eirik;
         Eirik = new student("EIRIK", " Stålesen",
-                "eirik@uia.no", 2002);
+                "eirik@uia.no ", 123123);
         student Helle;
-        Helle = new student("HELLE", "Trygesla",
-              "helle@uia.no", 2008);
+        Helle = new student("HELLE", " Trygesla",
+              "helle@uia.no ", 123456);
         student Daniel;
         Daniel = new student("DANIEL", "Pettersen",
-              "daniel@uia.no", 2004);
+              "daniel@uia.no ", 123789);
         STUDENTREGISTER.put("EIRIK", Eirik);
         STUDENTREGISTER.put("HELLE", Helle);
         STUDENTREGISTER.put("DANIEL", Daniel);
@@ -107,9 +105,9 @@ public class StudentRegister extends Register{
      */
     @Override
     public String getRegister() {
-        String students = ("The registered students in this system is:" + "<br>"
+        String students = ("registrerte studenter i systemet er :" + "<br>"
                 + STUDENTREGISTER.keySet()
-                + "<br>" + "These are not case sensitive");
+                + "<br>" );
         return students;
     }
     
@@ -117,7 +115,7 @@ public class StudentRegister extends Register{
      * Prints the full studentInfo of all students in register
      */
     public void fullStudentInfo() {
-        System.out.println("The students in the system is: ");
+        System.out.println("Full studentinfo er: ");
         Map<String, student> map = STUDENTREGISTER;
         map.values().forEach((value) -> {
             System.out.println(value.getInfo());
@@ -159,16 +157,16 @@ public class StudentRegister extends Register{
                     
                     addStudent(newName, newStudent);
                     
-                    System.out.println("Student: > " + newName + " < was successfully"
-                            + " added to the system");
+                    System.out.println("Student: > " + newName + " < ble vellykket"
+                            + " lagt til i systemet");
     }
-     public void webCreateStudent(String name, String description, String newMail, int newStudentID){
+     public void webCreateStudent(String name, String surname, String mail, int studentID){
 
                     String newname = name.toUpperCase();
-                    student newStudent = new student(newname, description, 
-                            newMail, newStudentID);
+                    student newStudent = new student(newname, surname, 
+                            mail, studentID);
                     addStudent(newname, newStudent); 
-                    System.out.println("Student: > " + newname + " < was successfully"
-                            + " added to the system");
+                    System.out.println("Student: > " + newname + " < har blitt"
+                            + " lagt til i systemet");
     }
 }
