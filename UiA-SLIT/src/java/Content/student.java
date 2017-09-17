@@ -29,7 +29,7 @@ public class student implements InformationInterface{
     private String surename;
     @SuppressWarnings("FieldMayBeFinal")
     // the mail of the student
-    private String Mail;
+    private String mail;
     @SuppressWarnings("FieldMayBeFinal")
     // the studentid of the student
     private int studentID;
@@ -45,7 +45,7 @@ public class student implements InformationInterface{
     
     this.firstname = firstname.toUpperCase();
     this.surename = surename;
-    this.Mail = mail;
+    this.mail = mail;
     this.studentID = studentID;
     }
     
@@ -59,7 +59,7 @@ public class student implements InformationInterface{
     {
         String studentInfo = ("student " + firstname + surename +
                 " er registrert i systemet med \n" + " student ID " 
-                + studentID + "\n og med " + Mail + "skole epost\n");  
+                + studentID + "\n og med " + mail + "skole epost\n");  
                 
         return studentInfo;
     }
@@ -86,7 +86,7 @@ public class student implements InformationInterface{
      * @return mail
      */
     public String getMail() {
-        return Mail;
+        return mail;
     }
     
     /**
