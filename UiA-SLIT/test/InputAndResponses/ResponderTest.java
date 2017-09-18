@@ -12,10 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Tor Borgen <Tor Borgen at CastleDev>
- */
+
 public class ResponderTest {
     
     public ResponderTest() {

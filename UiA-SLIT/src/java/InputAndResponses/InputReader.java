@@ -19,9 +19,6 @@ import java.util.HashSet;
 /**
  * InputReader reads typed text input from the terminal. 
  * The text typed by a user is returned.
- * 
- * @author     CastleDev / Tor Borgen
- * @version    0.4
  */
 public class InputReader{
     private final Scanner reader;

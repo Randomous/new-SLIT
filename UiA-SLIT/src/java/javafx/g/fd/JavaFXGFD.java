@@ -22,10 +22,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Tor Borgen <Tor Borgen at CastleDev>
- */
+
 public class JavaFXGFD extends Application {
     public Start startRef;
     public Input inputter;

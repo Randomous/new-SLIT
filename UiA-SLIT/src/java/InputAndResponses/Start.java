@@ -29,8 +29,6 @@ import java.util.HashSet;
  * It takes input from the terminal in form of text.
  * All commands and instructions appear when start method is called
  * 
- * @author CastleDev / Tor Borgen
- * @version 1.09
  */
 public class Start
 {

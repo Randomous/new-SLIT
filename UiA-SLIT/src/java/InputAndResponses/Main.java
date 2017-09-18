@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 package InputAndResponses;
-/**
- *
- * @author adm-tor
- */
+
 //import java.util.HashSet;
 public class Main {
     

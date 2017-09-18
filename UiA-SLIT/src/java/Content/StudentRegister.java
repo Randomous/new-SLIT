@@ -24,8 +24,6 @@ import java.util.Map;
  Contains methods for searching a student and returning it if successful
  Also contains method for displaying all students registered
  * 
- * @author CastleDev / Tor Borgen
- * @version 1.09
  */
 public class StudentRegister extends Register{
     
@@ -56,7 +54,7 @@ public class StudentRegister extends Register{
         Helle = new student("HELLE", " Trygesla",
               "helle@uia.no ", 123456);
         student Daniel;
-        Daniel = new student("DANIEL", "Pettersen",
+        Daniel = new student("DANIEL", " Pettersen",
               "daniel@uia.no ", 123789);
         STUDENTREGISTER.put("EIRIK", Eirik);
         STUDENTREGISTER.put("HELLE", Helle);

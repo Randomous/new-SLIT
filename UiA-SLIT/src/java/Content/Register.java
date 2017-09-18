@@ -5,10 +5,6 @@
  */
 package Content;
 
-/**
- *
- * @author Tor
- */
 
 /*
 Full abstracted class Register serves methods for implementation to all 

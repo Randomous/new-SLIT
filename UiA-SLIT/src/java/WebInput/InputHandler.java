@@ -16,10 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import Content.StudentRegister;
 
 
-/**
- *
- * @author Tor Borgen <Tor Borgen at CastleDev>
- */
+
 
 
 @WebServlet(name = "InputHandler", urlPatterns = {"/InputHandler"})

@@ -14,12 +14,6 @@
 package Content;
 
 
-
-/**
- *
- * @author Tor Borgen <Tor Borgen at CastleDev>
- */
-
 // Interface implementation not really needed, but showcased for specification
 public class Module extends student implements InformationInterface{
     
@@ -74,11 +68,11 @@ public class Module extends student implements InformationInterface{
      */
     @Override
     public String getInfo() {
-        String moduleInfo = ("Student " + super.getstudentfirstname() + super.getsurname() + 
+        String moduleInfo = ("Student " + super.getstudentfirstname() + " " + super.getsurname() + 
                 "\ner registrert med: " + super.getMail() + " og har: " + 
                 super.getStudentID() + " som studentid\n" 
-                + "Sist godkjent mdoul " + moduleNumber
-                + " Med: " + modulePoints + " poeng");
+                + "Sist godkjent modoul " + moduleNumber
+                + " Med : " + modulePoints + " poeng");
         return moduleInfo;
     }
     

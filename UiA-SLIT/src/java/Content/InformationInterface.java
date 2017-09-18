@@ -5,11 +5,6 @@
  */
 package Content;
 
-/**
- *
- * @author Tor Borgen <Tor Borgen at CastleDev>
- */
-
 /*
 Interface for contnt objects common methods that must be present.
 */
