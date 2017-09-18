@@ -8,10 +8,7 @@ package WebInput;
 import InputAndResponses.Start;
 import java.util.HashSet;
 
-/**
- *
- * @author Tor Borgen <Tor Borgen at CastleDev>
- */
+
 public class Info {
         
         public String name;

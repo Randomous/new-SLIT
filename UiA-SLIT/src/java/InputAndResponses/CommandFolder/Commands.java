@@ -10,8 +10,6 @@ import java.util.HashSet;
  * Commands contains the HashMap for commands as well as methods for retruning
  * returning them 
  * 
- * @author CastleDev / Tor Borgen
- * @version 1.09
  */
 public class Commands {
     

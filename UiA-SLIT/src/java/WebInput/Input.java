@@ -5,10 +5,7 @@ import java.util.HashSet;
 import InputAndResponses.CommandFolder.Commands;
 import Content.ModuleRegister;
 
-/**
- *
- * @author Tor Borgen <Tor Borgen at CastleDev>
- */
+
     @WebService
 public class Input {
         

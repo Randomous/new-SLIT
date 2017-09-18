@@ -29,8 +29,6 @@ import java.util.Iterator;
  * Other methods can fill HashMap and ArrayLiasts manually.
  * Various methods are to be called from within interface text input
  * 
- * @author CastleDev / Tor Borgen
- * @version 1.09
  */
 public class Responder{
     //Creates the random number generator
@@ -78,13 +76,13 @@ public class Responder{
      */
     private void fillStudentArray(){
         // put your code here
-        answerArray.add("Could not find that in the system");
-        answerArray.add("Sorry, does not compute");
-        answerArray.add("That sounds like a really cool, but i cannot find in the system");
-        answerArray.add("Hmm, can you specify");
-        answerArray.add("I do not think i can do that");
-        answerArray.add("Please me more specific");
-        answerArray.add("That could be done if you gave me more information");
+        answerArray.add("Kunne ikke finne i systemet");
+        answerArray.add("Beklager, dette ble feil");
+        answerArray.add("Det hørtes som en veldig god ide, men finner ikke");
+        answerArray.add("Hmm, kan du prøve igjen");
+        answerArray.add("I do not think i can do that... DAVE ! ");
+        answerArray.add("Beklager, jeg så på noe annet, kunne du skrive igjen");
+        answerArray.add("Trenger litt mer informasjon");
         
     }
     

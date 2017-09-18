@@ -17,8 +17,6 @@ package Content;
 /**
  * This class is the student object class. Contains all information for a student
  * As well as methods for returning information about the student
- * @author CastleDev / Tor Borgen
- * @version 1.09
  */
 public class student implements InformationInterface{
   

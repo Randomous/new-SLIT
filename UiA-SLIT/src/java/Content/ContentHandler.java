@@ -15,10 +15,6 @@ package Content;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Tor Borgen <Tor Borgen at CastleDev>
- */
 public class ContentHandler {
     
     // access to the StudentRegister

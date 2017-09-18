@@ -17,10 +17,7 @@ package Content;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- * @author Tor Borgen <Tor Borgen at CastleDev>
- */
+
 public class ModuleRegister extends Register {
     
     // HashMap for Module
@@ -38,8 +35,8 @@ public class ModuleRegister extends Register {
     */
     @Override
     public void fillRegister(){
-         int mailPlacer = 1;
-        int previMail = 1;
+         int moduleNumber = 1;
+        int modulePoints = 1;
         /**Map map = studentRegister;
         Iterator entries = map.entrySet().iterator();
         while (entries.hasNext()) {
@@ -47,11 +44,11 @@ public class ModuleRegister extends Register {
         for (student student : studentReg.STUDENTREGISTER.values()){
            Module module = new Module(student.getstudentfirstname(),
                    student.getsurname(), student.getMail(), student.getStudentID(),
-                   mailPlacer, previMail);
+                   moduleNumber, modulePoints);
            moduleRegister.put(student.getstudentfirstname(), module);
            //System.out.println(module.getInfo());
-           mailPlacer ++;
-           previMail ++;
+           moduleNumber ++;
+           modulePoints ++;
         }
     }
     /**
