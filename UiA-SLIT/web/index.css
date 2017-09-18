@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 18, 2017, 5:49:43 PM
+    Author     : root
+*/
+
+#first {
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: relative;
+}
+
+#second {
+  content: "";
+  background: url(UIALogo.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+#title {
+    position: relative;
+    display: inline-block;
+}
+

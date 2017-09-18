@@ -3,13 +3,19 @@
 <!DOCTYPE html>
     <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>UiA-SLIT</title>
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     </head>
-    
+    <div id="first">
+    </div>
+    <div id="second">
+    </div>
     <body>
+        <div id="title">
         <jsp:useBean id="mybean2" scope="session" class="WebInput.Input"/>
+        </div>
         <h2><jsp:getProperty name="mybean2" property="help" /></h2>
     <center><form name="loginForm" method="post" action="InputHandler">
         Brukernavn:</font> <input type="text" name="name"/> <br/>
