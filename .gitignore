@@ -1,4 +1,11 @@
+# Compiled class file
 *.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -7,20 +14,9 @@
 *.jar
 *.war
 *.ear
+*.zip
+*.tar.gz
+*.rar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/G-FD/nbproject/private/
-/G-FD/build/
-/Web/G-FD-Webservice/nbproject/private/
-/Web/G-FD-Webservice/build/
-/Web/G-FD-Web/nbproject/private/
-/Web/G-FD-Web/build/
-/Web/G-FD-Web/dist/
-/Web/JavaFX-G-FD/nbproject/private/
-/Web/JavaFX-G-FD/build/
-/TorBorgen_M1-12_M14-15_SpillerKatalog-Rangering/nbproject/private/
-/TorBorgen_M1-12_M14-15_SpillerKatalog-Rangering/build/
-/TorBorgen_M1-12_M14-15_SpillerKatalog-Rangering/dist/
-/UiA-SLIT/build/
-/UiA-SLIT/dist/
