@@ -5,9 +5,9 @@
     <head>
         <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                <script src="javascript.js" type="text/javascript"></script>
+
         <title>UiA-SLIT</title>
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="javascript.js" type="text/javascript"></script>
     </head>
     
     <div id="first">
@@ -60,22 +60,6 @@
     </div>
 
     <button id="hide" onclick="asd(1)">Registrer ny student</button>
-
-    <script type="text/javascript">
-    function asd(a)
-    {
-        if(a===1){
-            document.getElementById("asd").style.display="block";
-            $('#hide').hide();
-        }
-        else {
-            $("#asd").hide();
-            $("#hide").show();
-            
-        
-        }
-    }
-    </script>
         </center>
 
         </body>
