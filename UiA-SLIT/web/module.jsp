@@ -15,13 +15,52 @@
         <h1><center>Her er modulene og alt du kan gjøre med dem</center></h1>
         
         <p>
-            <form action="${pageContext.request.contextPath}/InputHandler" method="post">
-    <center><input type="submit" name="Commands" value="Endre modul" />
-    <input type="submit" name="Module" value="Lag modul" />
+    <form action="${pageContext.request.contextPath}/EditModule" method="post">
+    <center><input type="submit" name="Module" value="Lag modul" />
     <input type="submit" name="Students" value="Godkjenn modul" />
     </center>
 </form>
         </p>
+        
+     <center>
+        <br>
+    <div id="asd" style="display:none">
+        <form action="${pageContext.request.contextPath}/EditModule" method="post"> 
+        Modul Navn <input type="text" name="Name" />
+        Modul Nummer <input type="text" name="Number" />
+        <br>
+        Lærings Mål <input type="text" name="Goal" />
+        Maksimum Poeng <input type="number" name="Points" min="0" step="1"/>
+        <br>
+        <input type="Submit" name="AddStudent" value="Bekreft Endering" />
+
+        </form>
+            <br>
+            <button onclick="asd(2)">Avbryt Endring</button>
+    </div>
+
+    <button id="hide" onclick="asd(1)">Endre modul</button>
+
+    <script type="text/javascript">
+    function asd(a)
+    {
+        if(a===1){
+            document.getElementById("asd").style.display="block";
+            $('#hide').hide();
+        }
+        else {
+            $("#asd").hide();
+            $("#hide").show();
+            
+        
+        }
+    }
+    </script>
+        </center>
+
+        </body>
+        
+        
         
         <p>
 <center><form name="Go back" action="index.jsp">

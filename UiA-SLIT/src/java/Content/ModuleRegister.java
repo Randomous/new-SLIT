@@ -65,4 +65,9 @@ public class ModuleRegister extends Register {
         });
         return module.toString();
     }
+     
+ public String editModule (String Name,int Number,String Goal,int Points) { 
+      
+       return (" Dette er" + Name + Number + Goal + Points);
+     }
 }
