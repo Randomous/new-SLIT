@@ -6,6 +6,7 @@
 package WebInput;
 
 
+import Content.ModuleRegister;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -37,6 +38,8 @@ public class InputHandler extends HttpServlet {
         Input input = new Input();
         
         StudentRegister studentReg = new StudentRegister();
+        ModuleRegister mudleReg = new ModuleRegister();
+        
         String goBack = "<center><form name=\"Go back\" action=\"index.jsp\">\n" +
             "<input type=\"submit\" value=\"Gå tilbake\" />\n" +
             "</form></center>";
