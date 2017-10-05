@@ -69,11 +69,14 @@ public class ModuleRegister extends Register {
         return module.toString();
     }
      
+ public String editModule (String Name,int Number,String Goal,int Points) { 
+      
+       return (" Dette er" + Name + Number + Goal + Points);
+     }
+
      
      public String createNewModule(String moduleName, String moduleDescription, int moduleNumber){
          
          return ("PLACEHOLDER Modul er blitt opprettet!" + moduleName + " " + moduleDescription + " " + moduleNumber);
      }
-     
-   
 }
