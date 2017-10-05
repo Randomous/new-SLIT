@@ -15,20 +15,6 @@
     </head>
     <body>
         <h1><center>Her er modulene og alt du kan gjøre med dem</center></h1>
-      
-            <div id="deleteModule" style="display:none">
-        <form action="DeleteModule" method="post"> 
-        student navn <input type="text" name="Firstname" />
-        <br>
-        Modul Nummer <input type="number" name="ModuleNumber" min="0" step="1"/>
-        <br>
-        <input type="Submit" name="Delete"  value="slett Modul" />
-
-        </form>
-<br>
-            <button onclick="asd(2, 'deleteModule')">Avbryt sletting</button>
-    </div>
-            <button id="hidedeleteModule" onclick="asd(1, 'deleteModule)">Slett Modulen</button> 
 
 
     <center>
