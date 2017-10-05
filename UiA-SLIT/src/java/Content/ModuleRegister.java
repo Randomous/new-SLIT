@@ -65,4 +65,12 @@ public class ModuleRegister extends Register {
         });
         return module.toString();
     }
+     
+     public String Delete(String firstname, int moduleNumber){
+      
+      return ("Modulen til " + firstname + ", modul nummer " + moduleNumber + " er blitt slettet");
+     }
+         
+         
+     
 }

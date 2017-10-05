@@ -21,9 +21,44 @@
     <input type="submit" name="Students" value="Godkjenn modul" />
     </center>
 </form>
+        <form action="${pageContext.request.contextPath}/DeleteModule" method="post">
+        </center>
+</form>
         </p>
+        <center>
+        <br>
+            <div id="asd" style="display:none">
+        <form action="DeleteModule" method="post"> 
+        student navn <input type="text" name="Firstname" />
+        <br>
+        Modul Nummer <input type="number" name="ModuleNumber" min="0" step="1"/>
+        <br>
+        <input type="Submit" name="Delete"  value="slett Modul" />
+
+        </form>
+<br>
+            <button onclick="asd(2)">Avbryt sletting</button>
+    </div>
+            <button id="hide" onclick="asd(1)">Slett Modulen</button> 
+
+    <script type="text/javascript">
+    function asd(a)
+    {
+        if(a===1){
+            document.getElementById("asd").style.display="block";
+            $('#hide').hide();
+        }
+        else {
+            $("#asd").hide();
+            $("#hide").show();
+            
         
-        <p>
+        }
+    }
+    </script>
+        </center>
+               
+             
 <center><form name="Go back" action="index.jsp">
         <input type="submit" value="Gå tilbake"/> </form></center>
         </p>
