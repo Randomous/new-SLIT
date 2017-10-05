@@ -16,7 +16,7 @@
     <body>
         <h1><center>Her er modulene og alt du kan gjøre med dem</center></h1>
 
-
+        <br>
     <center>
         <br>
         <div id="editModule" style="display:none">
@@ -36,7 +36,7 @@
 
         <button id="hideeditModule" onclick="asd(1, 'editModule')">Endre modul</button>
 
-
+        <br>
         <center>
             <br>
             <div id="createModule" style="display:none">
@@ -55,7 +55,7 @@
 
             <button id="hidecreateModule" onclick="asd(1, 'createModule')">Opprett Modul</button>
 
-
+            <br>
         </center>
 
         <p>

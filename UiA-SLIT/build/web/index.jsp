@@ -25,6 +25,26 @@
         <input type="submit" name="Search" value="Søk" /></center>
     <br>
 </form>
+        
+         <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <br>
+  <br>
+  <a href="module.jsp">Moduler</a>
+  <a href="#">Resten</a>
+  <a href="#">Funker</a>
+  <a href="#">Ikke</a>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()">
+    <button>Meny</button>
+</span>
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+<!--    <button id="test" name="bla" value="meny"></button>-->
+</div> 
 
 <form action="${pageContext.request.contextPath}/InputHandler" method="post">
     <center><input type="submit" name="Commands" value="Tekst kommandoer" />
@@ -59,7 +79,7 @@
         <button onclick="asd(2, 'student')">Avbryt registrering</button>
     </div>
 
-    <button id="hide" onclick="asd(1, 'student')">Registrer ny student</button>
+    <button id="hidestudent" onclick="asd(1, 'student')">Registrer ny student</button>
 </center>
 
 </body>
