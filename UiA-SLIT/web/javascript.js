@@ -23,10 +23,10 @@ function asd(a, id)
 {
     if (a === 1) {
         document.getElementById(id).style.display = "block";
-        $('#hide').hide();
+        $('#hide' + id).hide();
     } else {
         $("#" + id).hide();
-        $("#hide").show();
+        $("#hide" + id).show();
 
 
     }

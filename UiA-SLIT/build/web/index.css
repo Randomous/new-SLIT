@@ -20,7 +20,7 @@ and open the template in the editor.
   background: url(UIALogo.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
+  background-position: top;
   opacity: 0.3;
   top: 0;
   left: 0;

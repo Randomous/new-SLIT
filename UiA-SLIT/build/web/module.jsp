@@ -34,7 +34,7 @@
             <button onclick="asd(2, 'editModule')">Avbryt Endring</button>
         </div>
 
-        <button id="hide" onclick="asd(1, 'editModule')">Endre modul</button>
+        <button id="hideeditModule" onclick="asd(1, 'editModule')">Endre modul</button>
 
 
         <center>
@@ -53,7 +53,7 @@
                 <button onclick="asd(2, 'createModule')">Avbryt registrering</button>
             </div>
 
-            <button id="hide" onclick="asd(1, 'createModule')">Opprett Modul</button>
+            <button id="hidecreateModule" onclick="asd(1, 'createModule')">Opprett Modul</button>
 
 
         </center>
