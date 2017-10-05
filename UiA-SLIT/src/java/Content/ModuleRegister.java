@@ -25,10 +25,13 @@ public class ModuleRegister extends Register {
     // STUDENTREGISTER for access to students
     public StudentRegister studentReg;
     
+    
+    
     public ModuleRegister() {
         moduleRegister = new HashMap<>();
         studentReg = new StudentRegister();
         fillRegister();
+        
     }
     /**
      * Fills the module with students from the STUDENTREGISTER
@@ -69,5 +72,11 @@ public class ModuleRegister extends Register {
  public String editModule (String Name,int Number,String Goal,int Points) { 
       
        return (" Dette er" + Name + Number + Goal + Points);
+     }
+
+     
+     public String createNewModule(String moduleName, String moduleDescription, int moduleNumber){
+         
+         return ("PLACEHOLDER Modul er blitt opprettet!" + moduleName + " " + moduleDescription + " " + moduleNumber);
      }
 }

@@ -22,6 +22,7 @@
 </form>
         </p>
         
+
      <center>
         <br>
     <div id="asd" style="display:none">
@@ -41,6 +42,34 @@
 
     <button id="hide" onclick="asd(1)">Endre modul</button>
 
+          <p>
+<center>
+            <form action="${pageContext.request.contextPath}/CreateModule" method="post">
+    
+    <input type="submit" name="Module" value="Opprett ny modul" />
+  
+    </center>
+</form>
+        </p>
+        
+           <center>
+        <br>
+    <div id="asd" style="display:none">
+        <form action="CreateModule" method="post"> 
+        Modul <input type="text" name="ModuleName" />
+        Beskrivelse <input type="text" name="ModuleDescription" />
+        <br>
+        Modul Nummer <input type="number" name="ModuleNumber" min="0" step="1"/>
+        <br>
+        <input type="Submit" name="AddModule" value="Opprett ny modul" />
+
+        </form>
+            <br>
+            <button onclick="asd(2)">Avbryt registrering</button>
+    </div>
+
+    <button id="hide" onclick="asd(1)">Opprett ny modul</button>
+
     <script type="text/javascript">
     function asd(a)
     {
@@ -57,10 +86,6 @@
     }
     </script>
         </center>
-
-        </body>
-        
-        
         
         <p>
 <center><form name="Go back" action="index.jsp">
