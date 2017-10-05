@@ -5,7 +5,7 @@
  */
 package WebInput;
 
-
+import Content.Module;
 import Content.ModuleRegister;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,14 +14,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Content.StudentRegister;
 
-
-
-
-
-@WebServlet(name = "InputHandler", urlPatterns = {"/InputHandler"})
-public class InputHandler extends HttpServlet {
+/**
+ *
+ * @author Shiwan
+ */
+@WebServlet(name = "EditModule", urlPatterns = {"/EditModule"})
+public class EditModule extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,73 +31,56 @@ public class InputHandler extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Input input = new Input();
         
-        StudentRegister studentReg = new StudentRegister();
-        ModuleRegister mudleReg = new ModuleRegister();
+        ModuleRegister moduleRegister = new ModuleRegister ();
         
-        String goBack = "<center><form name=\"Go back\" action=\"index.jsp\">\n" +
+       
+        
+        
+         String goBack = "<center><form name=\"Go back\" action=\"index.jsp\">\n" +
             "<input type=\"submit\" value=\"Gå tilbake\" />\n" +
             "</form></center>";
         
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
         
+        
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet InputHandler</title>");            
+            out.println("<title>Servlet EditModule</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<center><h1>Servlet InputHandler at " + request.getContextPath() + "</h1></center>");
-          if (request.getParameter("Commands") != null) {
-            //out.println("<h3>Works!</h3>");
-            out.println("<h1>" + input.getCommands() + "</h1>");
+            out.println("<h1>Servlet EditModule at " + request.getContextPath() + "</h1>");
+            if (request.getParameter("EditModule") != null) {
+              //  out.println("<h1>" + moduleRegister.editModule() + "<h1>");
             
-        } else if (request.getParameter("Module") != null) {
-            out.println("<center><h1>" + input.getModule() + "</h1></center>");
-            
-        } else if (request.getParameter("Students") != null) {
-            input.setName("!STUDENTS");
-            out.println("<center><h1>" + input.getName() + "</h1></center>");
-            
-        } else if (request.getParameter("AddStudent") != null) {
+            } else if (request.getParameter("AddStudent") != null) {
              //out.println("Please enter the student information\n" + 
                //             "Enter the firstname assosiated with the student");
-             String Name = request.getParameter("Firstname");
-             String Surname = request.getParameter("Surname" );
-             String Mail = request.getParameter("Mail");
-             String StudentID = request.getParameter("StudentID");
-             int result = Integer.valueOf(StudentID);
-             studentReg.webCreateStudent(Name,Surname, Mail, result);
-             out.println("Student: > " + Name + " < har blitt"
-                            + " lagt til systemet");
+             String Name = request.getParameter("Name");
+             String Number = request.getParameter("Number" );
+             String Goal = request.getParameter("Goal");
+             String Points = request.getParameter("Points");
+             int result = Integer.valueOf(Points);
+             int results = Integer.valueOf(Number);
+             out.println (moduleRegister.editModule(Name,results,Goal ,result));
+            
              
-        } else if (request.getParameter("Search") != null) {
-            input.setName(request.getParameter("name"));
-           
-            //out.println("<center><h1>Servlet InputHandler at " + request.getContextPath() + "</h1></center>");
-            out.println("<center><h2> Response form system: <br>" + input.getName() + "</h2></center>");
+            }
             
             
             
-        } else {
-            // out.
-        }
-            /* TODO output your page here. You may use following sample code. */
-            //String returned;
-            //returned = request.getParameter("name");
-           
             out.println("</body>");
             out.println("</html>");
-            out.println(goBack);
-        
+        }
     }
     
-   
+    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -129,9 +111,9 @@ public class InputHandler extends HttpServlet {
     }
 
     /**
-     * Returns a short surename of the servlet.
+     * Returns a short description of the servlet.
      *
-     * @return a String containing servlet surename
+     * @return a String containing servlet description
      */
     @Override
     public String getServletInfo() {

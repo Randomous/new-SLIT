@@ -82,5 +82,5 @@ public class Module extends student implements InformationInterface{
      */
     public void checkSubSuper() {
         System.out.println(super.getInfo());
-    }
+    }   
 }
