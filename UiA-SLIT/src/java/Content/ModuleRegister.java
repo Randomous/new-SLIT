@@ -79,4 +79,9 @@ public class ModuleRegister extends Register {
          
          return ("PLACEHOLDER Modul er blitt opprettet!" + moduleName + " " + moduleDescription + " " + moduleNumber);
      }
+     
+     public String Delete(String firstname, int moduleNumber){
+      
+      return ("Modulen til " + firstname + ", modul nummer " + moduleNumber + " er blitt slettet");
+     }
 }
