@@ -8,9 +8,17 @@
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>studentList</servlet-name>
+        <servlet-class>listdemo.StudentListServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Input</servlet-name>
         <url-pattern>/Input</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>studentList</servlet-name>
+        <url-pattern>/studentList</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
