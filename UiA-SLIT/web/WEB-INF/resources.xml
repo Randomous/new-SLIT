@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<resources>
-  <Resource id="RandomousDB" type="javax.sql.DataSource">#Fri Oct 06 14:40:22 CEST 2017
-jdbcDriver=com.mysql.jdbc.Driver
-password=esebYsYqUpYqEnen
-userName=torgb15
-jdbcUrl=jdbc\:mysql\://boltit.uia.no\:3306/torgb15?zeroDateTimeBehavior\=convertToNull
-</Resource>
-</resources>

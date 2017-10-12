@@ -31,7 +31,6 @@
   <br>
   <br>
   <a href="module.jsp">Moduler</a>
-  <a href="studentList">Studenter</a>
   <a href="#">Resten</a>
   <a href="#">Funker</a>
   <a href="#">Ikke</a>
@@ -47,7 +46,6 @@
 <!--    <button id="test" name="bla" value="meny"></button>-->
 </div> 
 
-
 <form action="${pageContext.request.contextPath}/InputHandler" method="post">
     <center><input type="submit" name="Commands" value="Tekst kommandoer" />
         <input type="submit" name="Module" value="Siste moduler" />
@@ -61,6 +59,8 @@
     </center>
 
 </form>
+
+
 
 <center>
     <br>
