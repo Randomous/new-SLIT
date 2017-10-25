@@ -31,7 +31,7 @@
   <br>
   <br>
   <a href="module.jsp">Moduler</a>
-  <a href="#">Resten</a>
+  <a href="index_1.jsp">Database</a>
   <a href="#">Funker</a>
   <a href="#">Ikke</a>
 </div>
