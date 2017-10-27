@@ -12,7 +12,7 @@
 <%@page import="javax.naming.InitialContext"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -24,22 +24,31 @@
             InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
             //The JDBC Data source that we just created
-            DataSource ds = (DataSource) context.lookup("connpool");
+            DataSource ds = (DataSource) context.lookup("randobase");
             Connection connection = ds.getConnection();
 
             if (connection == null)
             {
                 throw new SQLException("Error establishing connection!");
             }
-            String query = "SELECT * FROM data";
+            String query = "SELECT * FROM users ORDER BY U_FirstName, U_SurName";
 
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet rs = statement.executeQuery();
 
             while (rs.next())
             {
-                out.print(rs.getString("name") + "< br >");
+                out.println(rs.getInt("UserID") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
+                out.println(rs.getString("U_FirstName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
+                out.println(rs.getString("U_SurName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
+                out.println(rs.getString("U_Email"));
+                out.println("<br>");
             }
         %>
+        
+             <p>
+        <center><form name="Go back" action="index.jsp">
+                <input type="submit" value="Gå tilbake"/> </form></center>
+    </p>
     </body>
-</html>
+

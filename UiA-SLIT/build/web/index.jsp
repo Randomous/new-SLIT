@@ -31,7 +31,8 @@
   <br>
   <br>
   <a href="module.jsp">Moduler</a>
-  <a href="index_1.jsp">Database</a>
+  <a href="Users.jsp"> Brukere</a>
+  <a href="Modules.jsp">Moduler(database)</a> 
   <a href="#">Funker</a>
   <a href="#">Ikke</a>
 </div>

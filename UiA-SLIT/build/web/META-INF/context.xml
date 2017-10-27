@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context  antiJARLocking="true" path="/tompool">
+<Context  antiJARLocking="true" path="/UiASLIT">
     <!-- maxActive: Maximum number of database connections in pool. Make sure you
          configure your mysqld max_connections large enough to handle
          all of your db connections. Set to -1 for no limit.
@@ -25,9 +25,9 @@
     <!-- url: The JDBC connection url for connecting to your MySQL database.
          -->
 
-    <Resource name="connpool" auth="Container" type="javax.sql.DataSource"
+    <Resource name="randobase" auth="Container" type="javax.sql.DataSource"
             maxActive="100" maxIdle="30" maxWait="10000"
             username="root" password="root" driverClassName="com.mysql.jdbc.Driver"
-            url="jdbc:mysql://localhost:3306/connpool"/>
+            url="jdbc:mysql://localhost:3306/randobase"/>
 
 </Context>
