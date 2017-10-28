@@ -24,14 +24,14 @@
             InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
             //The JDBC Data source that we just created
-            DataSource ds = (DataSource) context.lookup("randobase");
+            DataSource ds = (DataSource) context.lookup("Randobase");
             Connection connection = ds.getConnection();
 
             if (connection == null)
             {
                 throw new SQLException("Error establishing connection!");
             }
-            String query = "SELECT * FROM users ORDER BY U_FirstName, U_SurName";
+            String query = "SELECT * FROM Users ORDER BY U_FirstName, U_SurName";
 
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet rs = statement.executeQuery();

@@ -25,14 +25,14 @@
             InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
             //The JDBC Data source that we just created
-            DataSource ds = (DataSource) context.lookup("randobase");
+            DataSource ds = (DataSource) context.lookup("Randobase");
             Connection connection = ds.getConnection();
 
             if (connection == null)
             {
                 throw new SQLException("Error establishing connection!");
             }
-            String query = "SELECT * FROM module ORDER BY M_ID";
+            String query = "SELECT * FROM Module ORDER BY M_ID";
 
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet rs = statement.executeQuery();

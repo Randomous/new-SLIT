@@ -25,9 +25,9 @@
     <!-- url: The JDBC connection url for connecting to your MySQL database.
          -->
 
-    <Resource name="randobase" auth="Container" type="javax.sql.DataSource"
+    <Resource name="Randobase" auth="Container" type="javax.sql.DataSource"
             maxActive="100" maxIdle="30" maxWait="10000"
-            username="root" password="root" driverClassName="com.mysql.jdbc.Driver"
-            url="jdbc:mysql://localhost:3306/randobase"/>
+            username="randmin" password="555666" driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:3306/Randobase"/>
 
 </Context>
