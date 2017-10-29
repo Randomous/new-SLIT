@@ -20,6 +20,8 @@
    <body>
         <h1>Data in my Connection Pooled Database</h1>
         <br>
+         <a href="#">Users</a>
+       <ul>
         <%
             InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
@@ -42,13 +44,17 @@
                 out.println(rs.getString("U_FirstName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
                 out.println(rs.getString("U_SurName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
                 out.println(rs.getString("U_Email"));
+//                out.println("<a href='Modules.jsp>" + rs.getInt("UserID"));
+                out.println("<li><a href='Modules.jsp'> 'Gå til bruker " + rs.getInt("UserID") + "</a></li>");
                 out.println("<br>");
             }
         %>
-        
+   
+      
+       </ul>
+   
              <p>
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
-    </p>
     </body>
 
