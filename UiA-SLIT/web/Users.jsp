@@ -18,7 +18,7 @@
         <title>JSP Page</title>
     </head>
    <body>
-        <h1>Data in my Connection Pooled Database</h1>
+       <h1> Liste over studenter i emnet</h1>
         <br>
          <a href="#">Users</a>
        <ul>
