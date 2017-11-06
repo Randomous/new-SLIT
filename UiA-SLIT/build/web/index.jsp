@@ -20,8 +20,14 @@
             <jsp:useBean id="mybean2" scope="session" class="WebInput.Input"/>
         </div>
         <h2><jsp:getProperty name="mybean2" property="help" /></h2>
-    <center><form id="userform" name="loginForm" method="post" action="InputHandler">
+<!--    <center><form id="userform" name="loginForm" method="post" action="InputHandler">
             Brukernavn:</font> <input type="text" name="name"/> <br/>
+        <input type="submit" name="Search" value="Søk" /></center>
+    <br>
+</form>-->
+        
+        <center><form id="userSearch" name="userSearch" method="post" action="UserSearch.jsp">
+            Student navn</font> <input type="text" name="name"/> <br/>
         <input type="submit" name="Search" value="Søk" /></center>
     <br>
 </form>
