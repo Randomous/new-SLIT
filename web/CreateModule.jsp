@@ -25,10 +25,17 @@
         
        <ul>
            <%
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/randobase", "randmin", "555666");
-                Statement st = con.createStatement();
+           InitialContext initialContext = new InitialContext();
+            Context context = (Context) initialContext.lookup("java:comp/env");
+            //The JDBC Data source that we just created
+            DataSource ds = (DataSource) context.lookup("Randobase");
+            Connection connection = ds.getConnection();
+
+            if (connection == null)
+            {
+                throw new SQLException("Error establishing connection!");
+            }
+                Statement st = connection.createStatement();
                 
          String ModuleNumber = request.getParameter("ModuleNumber");         
          String ModuleName = request.getParameter("ModuleName");
@@ -43,13 +50,6 @@
           
 
           out.println("modulen har blitt lagret i systemet");
-           
-
-         } catch (Exception e){
-           out.println (e);
-         }
-
-
             
            
         %>
