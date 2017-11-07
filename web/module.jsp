@@ -40,11 +40,12 @@
         <center>
             <br>
             <div id="createModule" style="display:none">
-                <form action="${pageContext.request.contextPath}/CreateModule" method="post"> 
-                    Modul <input type="text" name="ModuleName" />
-                    Beskrivelse <input type="text" name="ModuleDescription" />
+                <form action="CreateModule.jsp" method="post"> 
+                    Modul Nummer <input type="text" name="ModuleNumber" placeholder="Modul Nummer" />
+                    Modul Navn <input type="text" name="ModuleName" placeholder="ModuleName" />
+                    Modul Tittel <input type="text" name="Tittle" placeholder=" ModuleDescription" />
                     <br>
-                    Modul Nummer <input type="number" name="ModuleNumber" min="0" step="1"/>
+                    Modul Beskrivelse <input type="text" name="Description"/>
                     <br>
                     <input type="Submit" name="AddModule" value="Opprett ny modul" />
 
@@ -57,7 +58,28 @@
 
             <br>
         </center>
+            
+            <center>
+                <br>
+            <div id="CreateLearningGoals" style="display:none">
+                <form action="LearningGoals.jsp" method="post"> 
+                    Læringsmål Tittel <input type="text" name="LearningGoalsTittle"/>
+                    Læringsmål Beskrivelse <input type="text" name="LearningGoalsDescription"/>
+                    Modul Nummer <input type="text" name="ModuleNumber"/>
+                    <br>
+                    <input type="Submit" name ="AddLearningGoals" value="opprett læringsmål" />
+                </form>
+                <br>
+                <button onclick="asd(2, 'AddlearningGoals')">Avbryt registrering</button>
+            </div>
+                
+                <button id="hideCreateLearningGoals" onclick="asd(1, 'CreateLearningGoals')">Opprett LæringsMål</button>
+
             <br>
+        </center>
+            <br>
+            
+            
             <div id="deleteModule" style="display:none">
                <form action="${pageContext.request.contextPath}/DeleteModule" method="post"> 
                   student navn <input type="text" name="Firstname" />

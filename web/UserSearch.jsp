@@ -39,9 +39,7 @@
 
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet rs = statement.executeQuery();
-      
-           
-            if (rs.isBeforeFirst() && rs.next() && rs.isFirst() && rs.isLast()) {
+             if (rs.isBeforeFirst() && rs.next() && rs.isFirst() && rs.isLast()) {
                  // Logic for where there's exactly 1 row
                     out.println(rs.getInt("UserID") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
                 out.println(rs.getString("U_FirstName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
@@ -50,11 +48,8 @@
                 // TODO Her må mer inn
                 out.println("PLCACEHOLDER her stapper vi inn modul info og slikt når det er på plass");
 
-             } else if (!rs.next() ) {
-                out.println("Fant ingen med det navnet, prøv igjen");
-            }
-            
-            else do {
+             } else {
+                 do {
                       out.println(rs.getInt("UserID") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
                 out.println(rs.getString("U_FirstName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
                 out.println(rs.getString("U_SurName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
@@ -63,6 +58,7 @@
                 out.println("<li><a href='Modules.jsp'> 'Gå til bruker " + rs.getInt("UserID") + "</a></li>");
                 out.println("<br>");
                  } while (rs.next());
+             }
             
            
         %>
