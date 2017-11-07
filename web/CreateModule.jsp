@@ -29,6 +29,7 @@
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/randobase", "randmin", "555666");
                 Statement st = con.createStatement();
+                
          String ModuleNumber = request.getParameter("ModuleNumber");         
          String ModuleName = request.getParameter("ModuleName");
          String Tittle = request.getParameter("Tittle");

@@ -21,11 +21,21 @@
         <br>
         <div id="editModule" style="display:none">
             <form action="${pageContext.request.contextPath}/EditModule" method="post"> 
-                Modul Navn <input type="text" name="Name" />
-                Modul Nummer <input type="text" name="Number" />
+                Modul Navn <input type="text" name="ModuleName" />
+                Modul Tittel <input type="text" name="ModuleTittle" />
                 <br>
-                Lærings Mål <input type="text" name="Goal" />
-                Maksimum Poeng <input type="number" name="Points" min="0" step="1"/>
+                <br>
+                Modul Beskrivelse      <input type="text" name="ModuleDescription" />
+                <br>
+                <br>
+                Læringsmål Tittel      <input type="text" name="LearningGoalsTittle" />
+                <br>
+                <br>
+                Læringsmål Beskrivelse <input type="text" name="LearningGoalsDescription"/>
+                <br>
+                <br>
+                Modul Nummer           <input type="text" name="ModuleNumber" />
+                <br>
                 <br>
                 <input type="Submit" name="AddStudent" value="Bekreft Endering" />
 
