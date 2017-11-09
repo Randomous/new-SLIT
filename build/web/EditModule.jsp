@@ -20,27 +20,27 @@
         
        <ul>
            <%
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/randobase", "randmin", "555666");
-                Statement st = con.createStatement();
+          //  try {
+            //    Class.forName("com.mysql.jdbc.Driver");
+              //  Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/randobase", "randmin", "555666");
+                //Statement st = con.createStatement();
                 
-         String LearningGoalsTittle = request.getParameter("Number");
-         String LearningGoalsDescription = request.getParameter("Name");
-         String ModuleNumber = request.getParameter("LearningGoals");
+         //String LearningGoalsTittle = request.getParameter("Number");
+         //String LearningGoalsDescription = request.getParameter("Name");
+         //String ModuleNumber = request.getParameter("LearningGoals");
          
 
           //out.println ("insert into LearningGoals (LG_Tittle, LG_Description, M_ID)values('"+LearningGoalsTittle+"', '"+LearningGoalsDescription+"', '"+ModuleNumber+"')"); 
-          st.executeUpdate("insert into LearningGoals (LG_Tittle, LG_Description, M_ID)values('"+LearningGoalsTittle+"', '"+LearningGoalsDescription+"', '"+ModuleNumber+"')");
-          st.executeUpdate("insert into Module (M_Name, M_Tittle, M_Description)values('"+Number+"', '"+Name+"','"+Tittle+"','"+Description+"')");
+          //st.executeUpdate("insert into LearningGoals (LG_Tittle, LG_Description, M_ID)values('"+LearningGoalsTittle+"', '"+LearningGoalsDescription+"', '"+ModuleNumber+"')");
+         // st.executeUpdate("insert into Module (M_Name, M_Tittle, M_Description)values('"+Number+"', '"+Name+"','"+Tittle+"','"+Description+"')");
           
         
-          out.println ("Læringsmål har blitt lagt til modulen du har valgt");
+          //out.println ("Læringsmål har blitt lagt til modulen du har valgt");
           
 
-         } catch (Exception e){
-           out.println (e);
-         }
+         //} catch (Exception e){
+           //out.println (e);
+         //}
 
 
             

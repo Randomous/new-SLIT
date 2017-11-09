@@ -51,7 +51,6 @@
             <br>
             <div id="createModule" style="display:none">
                 <form action="CreateModule.jsp" method="post"> 
-                    Modul Nummer <input type="text" name="ModuleNumber" placeholder="Modul Nummer" />
                     Modul Navn <input type="text" name="ModuleName" placeholder="ModuleName" />
                     Modul Tittel <input type="text" name="Tittle" placeholder=" ModuleDescription" />
                     <br>

@@ -41,12 +41,12 @@
          String ModuleName = request.getParameter("ModuleName");
          String Tittle = request.getParameter("Tittle");
          String Description = request.getParameter("Description");
-         String LearningGoalsTittle = request.getParameter("LearningGoalsTittle");
-         String LearningGoalsDescription = request.getParameter("LearningGoalsDescription");
+         //String LearningGoalsTittle = request.getParameter("LearningGoalsTittle");
+         //String LearningGoalsDescription = request.getParameter("LearningGoalsDescription");
        
             //out.println ("insert into Module (M_ID, M_Name, M_Tittle, M_Description)values('"+ModuleID+",'"+ModuleName+"','"+Tittle+"','"+Description+"')");    
           
-          st.executeUpdate("insert into Module (M_ID, M_Name, M_Tittle, M_Description)values('"+ModuleNumber+"', '"+ModuleName+"','"+Tittle+"','"+Description+"')");
+          st.executeUpdate("insert into Module (M_Name, M_Tittle, M_Description)values('"+ModuleName+"','"+Tittle+"','"+Description+"')");
           
 
           out.println("modulen har blitt lagret i systemet");
