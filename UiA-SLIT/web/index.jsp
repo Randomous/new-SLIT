@@ -37,6 +37,7 @@
   <br>
   <br>
   <a href="module.jsp">Moduler</a>
+  <a href="deliveryQueue.jsp">Godkjenning</a>
   <a href="Users.jsp"> Brukere</a>
   <a href="Modules.jsp">Moduler(database)</a> 
   <a href="Deliverable.jsp">Deliverable</a>
