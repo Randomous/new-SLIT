@@ -57,18 +57,38 @@
             String query = "SELECT * FROM Deliverable ORDER BY D_ID";
 
             PreparedStatement statement = connection.prepareStatement(query);
-            ResultSet rs = statement.executeQuery();
-
-            while (rs.next())
-            {
-                out.println(rs.getInt("D_ID") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-                out.println(rs.getString("D_ModuleName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-                out.println(rs.getString("D_DeliverableStatus") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-                out.println(rs.getString("D_RatedBy"));
-                out.println("<br>");
-            }
-        %>
+            ResultSet rs = statement.executeQuery("select * from Deliverable");
+            
+            %>
+            <center>
+            
+            <TABLE BORDER="1">
+            <TR>
+                <TH><font size="4"</font>ID</TH>
+                <TH><font size="4"</font>Module Navn</TH>
+                <TH><font size="4"</font>Status:</TH>
+                <TH><font size="4"</font>Godkjent av</TH>
+               
+            </TR>
+            
+            <%
+            while (rs.next()){ %>
+            
+            <tr> 
+              <TD>  <%= rs.getInt("D_ID") %></TD>
+              <TD>  <%= rs.getString("D_ModuleName")%></TD>
+              <TD>  <%= rs.getString("D_DeliverableStatus")%></TD>
+              <TD>  <%= rs.getString("D_RatedBy")%></TD>
+              <TD>   
+                 
+                </tr>   
+               
+           <% } %>
+             </table>    
         
+        </center>
+
+          
              <p>
                  </div>
         <center><form name="Go back" action="index.jsp">

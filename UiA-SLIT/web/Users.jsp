@@ -41,7 +41,7 @@
         
         <br>
         <div id="Textaline">
-         <a href="#">Users</a>
+         
        <ul>
         <%
             InitialContext initialContext = new InitialContext();
@@ -57,20 +57,37 @@
             String query = "SELECT * FROM Users ORDER BY U_FirstName, U_SurName";
 
             PreparedStatement statement = connection.prepareStatement(query);
-            ResultSet rs = statement.executeQuery();
-
-            while (rs.next())
-            {
-                out.println(rs.getInt("UserID") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-                out.println(rs.getString("U_FirstName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-                out.println(rs.getString("U_SurName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-                out.println(rs.getString("U_Email"));
-//                out.println("<a href='Modules.jsp>" + rs.getInt("UserID"));
-                out.println("<li><a href='Modules.jsp'> 'Gå til bruker " + rs.getInt("UserID") + "</a></li>");
-                out.println("<br>");
-            }
-        %>
-   
+            ResultSet rs = statement.executeQuery("select * from Users");
+             %>
+            <center>
+            <TABLE BORDER="1">
+            <TR>
+                <TH><font size="4"</font>BrukerID</TH>
+                <TH><font size="4"</font>Fornavn</TH>
+                <TH><font size="4"</font>Etternavn</TH>
+                <TH><font size="4"</font>Epost</TH>
+              
+            </TR>
+            
+            <%
+            while (rs.next()){ %>
+            
+            <tr> 
+              <TD>  <%= rs.getInt("UserID") %></TD>
+              <TD>  <%= rs.getString("U_FirstName") %></TD>
+              <TD>  <%= rs.getString("U_SurName") %></TD>
+              <TD>  <%= rs.getString("U_Email")%></TD> 
+              <TD>   
+                  <a href='Modules.jsp'> Gå til Modul</a>
+                </tr>   
+               
+                            
+           <% } %>
+             </table>    
+        
+        </center>
+                
+         
       
        </ul>
    </div>
