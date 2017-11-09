@@ -14,12 +14,33 @@
 <!DOCTYPE html>
 
     <head>
+         <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
    <body>
-       <h1> Liste over studenter i emnet</h1>
+       <h1><center> Liste over studenter i emnet</center></h1>
+       
+    <div id="first">
+    </div>
+    <div id="second">
+    </div>
+    <div id="title">
+    </div>
+       
+   <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <br>
+  <br>
+  <a href="module.jsp">Moduler</a>
+  <a href="Users.jsp"> Brukere</a>
+  <a href="Modules.jsp">Moduler(database)</a> 
+  <a href="Deliverable.jsp">Deliverable</a>
+  <a href="#">Ikke</a>
+</div>
+        
         <br>
+        <div id="Textaline">
          <a href="#">Users</a>
        <ul>
         <%
@@ -52,7 +73,7 @@
    
       
        </ul>
-   
+   </div>
              <p>
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
