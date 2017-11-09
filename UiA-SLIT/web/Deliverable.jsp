@@ -15,11 +15,33 @@
 <!DOCTYPE html>
 
     <head>
+        <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
    <body>
-        <h1>Alle moduler</h1>
+        <h1><center>Alle moduler</center></h1>
+        
+     <div id="first">
+    </div>
+    <div id="second">
+    </div>
+    <div id="title">
+    </div>
+        
+        
+        <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <br>
+  <br>
+  <a href="module.jsp">Moduler</a>
+  <a href="Users.jsp"> Brukere</a>
+  <a href="Modules.jsp">Moduler(database)</a> 
+  <a href="Deliverable.jsp">Deliverable</a>
+  <a href="#">Ikke</a>
+</div>
+        
+        <div id="Textaline">
         <br>
         <%
             InitialContext initialContext = new InitialContext();
@@ -48,6 +70,7 @@
         %>
         
              <p>
+                 </div>
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
     </p>

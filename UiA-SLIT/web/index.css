@@ -90,3 +90,16 @@ and open the template in the editor.
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 } 
+
+#text {
+   
+    right: 30px;
+    font-size: 25px;
+    margin-left: 40px; 
+    
+}
+
+#Textaline {
+    
+    text-align: center;
+}
