@@ -1,17 +1,19 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+
     <head>
         <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="javascript.js" type="text/javascript"></script>
 
         <title>UiA-SLIT</title>
+        <jsp:include page="Teacher.jsp" />
     </head>
 
-    <div id="first">
-    </div>
+    
+      
+    
     <div id="second">
     </div>
 
@@ -25,6 +27,8 @@
         <input type="submit" name="Search" value="Søk" /></center>
     <br>
 </form>-->
+
+     
         
         <center><form id="userSearch" name="userSearch" method="post" action="UserSearch.jsp">
             Student navn</font> <input type="text" name="name"/> <br/>
@@ -90,4 +94,4 @@
 </center>
 
 </body>
-</html>
+
