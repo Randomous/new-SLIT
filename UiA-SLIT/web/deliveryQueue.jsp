@@ -21,6 +21,9 @@
    <body>
        <h1>Innleveringer</h1>
         <br>
+          <br>
+         <a href="#">Velg fra listen av innleveringer</a>
+       <ul>
         <%
             InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
@@ -51,12 +54,15 @@
                 String uplDate = rs.getString("D_UploadDate");
             
         %>
-              <h2>Innlevering på modul </h2><p>(<%= moduleName %>)</p>
-                <div id="editModule" style="display:none">
+        <li>
+        <h2>Innlevering på modul </h2><p><%= moduleName %></p>
+                <div id=<%=id %> , 
+                     style="display:none">
             <form action="${pageContext.request.contextPath}/EditModule" method="post">
                 <p>
-                    Her er informasjon om modulen: <%= evalDate %>
+                    Her er informasjon om modulen: <%= moduleName %>
                     Lastet opp <%= uplDate %>
+                    Evaluert dato <%= evalDate %>
                     Ansvarlig <%= ratedBy %>
                     LeveringsID: <%= id %>
                 </p>
@@ -70,15 +76,20 @@
 
             </form>
             <br>
-            <button onclick="asd(2, 'editModule')">Avbryt Endring</button>
+            <button onclick="asd(2, '<%= id %>')">Avbryt Endring</button>
         </div>
+            <%
+                String hideID = "hide" + id;
+                out.println(hideID);
+                %>
 
-        <button id="hideeditModule" onclick="asd(1, 'editModule')">Godkjenn modul</button>
+        <button id="hideID" onclick="asd(1, '<%= id %>')">Godkjenn modul</button>
+         </li>
         <%
         }
         %>
       
-
+       </ul>
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
     </body>
