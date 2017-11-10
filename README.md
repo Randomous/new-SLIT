@@ -2,7 +2,7 @@
 Randomous new SLIT project.
 Her må vi ha mer informasjon men bare for å gjøre en test:
 
-https://www.youtube.com/embed/ocwnns57cYQ
+https://youtu.be/ocwnns57cYQ
 
 Her ser man gode eksempler på medlemmer av Randomous i sitt naturlige habitat
 
