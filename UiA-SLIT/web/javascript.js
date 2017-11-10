@@ -44,3 +44,13 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 } 
+
+function listSize(list) {
+        var ul = document.getElementById(list);
+	var i=0, itemCount =0;
+	while(ul.getElementsByTagName('li') [i++]) itemCount++;
+        var text = "Det er " + itemCount + " leveringer i kø";
+        
+        document.getElementById("listCount").innerHTML = text;
+    //return $("#" + setList + " li").length;
+}
