@@ -16,6 +16,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Delivery Queue</title>
+                <link rel="stylesheet" type="text/css" href="index.css">
+
         <script src="javascript.js" type="text/javascript"></script>
     </head>
    <body>
@@ -55,7 +57,7 @@
             
         %>
         <li>
-        <h2>Innlevering på modul </h2><p><%= moduleName %></p>
+        <p> Innlevering på modul: <%= moduleName %></p>
                 <div id=<%=id %> , 
                      style="display:none">
             <form action="${pageContext.request.contextPath}/EditModule" method="post">
@@ -66,10 +68,10 @@
                     Ansvarlig <%= ratedBy %>
                     LeveringsID: <%= id %>
                 </p>
-                Godkjenner navn <input type="text" name="Name" />
-                Kommentar til student<input type="text" name="Number" />
+                Kommentar til student <input class="textboxLarge" type="text" name="Number" />
                 <br>
-                Intern kommentar (Ikke synlig for student <input type="text" name="Goal" />
+                Intern kommentar (Ikke synlig for student) <input class="textboxLarge" type="text" name="Goal" />
+                Godkjenner navn <input type="text" name="Name" placeholder="HER BLIR USER STAPPET INN UTEN TEKST FELT"/>
                 Antall poeng <input type="number" name="Points" min="0" step="1"/>
                 <br>
                 <input type="Submit" name="AddStudent" value="Bekreft Endering" />
@@ -80,10 +82,9 @@
         </div>
             <%
                 String hideID = "hide" + id;
-                out.println(hideID);
                 %>
 
-        <button id="hideID" onclick="asd(1, '<%= id %>')">Godkjenn modul</button>
+        <button id=<%=hideID %> , onclick="asd(1, '<%= id %>')"> Gå til evaluering </button>
          </li>
         <%
         }
