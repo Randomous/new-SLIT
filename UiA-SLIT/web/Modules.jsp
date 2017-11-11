@@ -4,6 +4,7 @@
     Author     : Helll
 --%>
 
+<%@page import="java.sql.*" %>
 <%@page import="javax.naming.Context"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -14,13 +15,41 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-    <head>
+<HTML>
+    <head>        
+         <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+  
+       
    <body>
-        <h1>Alle moduler</h1>
+         
+        <h1><center>Alle moduler</center></h1>
+        
+   <div id="first">
+    </div>
+    <div id="second">
+    </div>
+    <div id="title">
+    </div>
+        
+        
+        <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <br>
+  <br>
+  <a href="module.jsp">Moduler</a>
+  <a href="Users.jsp"> Brukere</a>
+  <a href="Modules.jsp">Moduler(database)</a> 
+  <a href="Deliverable.jsp">Deliverable</a>
+  <a href="#">Ikke</a>
+</div>
+        
+        <div id="Textaline">
         <br>
+        
+      
         <%
             InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
@@ -35,21 +64,38 @@
             String query = "SELECT * FROM Module ORDER BY M_ID";
 
             PreparedStatement statement = connection.prepareStatement(query);
-            ResultSet rs = statement.executeQuery();
-
-            while (rs.next())
-            {
-                out.println(rs.getInt("M_ID") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-                out.println(rs.getString("M_Name") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-                out.println(rs.getString("M_Tittle") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-                out.println(rs.getString("M_Description"));
-                out.println("<br>");
-            }
-        %>
+            ResultSet rs = statement.executeQuery("select * from Module");
+            %>
+            <center>
+            <TABLE BORDER="1">
+            <TR>
+                <TH><font size="4"</font>ID</TH>
+                <TH><font size="4"</font>Navn</TH>
+                <TH><font size="4"</font>Tittel</TH>
+                <TH><font size="4"</font>Forklaring</TH>
+               
+            </TR>
+            
+            <%
+            while (rs.next()){ %>
+            
+            <tr> 
+              <TD>  <%= rs.getInt("M_ID") %></TD>
+              <TD>  <%= rs.getString("M_Name") %></TD>
+              <TD>  <%= rs.getString("M_Tittle") %></TD>
+              <TD>  <%= rs.getString("M_Description")%></TD>
+              <TD>   
+                 
+                </tr>   
+               
+           <% } %>
+             </table>    
         
+        </center>
              <p>
+           
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
     </p>
     </body>
-
+</HTML>
