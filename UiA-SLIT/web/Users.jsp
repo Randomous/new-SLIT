@@ -21,22 +21,15 @@
    <body>
        <h1><center> Liste over studenter i emnet</center></h1>
        
-    <div id="first">
-    </div>
-    <div id="second">
-    </div>
-    <div id="title">
-    </div>
-       
+   
    <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <br>
   <br>
-  <a href="module.jsp">Moduler</a>
+  <a href="module.jsp">Endre/oppdatere</a>
   <a href="Users.jsp"> Brukere</a>
-  <a href="Modules.jsp">Moduler(database)</a> 
-  <a href="Deliverable.jsp">Deliverable</a>
-  <a href="#">Ikke</a>
+  <a href="Modules.jsp">Moduler</a> 
+  <a href="Deliverable.jsp">Innlevering</a>
 </div>
         
         <br>
@@ -66,6 +59,7 @@
                 <TH><font size="4"</font>Fornavn</TH>
                 <TH><font size="4"</font>Etternavn</TH>
                 <TH><font size="4"</font>Epost</TH>
+                <TH><font size="4"</font>Moduler</TH>
               
             </TR>
             
