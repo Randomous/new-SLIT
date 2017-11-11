@@ -89,6 +89,15 @@ and open the template in the editor.
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+
+}
+
+.textboxLarge
+{
+    height:200px;
+    font-size:14pt;
+}
+
 } 
 
 #text {
