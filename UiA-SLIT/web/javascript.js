@@ -54,3 +54,44 @@ function listSize(list) {
         document.getElementById("listCount").innerHTML = text;
     //return $("#" + setList + " li").length;
 }
+function youtubeEmbed(vidID, vidText) {
+    var position = document.documentElement.innerHTML.indexOf('https://youtu.be');
+    if (position !== 0) {
+//        alert(vidText);
+
+    document.getElementById(vidText).innerHTML = "WORKS";
+
+    } else {
+        console.log("NO TREFF");
+            document.getElementById("vidText").innerHTML = "FACK!!!!!!!!!!!";
+    }
+    
+}
+function youtubeID(url) {
+//    alert(url);
+var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+if(videoid !== null) {
+   console.log("video id = " + videoid[1]);
+} else { 
+    console.log("The youtube url is not valid.");
+}
+return videoid[1];
+}
+function youtubePlayer(ytID, playerID) {
+     // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      height: '360',
+      width: '640',
+      videoId: 'M7lc1UVf-VE'
+    });
+  }
+      }
