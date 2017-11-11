@@ -14,12 +14,6 @@
 
 package InputAndResponses;
 
-import Content.StudentRegister;
-import Content.student;
-import Content.ModuleRegister;
-import Content.ContentHandler;
-import InputAndResponses.CommandFolder.Commands;
-import InputAndResponses.CommandFolder.CommandWords;
 import java.util.HashSet;
 
 /**
@@ -36,16 +30,8 @@ public class Start
     //private final InputReader reader;
     
     // Responder with maps, arrays and randomiser
-    private final Responder responder;
-    // studentRegister with studentmap
-    private final StudentRegister studentRegister;
-    // moduleregister with module content
-    private final ModuleRegister module;
-    // ContentHandler with full content list
-    private final ContentHandler content;
+    //private final ContentHandler content;
     // enum commands
-    private final Commands command;
-    public String returnedStudent;
     
 
     /**
@@ -55,11 +41,7 @@ public class Start
     {
        // Initialize objects needed and start application method
        //reader = new InputReader();
-       responder = new Responder();
-       studentRegister = new StudentRegister();
-       module = new ModuleRegister();
-       command = new Commands();
-       content = new ContentHandler();
+       //content = new ContentHandler();
        
     }
     
@@ -71,79 +53,20 @@ public class Start
      * Valid student in system from input returns string of map object
      * Anything else returns generic random string from responder
      * HashMap containing firstname values.
+     * @param input
+     * @return 
      */
     public String start(HashSet<String> input)
     {
         boolean finished = false;
         
-        GetWebWelcome();
-       
-        
-        while(!finished) 
-        {
-            
-            CommandWords commands = command.getCommand(input);
-            // Switch over enums from input parameter
-            switch (commands)
-            {
-                //Default switch if no hit on commands, either find student or
-                // generic general response
-                case UNKNOWN :
-                    student studentReg;
-                    studentReg = studentRegister.findStudent(input);
-                    if (studentReg != null) {
-                        returnedStudent = studentReg.getInfo();
-                        return studentReg.getInfo();
-                    }
-                    else {
-                    return responder.generateResponse();
-                    }
-                    
-                case COMMANDS :
-                     return command.displayCommands();
-                   // break;
-                case STUDENTS :
-                    return studentRegister.getRegister();
-                    //break;
-                case RESOLVEDREPLIES :
-                    String replies = ("There has been "
-                            + "generated: " + responder.amountOfResponses() 
-                            + " generic responses by the system");
-                    return replies;
-                    //break;
-                case RESOLVEDSTUDENTS :
-                    String resolvedStudents = ("There has been sucessful searches for: "
-                            + studentRegister.firstnamesResolved() 
-                            + " students found by the system");
-                    return resolvedStudents;
-                    //break;
-                case ADDSTUDENT :
-                    studentRegister.createNewStudent();
-                    break;
-                case MODULE :
-                    return module.getRegister();
-                    //break;
-                case CONTENT :
-                    //content.printAllContent();
-                    return content.fullContentPrint();
-                    //break;
-                case SUPER :
-                    content.superPrint();
-                case HELP :
-                    return command.displayHelp();
-                    //break;
-
-                case EXIT :
-                    finished = true; 
-                    break;
-            }
-        }
-        
-        return GetGoodbye();
+        GetWebWelcome();    
+        return null;
     }
     
        /**
      * Print the welcome message and instructions
+     * @return 
      */
     public String GetWebWelcome()
     {   //String help = command.displayHelp();
@@ -160,14 +83,6 @@ public class Start
         " Please enter what you wish to do." +
         " Enter a friends firstname to get the stored info");
         return ret;
-    }
-    
-        /**
-     * Print a good-bye message to the screen.
-     */
-    private String GetGoodbye()
-    {
-        return "Have a nice day, bye!";
     }
 }
 
