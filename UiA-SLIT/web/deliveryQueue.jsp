@@ -17,9 +17,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Delivery Queue</title>
     <link rel="stylesheet" type="text/css" href="index.css">
-
-    <script src="javascript.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<jsp:include page="Teacher.jsp" />
     <!--     <script src="JS/Repo.js-master/repo.min.js" </script>-->
 
 

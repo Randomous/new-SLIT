@@ -10,7 +10,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="javascript.js" type="text/javascript"></script>
+ <jsp:include page="Teacher.jsp" />
 
         <title>Moduler</title>
     </head>
