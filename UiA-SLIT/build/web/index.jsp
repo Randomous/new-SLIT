@@ -36,7 +36,9 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <br>
   <br>
+
   <a href="module.jsp">Endre/oppdatere</a>
+  <a href="deliveryQueue.jsp">Godkjenning</a>
   <a href="Users.jsp"> Brukere</a>
   <a href="Modules.jsp">Moduler</a> 
   <a href="Deliverable.jsp">Innlevering</a>
