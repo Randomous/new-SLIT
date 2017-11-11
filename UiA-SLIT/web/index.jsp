@@ -36,12 +36,15 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <br>
   <br>
-
+  <p> Moduler</p>
   <a href="module.jsp">Endre/oppdatere</a>
-  <a href="deliveryQueue.jsp">Godkjenning</a>
-  <a href="Users.jsp"> Brukere</a>
-  <a href="Modules.jsp">Moduler</a> 
+  <a href="deliveryQueue.jsp">Leveringskø</a>
   <a href="Deliverable.jsp">Innlevering</a>
+  <a href="Modules.jsp">Moduler</a> 
+ 
+  <p> Brukere</p>
+      <a href="Users.jsp"> Brukere</a>
+  
 </div>
 
 <!-- Use any element to open the sidenav -->

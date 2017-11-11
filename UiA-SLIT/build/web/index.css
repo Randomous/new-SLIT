@@ -58,6 +58,15 @@ and open the template in the editor.
     font-family: "LatoWeb","Helvetica Neue",Helvetica,Arial,sans-serif;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
+    font-size: 20px;
+    color: whitesmoke;
+    display: block;
+    transition: 0.3s
+}
+.sidenav p {
+    font-family: "LatoWeb","Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 8px 8px 8px 32px;
+    text-decoration: underline;
     font-size: 25px;
     color: whitesmoke;
     display: block;
@@ -98,7 +107,6 @@ and open the template in the editor.
     font-size:14pt;
 }
 
-} 
 
 #text {
    
