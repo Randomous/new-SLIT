@@ -56,7 +56,7 @@
        </ul>
    
              <p>
-        <center><form name="Go back" action="Login.jsp">
+        <center><form name="Go back" action="login.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
     </body>
 
