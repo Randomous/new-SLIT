@@ -50,16 +50,11 @@
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()) {
-                // out.println("<div id='approve'");
-//                out.println(rs.getInt("D_ID") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-//                out.println(rs.getString("D_EvaluationDate") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-//                out.println(rs.getString("D_ModuleName") + ("&nbsp;&nbsp;&nbsp;&nbsp"));
-//                out.println(rs.getString("D_RatedBy"));
-//                out.println(rs.getString("D_UploadDate"));
+
                 int id = rs.getInt("D_ID");
-                //String evalDate = rs.getString("D_EvaluationDate");
+       
                 String moduleName = rs.getString("M_Tittle");
-                //String ratedBy = rs.getString("D_RatedBy");
+                
                 String uplDate = rs.getString("D_UploadDate");
                 String userID = rs.getString("UserID");
                 String firstname = rs.getString("U_FirstName");
@@ -71,11 +66,12 @@
                 String delText = rs.getString("D_Text");
                 String delYTLink = rs.getString("D_YouTubeLink");
                 String delGitLink = rs.getString("D_GitHubLink");
-
+                
+                  String divID = String.valueOf(id);
         %>
         <li>
             <p> Innlevering på modul: <%= moduleName%></p>
-            <div id=<%=id%> , 
+            <div id=<%= divID %> , 
                  style="display:none">
                 <form action="${pageContext.request.contextPath}/EditModule" method="post">
                     <p>
@@ -99,45 +95,48 @@
                         <%
                             if(delYTLink != "NULL") {
                         %>
-                        <div id="ytplayer">
+                        <!--<div id="ytplayer"></div>-->
+
                         <script type='text/javascript'> var ytID = youtubeID('<%=delYTLink%>'); 
                             
-//                        youtubePlayer(ytID,'script');
-                            var div = document.getElementById("ytplayer");
-                            // With old JS syntax
-//                            div.id = "ytplayer" + new Date().getTime().toString();
-//                            alert(div.id);
-//                          ##Looking good but needs some int change
+                        youtubePlayer(ytID,'vidTest');
+//                            var div = document.getElementById("vidTest");
+//                            // With old JS syntax
+////                            div.id = "ytplayer" + new Date().getTime().toString();
+////                            alert(div.id);
+////                          ##Looking good but needs some int change
 //                            var datestr = new Date().getTime().toString(), randomstr = Math.random().toString(); 
 //                            var bigString = 'ytplayer' + datestr + randomstr;
 //                            div.id = bigString;
-//                            alert(bigString);
-
+////                            alert(div.id);
+//                            var ytStand = "https://www.youtube.com/embed/";
+//                            var newLink = ytStand + ytID;
+//                               document.getElementById(div.id).src = newLink;
+                               
+                               
+                               
+                               
                             
 //                            document.getElementById("ytplayer").id = div.id;
 //                            alert(document.getElementById("ytplayer").id);
-                        var tag = document.createElement('script');
-                          tag.src = "https://www.youtube.com/player_api";
-                          var firstScriptTag = document.getElementsByTagName('script')[0];
-                          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                        
 //                          wait(5000);
                           // Replace the 'ytplayer' element with an <iframe> and
                           // YouTube player after the API code downloads.
-                          var player;
-                          (function () {
+//                          var player;
+//                          (function () {
 //                              alert(div.id);
-                            player = new YT.Player('ytplayer', {
-                              height: '360',
-                              width: '640',
-                              videoId: ytID
-                            });
-                          }());
+//                            player = new YT.Player(div.id.toString(), {
+//                              height: '360',
+//                              width: '640',
+//                              videoId: ytID
+//                            });
+//                          }());
                         </script>
-                        <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>-->
+                        <iframe id="vidTest" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
                             <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
                             
                         <!--</div>-->
-                        </div>
                         <%
                             } else {
                         %>
@@ -169,13 +168,13 @@
                     <!--<script type='text/javascript'> youtubeEmbed('vidLink<%=id%>', 'vidLink<%=id%>text'); </script>-->
                 </form>
                 <br>
-                <button onclick="asd(2, '<%= id%>')">Avbryt Endring</button>
+                <button onclick="asd(2, '<%= divID%>')">Avbryt Endring</button>
             </div>
             <%
-                String hideID = "hide" + id;
+                String hideID = "hide" + divID;
             %>
 
-            <button id=<%=hideID%> , onclick="asd(1, '<%= id%>')"> Gå til evaluering </button>
+            <button id=<%=hideID%> , onclick="asd(1, '<%= divID%>')"> Gå til evaluering </button>
         </li>
         <%
             }

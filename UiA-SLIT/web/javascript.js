@@ -14,7 +14,10 @@
     script.src = 'http://code.jquery.com/jquery-latest.min.js';
     script.type = 'text/javascript';
     document.getElementsByTagName('head')[0].appendChild(script);
-
+    var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
 })();
@@ -79,19 +82,45 @@ return videoid[1];
 }
 function youtubePlayer(ytID, playerID) {
      // Load the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var player;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      height: '360',
-      width: '640',
-      videoId: 'M7lc1UVf-VE'
-    });
-  }
+//  var tag = document.createElement('script');
+//  tag.src = "https://www.youtube.com/player_api";
+//  var firstScriptTag = document.getElementsByTagName('script')[0];
+//  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+//
+//  // Replace the 'ytplayer' element with an <iframe> and
+//  // YouTube player after the API code downloads.
+//  var player;
+//  function onYouTubePlayerAPIReady() {
+//    player = new YT.Player('ytplayer', {
+//      height: '360',
+//      width: '640',
+//      videoId: 'M7lc1UVf-VE'
+//    });
+//  }
+//                            var div = document.getElementById(playerID);
+//                            // With old JS syntax
+////                            div.id = "ytplayer" + new Date().getTime().toString();
+////                            alert(div.id);
+////                          ##Looking good but needs some int change
+//                            var datestr = new Date().getTime().toString(), randomstr = Math.random().toString(); 
+//                            var bigString = 'id' + datestr + randomstr;
+                               var div = document.getElementById(playerID);
+                               var bigString = getUniqueId(div);
+                               div.id = bigString;
+//                            div.id = bigString;
+//                            alert(div.id);
+                            var ytStand = "https://www.youtube.com/embed/";
+                            var newLink = ytStand + ytID;
+                               document.getElementById(div.id).src = newLink;
       }
+function getUniqueId(id) {
+    
+                            // With old JS syntax
+//                            div.id = "ytplayer" + new Date().getTime().toString();
+//                            alert(div.id);
+//                          ##Looking good but needs some int change
+                            var datestr = new Date().getTime().toString(), randomstr = Math.random().toString(); 
+                            var bigString = id + datestr + randomstr;
+                            
+                            return bigString;
+}
