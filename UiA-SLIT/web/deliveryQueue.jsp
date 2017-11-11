@@ -19,6 +19,10 @@
     <link rel="stylesheet" type="text/css" href="index.css">
 
     <script src="javascript.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--     <script src="JS/Repo.js-master/repo.min.js" </script>-->
+
+
 </head>
 <body>
     <h1>Innleveringer
@@ -28,8 +32,14 @@
     </p>
     <br>
     <br>
-    <a href="#">Velg fra listen av innleveringer</a>
-    <ul id="queueList">
+    <a>Velg fra listen av innleveringer</a>
+    <p>
+        Køen er sortert etter leveringstidspunkt. Øverste levering er første levering.
+        <br> Gå gjennom listen fra topp til bunn for rettferdig behandling.
+    </p>
+
+
+    <ul id="queueList1">
         <%
             InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
@@ -40,21 +50,20 @@
             if (connection == null) {
                 throw new SQLException("Error establishing connection!");
             }
-            
+
 //            String query = "SELECT Users.UserID, Users.U_FirstName, Users.U_SurName, Module.M_Description, Module.M_ID, Module.M_Tittle, Deliverable.D_DeliverableStatus, Deliverable.D_ID, Deliverable.D_UploadDate FROM StoredData LEFT JOIN Users ON StoredData.UserID=Users.UserID LEFT JOIN Module ON StoredData.M_ID=Module.M_ID LEFT JOIN Deliverable ON StoredData.D_ID = Deliverable.D_ID WHERE D_DeliverableStatus = 0 ORDER BY D_UploadDate;";
             String query = "SELECT Users.UserID, Users.U_FirstName, Users.U_SurName, Module.M_Description, Module.M_ID, Module.M_Tittle, Deliverable.D_DeliverableStatus, Deliverable.D_ID, Deliverable.D_UploadDate, D_Text, D_YouTubeLink, D_GitHubLink FROM StoredData LEFT JOIN Users ON StoredData.UserID=Users.UserID LEFT JOIN Module ON StoredData.M_ID=Module.M_ID LEFT JOIN Deliverable ON StoredData.D_ID = Deliverable.D_ID WHERE D_DeliverableStatus = 0 ORDER BY D_UploadDate;";
 
             //String query = "SELECT * FROM Deliverable ORDER BY D_UploadDate";
-
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()) {
 
                 int id = rs.getInt("D_ID");
-       
+
                 String moduleName = rs.getString("M_Tittle");
-                
+
                 String uplDate = rs.getString("D_UploadDate");
                 String userID = rs.getString("UserID");
                 String firstname = rs.getString("U_FirstName");
@@ -66,108 +75,110 @@
                 String delText = rs.getString("D_Text");
                 String delYTLink = rs.getString("D_YouTubeLink");
                 String delGitLink = rs.getString("D_GitHubLink");
-                
-                  String divID = String.valueOf(id);
+
+                String divID = String.valueOf(id);
         %>
         <li>
-            <p> Innlevering på modul: <%= moduleName%></p>
-            <div id=<%= divID %> , 
+            <p> Innlevering på modul: <%= moduleName%> av student <%= firstname%>&nbsp; <%= surneame%></p>
+            <div id=<%= divID%> , 
                  style="display:none">
                 <form action="${pageContext.request.contextPath}/EditModule" method="post">
                     <p>
                         Her er informasjon om modulen: <%= moduleName%> 
                         <br>
-                        Modul nummer <%= moduleID %>
+                        Modul nummer <%= moduleID%>
                         <br>
                         Lastet opp <%= uplDate%>
                         LeveringsID: <%= id%>
                         <br>
-                        Levert av: <%= firstname %> <%= surneame %>
+                        Levert av: <%= firstname%>&nbsp; <%= surneame%>
                         <br>
-                        Modul Tittel: <%= moduleTitle %>
+                        Med studentID: <%= userID%>
+                        <br>
+                        Modul Tittel: <%= moduleTitle%>
                         <br>
                         Modul beskrivelse  
                         <br>
-                        <%= moduleDesc %>
+                        <%= moduleDesc%>
                         <br>
-                        <!--<div id="ytplayer<%=id%>">-->
-                       
-                        <%
-                            if(delYTLink != "NULL") {
-                        %>
-                        <!--<div id="ytplayer"></div>-->
+                        // TODO implement learning goals in query and storedData
+                        PLACEHOLDER: Læringsmål
+                        <br>
 
-                        <script type='text/javascript'> var ytID = youtubeID('<%=delYTLink%>'); 
-                            
-                        youtubePlayer(ytID,'vidTest');
-//                            var div = document.getElementById("vidTest");
-//                            // With old JS syntax
-////                            div.id = "ytplayer" + new Date().getTime().toString();
-////                            alert(div.id);
-////                          ##Looking good but needs some int change
-//                            var datestr = new Date().getTime().toString(), randomstr = Math.random().toString(); 
-//                            var bigString = 'ytplayer' + datestr + randomstr;
-//                            div.id = bigString;
-////                            alert(div.id);
-//                            var ytStand = "https://www.youtube.com/embed/";
-//                            var newLink = ytStand + ytID;
-//                               document.getElementById(div.id).src = newLink;
-                               
-                               
-                               
-                               
-                            
-//                            document.getElementById("ytplayer").id = div.id;
-//                            alert(document.getElementById("ytplayer").id);
-                        
-//                          wait(5000);
-                          // Replace the 'ytplayer' element with an <iframe> and
-                          // YouTube player after the API code downloads.
-//                          var player;
-//                          (function () {
-//                              alert(div.id);
-//                            player = new YT.Player(div.id.toString(), {
-//                              height: '360',
-//                              width: '640',
-//                              videoId: ytID
-//                            });
-//                          }());
-                        </script>
-                        <iframe id="vidTest" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
-                            <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-                            
-                        <!--</div>-->
+                    <h3> Studentens innhold i innleveringen er
+                    </h3>
+                    <br>
+                    Tekst:  <%= delText%>
+                    <br>
+                    <%
+                        if (delGitLink != "NULL") {
+                    %>
+                    GitHub repo link:
+                    <a id ="repo1" target="_blank"> Studentens repo</a>
+                    <script>
+                        var repoID = idSetter('repo1');
+                        setGitLink(repoID, '<%=delGitLink%>');
+//                     setRepo(repoID);
+                    </script>
+
+                    <br>
+                    <%
+                    } else {
+                    %>
+                    GitHub repo mangler
+                    <%}
+                    %>
+                    <%
+                        if (delYTLink != "NULL") {
+                    %>
+                    Studenten har lastet opp følgende YouTube video
+                    <br>
+
+                    <script type='text/javascript'> var ytID = youtubeID('<%=delYTLink%>');
+
+                        youtubePlayer(ytID, 'vidTest');
+//                         
+                    </script>
+                    <iframe id="vidTest" width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
                         <%
-                            } else {
+                        } else {
                         %>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/b-Cr0EWwaTk" frameborder="0" allowfullscreen></iframe>
-                        <%
-                            }
-                            %>
-                        
-<!--                        <p id="vidLink<%=id%>">
-                        <embed height="500" width="500" src="http://htmlpreview.github.io/?https://github.com/Randomous/new-SLIT/blob/master/README.md"/>
-                        </p>
-                    <p id="vidLink<%=id%>'text'">
-                        
-                    </p>-->
-                    
-                        
+                    Ingen youtube video lastet opp
+                    <%
+                        }
+                    %>
                     </p>
                     Kommentar til student <br> <input class="textboxLarge" type="text" name="Number" />
                     <br>
                     Intern kommentar (Ikke synlig for student) <br> <input class="textboxLarge" type="text" name="Goal" />
                     <br>
-                    Godkjenner navn <input type="text" name="Name" placeholder="HER BLIR USER STAPPET INN UTEN TEKST FELT"/>
+                    Godkjenner navn <input type="text" name="Name" placeholder="Blir USER fra ROLE"/>
                     <br>
-                    Antall poeng <input type="number" name="Points" min="0" step="1"/>
+                    <!--Antall poeng <input type="number" name="Points" min="0" step="1"/>-->
+                     <p>
+                        <label>Poeng</label>
+                        <select id = "pointList">
+                          <option value = "1">1 Nesten stryk</option>
+                          <option value = "2">2</option>
+                          <option value = "3">3</option>
+                          <option value = "4">4</option>
+                          <option value = "5">5 Middels</option>
+                          <option value = "6">6</option>
+                          <option value = "7">7</option>
+                          <option value = "8">8</option>
+                          <option value = "9">9</option>
+                          <option value = "10">10 Toppers! A!</option>
+                        </select>
+                     </p>
                     <br>
+                    <input type="radio" name="delivery" value="Approved" checked> Godkjent<br>
+                    <input type="radio" name="delivery" value="NotApproved"> Ikke godkjent<br>
+                    
                     <input type="Submit" name="AddStudent" value="Bekreft Endering" />
 
-                    
-                    <!--<script type='text/javascript'> youtubeEmbed('vidLink<%=id%>', 'vidLink<%=id%>text'); </script>-->
                 </form>
                 <br>
+
                 <button onclick="asd(2, '<%= divID%>')">Avbryt Endring</button>
             </div>
             <%
@@ -181,7 +192,9 @@
         %>
 
     </ul>
-    <script type='text/javascript'> listSize("queueList");</script>
+    <script type='text/javascript'>
+        listSize("queueList1");
+    </script>
 <center><form name="Go back" action="index.jsp">
         <input type="submit" value="Gå tilbake"/> </form></center>
 </body>
