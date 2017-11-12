@@ -15,9 +15,10 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <jsp:include page="Teacher.jsp" />
     <title>Delivery Queue</title>
     <link rel="stylesheet" type="text/css" href="index.css">
-<jsp:include page="Teacher.jsp" />
+
     <!--     <script src="JS/Repo.js-master/repo.min.js" </script>-->
 
 

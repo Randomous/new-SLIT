@@ -10,6 +10,7 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <br>
   <br>
+  <a href="index.jsp"> Hjem </a>
   <p> Moduler</p>
   <a href="module.jsp">Endre/oppdatere</a>
   <a href="deliveryQueue.jsp">Leveringskø</a>

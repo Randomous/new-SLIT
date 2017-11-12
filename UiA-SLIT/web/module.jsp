@@ -18,7 +18,6 @@
         <h1><center>Her er modulene og alt du kan gjøre med dem</center></h1>
 
         
-   <jsp:include page="SidenavMenu.jsp" />
         
         <br>
     <center>

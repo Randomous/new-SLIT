@@ -34,6 +34,8 @@ System.out.println("Teacher's Home");
 HttpSession session = request.getSession(); //Creating a session
 session.setAttribute("Teacher", userName); //setting session attribute
 request.setAttribute("userName", userName);
+session.setAttribute("role", loginBean.getRole());
+session.setAttribute("userID", loginBean.getID());
 request.getRequestDispatcher("/index.jsp").forward(request, response);
 }
 else if(userValidate.equals("Hjelpelærer"))
