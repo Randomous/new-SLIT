@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="index.css">
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="javascript.js" type="text/javascript"></script>
+    
 
         <title>UiA-SLIT</title>
         <jsp:include page="Teacher.jsp" />
@@ -35,32 +35,7 @@
         <input type="submit" name="Search" value="Søk" /></center>
     <br>
 </form>
-        
-         <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <br>
-  <br>
-  <p> Moduler</p>
-  <a href="module.jsp">Endre/oppdatere</a>
-  <a href="deliveryQueue.jsp">Leveringskø</a>
-  <a href="Deliverable.jsp">Innlevering</a>
-  <a href="Modules.jsp">Moduler</a> 
- 
-  <p> Brukere</p>
-      <a href="Users.jsp"> Brukere</a>
-  
-</div>
-
-<!-- Use any element to open the sidenav -->
-<span onclick="openNav()">
-    <button>Meny</button>
-</span>
-
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-<div id="main">
-<!--    <button id="test" name="bla" value="meny"></button>-->
-</div> 
-
+         
 <form action="${pageContext.request.contextPath}/InputHandler" method="post">
     <center><input type="submit" name="Commands" value="Tekst kommandoer" />
         <input type="submit" name="Module" value="Siste moduler" />

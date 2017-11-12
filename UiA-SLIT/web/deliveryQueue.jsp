@@ -23,8 +23,10 @@
 
 </head>
 <body>
+    <div id="Textaline">
     <h1>Innleveringer
     </h1>
+            
     <p id="listCount">
 
     </p>
@@ -193,6 +195,7 @@
     <script type='text/javascript'>
         listSize("queueList1");
     </script>
+            </div>
 <center><form name="Go back" action="index.jsp">
         <input type="submit" value="Gå tilbake"/> </form></center>
 </body>

@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 
     <head>
-         <link rel="stylesheet" type="text/css" href="index.css">
+         <jsp:include page="Teacher.jsp" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -22,15 +22,6 @@
        <h1><center> Liste over studenter i emnet</center></h1>
        
    
-   <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <br>
-  <br>
-  <a href="module.jsp">Endre/oppdatere</a>
-  <a href="Users.jsp"> Brukere</a>
-  <a href="Modules.jsp">Moduler</a> 
-  <a href="Deliverable.jsp">Innlevering</a>
-</div>
         
         <br>
         <div id="Textaline">
