@@ -8,7 +8,7 @@
     
 
         <title>UiA-SLIT</title>
-        <jsp:include page="Teacher.jsp" />
+        <jsp:include page="UserInfo.jsp" />
     </head>
 
     

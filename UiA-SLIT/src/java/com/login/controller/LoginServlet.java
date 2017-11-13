@@ -42,8 +42,10 @@ else if(userValidate.equals("Hjelpelærer"))
 {
 System.out.println("Teacher Assistent's Home");
 HttpSession session = request.getSession();
-session.setAttribute("Teacher Assistent", userName);
+session.setAttribute("Teacher Assistant", userName);
 request.setAttribute("userName", userName);
+session.setAttribute("role", loginBean.getRole());
+session.setAttribute("userID", loginBean.getID());
 request.getRequestDispatcher("/TeacherAssistent.jsp").forward(request, response);
 }
 else if(userValidate.equals("Student"))
@@ -53,7 +55,9 @@ HttpSession session = request.getSession();
 session.setMaxInactiveInterval(10*60);
 session.setAttribute("Student", userName);
 request.setAttribute("userName", userName);
-request.getRequestDispatcher("/Student.jsp").forward(request, response);
+session.setAttribute("role", loginBean.getRole());
+session.setAttribute("userID", loginBean.getID());
+request.getRequestDispatcher("/index.jsp").forward(request, response);
 }
 else
 {
