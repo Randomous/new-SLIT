@@ -22,6 +22,7 @@
        <h1>Update data from database in jsp</h1>
 
 <ul>
+    
 <%
 
     InitialContext initialContext = new InitialContext();

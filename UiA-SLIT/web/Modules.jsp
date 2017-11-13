@@ -48,6 +48,9 @@
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet rs = statement.executeQuery("select * from Module");
             %>
+            
+            
+           
             <center>
             <TABLE BORDER="1">
             <TR>
@@ -69,10 +72,9 @@
               <TD>  <%= rs.getString("M_Description")%></TD>
               <TD>   
                   <br>
-                      <a href='Update.jsp'> Gå til Modul</a>
-                 
-                </tr>   
-               
+                    <a href='Update.jsp'>Gå til Modul</a>
+                    
+                    
            <% } %>
              </table>    
         

@@ -1,6 +1,3 @@
-UpdateModule
-
-
 
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -42,11 +39,13 @@ String M_Tittle=request.getParameter("M_Tittle");
 String M_Description=request.getParameter("M_Description");
 
 
+if(M_ID != null)
+{
 PreparedStatement ps = null;
+try
+{    
 
-
-
-String sql="INSERT INTO Module (M_ID, M_Name, M_Tittle, M_Description) VALUES (?, ?, ?, ?)";
+String sql="Update Module set M_ID=?, M_Name=?, M_Tittle=?, M_Description=? where M_ID="+M_ID;
 ps = connection.prepareStatement(sql);
 ps.setString(1, M_ID);
 ps.setString(2, M_Name);
@@ -54,13 +53,26 @@ ps.setString(3, M_Tittle);
 ps.setString(4, M_Description);
 
 
-
-ps.executeUpdate(sql);
+int i=ps.executeUpdate();
+if(i > 0)
 {
 out.print("Record Updated Successfully");
+}
+else
+{
 out.print("There is a problem in updating Record.");
 }
-%>
+}
+
+catch(SQLException sql)
+{
+
+request.setAttribute("error", sql);
+out.println(sql);
+}
+}
+
+%> 
         </center>
        </ul>
    </div>
