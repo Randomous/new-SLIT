@@ -25,18 +25,29 @@
 </head>
 <body>
     <div id="Textaline">
-    <h1>Innleveringer
-    </h1>
+    <h2>Innleveringer
+    </h2>
             
     <p id="listCount">
 
     </p>
     <br>
     <br>
+    <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
+        // Lager variabel for senere kall i kode
+        
+        String sesRole = request.getSession().getAttribute("role").toString();
+                String checkRole = "Lærer";                
+                String checkRoleTA = "Hjelpelærer";
+            if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
+        %>
     <a>Velg fra listen av innleveringer</a>
+    <br>
+     Gå gjennom listen fra topp til bunn for rettferdig behandling. <br>
+     <% } %>
     <p>
         Køen er sortert etter leveringstidspunkt. Øverste levering er første levering.
-        <br> Gå gjennom listen fra topp til bunn for rettferdig behandling.
+       
     </p>
 
 
@@ -81,18 +92,9 @@
         %>
         <li>
             <p> Innlevering på modul: <%= moduleName%> av student <%= firstname%>&nbsp; <%= surneame%></p>
-            <%
-                String sesRole = request.getSession().getAttribute("role").toString();
-                String checkRole =""; 
-                if(sesRole == "Lærer") {
-                    checkRole = "Teacher";
-                        }
-                String chkStr = "Teacher";
-                System.out.println(sesRole);
-                System.out.println("and check " + checkRole);
-                
-            if( checkRole == chkStr) { 
             
+            <%  //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper     
+            if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
                 %>
             <div id=<%= divID%> , 
                  style="display:none">
@@ -115,8 +117,10 @@
                         <br>
                         <%= moduleDesc%>
                         <br>
+                        <%
                         // TODO implement learning goals in query and storedData
-                        PLACEHOLDER: Læringsmål
+                                %>
+                                PLACEHOLDER: Læringsmål
                         <br>
 
                     <h3> Studentens innhold i innleveringen er
@@ -161,7 +165,7 @@
                     <%
                         }
                     %>
-                    
+                    <br>
                     Kommentar til student <br> <input class="textboxLarge" type="text" name="Number" />
                     <br>
                     Intern kommentar (Ikke synlig for student) <br> <input class="textboxLarge" type="text" name="Goal" />
@@ -202,7 +206,13 @@
             <button id=<%=hideID%> , onclick="asd(1, '<%= divID%>')"> Gå til evaluering </button>
         </li>
         <%
-            } else {out.print("student");
+            } else {
+            %>
+       
+            <p> Vennligst vent i kø på din tur. Du rykker stadig bakover i køen</p>
+            <br>
+            
+            <%
 }
 }
         %>

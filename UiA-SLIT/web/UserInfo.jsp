@@ -16,10 +16,10 @@
 
 </head>
 <body>
-<center><h2>UiA-SLIT for <% out.println(request.getSession().getAttribute("role")); %></h2></center>
-<center>Logget inn som <%=request.getAttribute("userName") %>
-Med rolle: <% out.println(request.getSession().getAttribute("role")); %>
-Og brukerID <% out.println(request.getSession().getAttribute("userID")); %>
+<center><h2>UiA-SLIT for <% out.print(request.getSession().getAttribute("role")); %></h2></center>
+<center>Logget inn som <% out.print(request.getSession().getAttribute("userName")); %>
+Med rolle: <% out.print(request.getSession().getAttribute("role")); %>
+Og brukerID <% out.print(request.getSession().getAttribute("userID")); %>
 </center>
 <div style="text-align: right"><a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a></div>
 <jsp:include page="SidenavMenu.jsp" />

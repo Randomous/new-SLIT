@@ -32,8 +32,7 @@ if(userValidate.equals("Lærer"))
 {
 System.out.println("Teacher's Home");
 HttpSession session = request.getSession(); //Creating a session
-session.setAttribute("Teacher", userName); //setting session attribute
-request.setAttribute("userName", userName);
+session.setAttribute("userName", userName);
 session.setAttribute("role", loginBean.getRole());
 session.setAttribute("userID", loginBean.getID());
 request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -42,19 +41,17 @@ else if(userValidate.equals("Hjelpelærer"))
 {
 System.out.println("Teacher Assistent's Home");
 HttpSession session = request.getSession();
-session.setAttribute("Teacher Assistant", userName);
-request.setAttribute("userName", userName);
+session.setAttribute("userName", userName);
 session.setAttribute("role", loginBean.getRole());
 session.setAttribute("userID", loginBean.getID());
-request.getRequestDispatcher("/TeacherAssistent.jsp").forward(request, response);
+request.getRequestDispatcher("/index.jsp").forward(request, response);
 }
 else if(userValidate.equals("Student"))
 {
 System.out.println("Student's Home");
 HttpSession session = request.getSession();
 session.setMaxInactiveInterval(10*60);
-session.setAttribute("Student", userName);
-request.setAttribute("userName", userName);
+session.setAttribute("userName", userName);
 session.setAttribute("role", loginBean.getRole());
 session.setAttribute("userID", loginBean.getID());
 request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -63,7 +60,7 @@ else
 {
 System.out.println("Error message = "+userValidate);
 request.setAttribute("errMessage", userValidate);
-request.getRequestDispatcher("/RoleLogIn.jsp").forward(request, response);
+request.getRequestDispatcher("/RoleLogin.jsp").forward(request, response);
 }
 }
 catch (IOException e1)

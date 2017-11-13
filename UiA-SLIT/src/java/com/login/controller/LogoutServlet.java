@@ -22,7 +22,7 @@ if(session!=null) //If session is not null
 {
 session.invalidate(); //removes all session attributes bound to the session
 request.setAttribute("errMessage", "You have logged out successfully");
-RequestDispatcher requestDispatcher = request.getRequestDispatcher("/RoleLogIn.jsp");
+RequestDispatcher requestDispatcher = request.getRequestDispatcher("/RoleLogin.jsp");
 requestDispatcher.forward(request, response);
 System.out.println("Logged out");
 }
