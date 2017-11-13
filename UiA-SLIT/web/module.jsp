@@ -15,7 +15,7 @@
         <title>Moduler</title>
     </head>
     <body>
-        <h1><center>Her er modulene og alt du kan gjøre med dem</center></h1>
+        <h1 class="TextFormat"><center>Her er modulene og alt du kan gjøre med dem</center></h1>
 
         
         

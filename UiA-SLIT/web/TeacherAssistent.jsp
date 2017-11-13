@@ -13,7 +13,7 @@
 <title>Teacher Assistent Page</title>
 </head>
 <body>
-<center><h2>UiA-SLIT for Hjelpelærer</h2></center>
+<center><h2 class="TextFormat">UiA-SLIT for Hjelpelærer</h2></center>
 Velkommen <%=request.getAttribute("userName") %>
 <div style="text-align: right"><a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a></div>
 </body>
