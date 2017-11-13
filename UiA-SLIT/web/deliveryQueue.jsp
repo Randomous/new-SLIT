@@ -81,6 +81,19 @@
         %>
         <li>
             <p> Innlevering på modul: <%= moduleName%> av student <%= firstname%>&nbsp; <%= surneame%></p>
+            <%
+                String sesRole = request.getSession().getAttribute("role").toString();
+                String checkRole =""; 
+                if(sesRole == "Lærer") {
+                    checkRole = "Teacher";
+                        }
+                String chkStr = "Teacher";
+                System.out.println(sesRole);
+                System.out.println("and check " + checkRole);
+                
+            if( checkRole == chkStr) { 
+            
+                %>
             <div id=<%= divID%> , 
                  style="display:none">
                 <form action="${pageContext.request.contextPath}/EditModule" method="post">
@@ -148,7 +161,7 @@
                     <%
                         }
                     %>
-                    </p>
+                    
                     Kommentar til student <br> <input class="textboxLarge" type="text" name="Number" />
                     <br>
                     Intern kommentar (Ikke synlig for student) <br> <input class="textboxLarge" type="text" name="Goal" />
@@ -189,8 +202,11 @@
             <button id=<%=hideID%> , onclick="asd(1, '<%= divID%>')"> Gå til evaluering </button>
         </li>
         <%
-            }
+            } else {out.print("student");
+}
+}
         %>
+       
 
     </ul>
     <script type='text/javascript'>

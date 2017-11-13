@@ -12,11 +12,11 @@
 <head>  <link rel="stylesheet" type="text/css" href="index.css">
            <script src="javascript.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<title>Teacher Page</title>
+<title>SLIT for <% out.println(request.getSession().getAttribute("role")); %> </title>
 
 </head>
 <body>
-<center><h2>UiA-SLIT for Lærer</h2></center>
+<center><h2>UiA-SLIT for <% out.println(request.getSession().getAttribute("role")); %></h2></center>
 <center>Logget inn som <%=request.getAttribute("userName") %>
 Med rolle: <% out.println(request.getSession().getAttribute("role")); %>
 Og brukerID <% out.println(request.getSession().getAttribute("userID")); %>
