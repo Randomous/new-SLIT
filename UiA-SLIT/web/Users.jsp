@@ -44,7 +44,7 @@
             ResultSet rs = statement.executeQuery("select * from Users");
              %>
             <center>
-            <TABLE BORDER="1">
+            <TABLE class="ModuleTable">
             <TR>
                 <TH><font size="4"</font>BrukerID</TH>
                 <TH><font size="4"</font>Fornavn</TH>

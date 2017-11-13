@@ -25,8 +25,8 @@
 </head>
 <body>
     <div id="Textaline">
-    <h2>Innleveringer
-    </h2>
+    <h1 class="TextFormat">Innleveringer
+    </h1>
             
     <p id="listCount">
 

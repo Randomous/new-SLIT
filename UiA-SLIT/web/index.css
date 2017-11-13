@@ -26,7 +26,7 @@ and open the template in the editor.
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: -1;   
 }
 
@@ -119,4 +119,34 @@ and open the template in the editor.
 #Textaline {
     
     text-align: center;
+}
+
+.ModuleTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    position: relative;
+    margin-left:20%;
+}
+
+.ModuleTable td, ModuleTable th {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.ModuleTable tr:nth-child(even){background-color: #f2f2f2;}
+
+.ModuleTable tr:hover {background-color: #ddd;}
+
+.ModuleTable th {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.TextFormat {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #000000
 }
