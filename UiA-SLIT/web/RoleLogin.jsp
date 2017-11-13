@@ -16,7 +16,7 @@
         SLIT Innlogging
     </h1></center>
     <br>
-    
+    <center>
 <form action="LoginServlet" method="post">
 <table class="ModuleTable">
 <tr>
@@ -36,7 +36,6 @@
 </tr>
 </table>
 </form>
-<center>
 <h3>Dev info for login</h3>
 LoginInfo
 <br>
