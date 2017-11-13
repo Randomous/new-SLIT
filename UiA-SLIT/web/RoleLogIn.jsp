@@ -9,11 +9,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login</title>
+<title class="TextFormat">Login</title>
 </head>
 <body>
 <form action="LoginServlet" method="post">
-<table align="center">
+<table class="ModuleTable">
 <tr>
 <td>Username = LSN</td>
 <td><input type="text" name="username" /></td>

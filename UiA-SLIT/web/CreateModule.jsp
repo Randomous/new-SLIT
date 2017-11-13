@@ -22,7 +22,7 @@
         <title>JSP Page</title>
     </head>
    <body>
-       <h1> Resultat</h1>
+       <h1 class="TextFormat"> Resultat</h1>
         <br>
         
        <ul>

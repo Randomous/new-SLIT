@@ -26,7 +26,7 @@
        
    <body>
          
-        <h1><center>Alle moduler</center></h1>
+        <h1 class="TextFormat"><center>Alle moduler</center></h1>
         
         <div id="Textaline">
         <br>
@@ -49,7 +49,7 @@
             ResultSet rs = statement.executeQuery("select * from Module");
             %>
             <center>
-            <TABLE BORDER="1">
+            <TABLE class="ModuleTable">
             <TR>
                 <TH><font size="4"</font>ID</TH>
                 <TH><font size="4"</font>Navn</TH>
