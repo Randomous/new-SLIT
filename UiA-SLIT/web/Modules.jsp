@@ -68,7 +68,8 @@
               <TD>  <%= rs.getString("M_Tittle") %></TD>
               <TD>  <%= rs.getString("M_Description")%></TD>
               <TD>   
-                  
+                  <br>
+                      <a href='Update.jsp'> Gå til Modul</a>
                  
                 </tr>   
                
