@@ -1,5 +1,5 @@
 <%-- 
-    Document   : RoleLogIn
+    Document   : RoleLogin
     Created on : 10.nov.2017, 09:28:09
     Author     : Helle K. Trygsland
 --%>
@@ -11,15 +11,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title class="TextFormat">Login</title>
 </head>
-<body>
+<body> 
+    <h1> <center>
+        SLIT Innlogging
+    </h1></center>
+    <br>
+    
 <form action="LoginServlet" method="post">
 <table class="ModuleTable">
 <tr>
-<td>Username = LSN</td>
+<td>Username</td>
 <td><input type="text" name="username" /></td>
 </tr>
 <tr>
-<td>Password = tittentei</td>
+<td>Password</td>
 <td><input type="password" name="password" /></td>
 </tr>
 <tr>
@@ -31,5 +36,15 @@
 </tr>
 </table>
 </form>
+<center>
+<h3>Dev info for login</h3>
+LoginInfo
+<br>
+Lærer: LSN / tittentei
+<br>
+Student: star / theStar
+<br>
+Hjelpelærer: tidlle / trerr
+</center>
 </body>
 </html>

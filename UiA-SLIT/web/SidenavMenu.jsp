@@ -4,6 +4,7 @@
     Author     : root
 --%>
 
+<%@page import="java.lang.CharSequence"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <div id="mySidenav" class="sidenav">
@@ -11,14 +12,24 @@
   <br>
   <br>
   <a href="index.jsp"> Hjem </a>
-  <p> Moduler</p>
+    <p> Moduler</p>
+    <a href="deliveryQueue.jsp">Leveringskø</a>
+      <a href="Modules.jsp">Moduler</a> 
+  <%
+      String sesRole = request.getSession().getAttribute("role").toString();
+                String checkRole = "Lærer";
+                String checkRoleTA = "Hjelpelærer";
+            if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
+        if (sesRole.equals(checkRole)) {
+      %>
   <a href="module.jsp">Endre/oppdatere</a>
-  <a href="deliveryQueue.jsp">Leveringskø</a>
+  <% }
+  %>
   <a href="Deliverable.jsp">Innlevering</a>
-  <a href="Modules.jsp">Moduler</a> 
- 
   <p> Brukere</p>
       <a href="Users.jsp"> Brukere</a>
+      <% } 
+      %>
   
 </div>
 

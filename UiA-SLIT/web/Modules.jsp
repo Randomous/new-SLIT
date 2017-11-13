@@ -19,7 +19,7 @@
     <head>        
          <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <jsp:include page="Teacher.jsp" />
+        <jsp:include page="UserInfo.jsp" />
         <title>JSP Page</title>
     </head>
   
@@ -47,6 +47,7 @@
 
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet rs = statement.executeQuery("select * from Module");
+           
             %>
             <center>
             <TABLE class="ModuleTable">
@@ -60,14 +61,17 @@
             </TR>
             
             <%
-            while (rs.next()){ %>
+            while (rs.next()){ 
+             String M_ID = String.valueOf(rs.getInt("M_ID"));
+            %>
             
             <tr> 
-              <TD>  <%= rs.getInt("M_ID") %></TD>
+              <TD>  <%= M_ID %></TD>
               <TD>  <%= rs.getString("M_Name") %></TD>
               <TD>  <%= rs.getString("M_Tittle") %></TD>
               <TD>  <%= rs.getString("M_Description")%></TD>
-              <TD>   
+              <TD> <form name="ChangeModule" action="module.jsp" value='<%= M_ID%>'>
+                <input type="submit" value="Rediger" /> </form>
                   
                  
                 </tr>   
