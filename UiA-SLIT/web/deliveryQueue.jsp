@@ -47,6 +47,7 @@
      <% } %>
     <p>
         Køen er sortert etter leveringstidspunkt. Øverste levering er første levering.
+        <br>
        
     </p>
 
@@ -91,7 +92,7 @@
                 String divID = String.valueOf(id);
         %>
         <li>
-            <p> Innlevering på modul: <%= moduleName%> av student <%= firstname%>&nbsp; <%= surneame%></p>
+            <p><b> Innlevering på modul: <%= moduleName%> av student <%= firstname%>&nbsp; <%= surneame%></b></p>
             
             <%  //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper     
             if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
@@ -209,7 +210,7 @@
             } else {
             %>
        
-            <p> Vennligst vent i kø på din tur. Du rykker stadig bakover i køen</p>
+            <p> Vennligst vent i kø på din tur. Du rykker stadig bakover i køen </p>
             <br>
             
             <%
@@ -223,7 +224,6 @@
         listSize("queueList1");
     </script>
             </div>
-<center><form name="Go back" action="index.jsp">
-        <input type="submit" value="Gå tilbake"/> </form></center>
+
 </body>
 
