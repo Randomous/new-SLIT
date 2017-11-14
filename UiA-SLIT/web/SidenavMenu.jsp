@@ -11,6 +11,7 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <br>
   <br>
+  <input type="submit" value="Gå tilbake" onclick="history.back(-1)"/> 
   <a href="index.jsp"> Hjem </a>
     <p> Moduler</p>
     <a href="deliveryQueue.jsp">Leveringskø</a>

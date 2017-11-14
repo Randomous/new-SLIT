@@ -56,6 +56,9 @@
                 <TH><font size="4"</font>Navn</TH>
                 <TH><font size="4"</font>Tittel</TH>
                 <TH><font size="4"</font>Forklaring</TH>
+                <TH><font size="4"</font>Modul</TH>
+                <TH><font size="4"</font>Læringsmål</TH>
+        
                 
                
             </TR>
@@ -70,8 +73,11 @@
               <TD>  <%= rs.getString("M_Name") %></TD>
               <TD>  <%= rs.getString("M_Tittle") %></TD>
               <TD>  <%= rs.getString("M_Description")%></TD>
+              
               <TD> <form name="ChangeModule" action="module.jsp" value='<%= M_ID%>'>
                 <input type="submit" value="Rediger" /> </form>
+                <TD>  <form name="<%= M_ID%>" action="ChangeLearningGoals.jsp" />
+                <input type="submit" value="Endre" /> </form>
                   
                  
                 </tr>   
@@ -83,7 +89,7 @@
              <p>
            
         <center><form name="Go back" action="index.jsp">
-                <input type="submit" value="Gå tilbake"/> </form></center>
+                <input type="submit" value="Gå tilbake" onclick="history.back()"/> </form></center>
     </p>
     </body>
 </HTML>
