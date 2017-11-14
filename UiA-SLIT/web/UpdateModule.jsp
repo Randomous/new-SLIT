@@ -1,4 +1,7 @@
 
+
+
+<%@page import="java.sql.*" %>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="javax.naming.Context"%>
@@ -16,6 +19,8 @@
         <title>JSP Page</title>
     </head>
    <body>
+    <center>
+ 
 <%
     
     
@@ -33,35 +38,23 @@
 
             
             
-String M_ID = request.getParameter("M_ID");
-String M_Name=request.getParameter("M_Name");
-String M_Tittle=request.getParameter("M_Tittle");
-String M_Description=request.getParameter("M_Description");
+String M_ID=request.getParameter("M_ID");
 
 
-if(M_ID != null)
-{
+
 PreparedStatement ps = null;
 try
 {    
 
-String sql="Update Module set M_ID=?, M_Name=?, M_Tittle=?, M_Description=? where M_ID="+M_ID;
+String sql="update Module where M_ID=?"+M_ID;
 ps = connection.prepareStatement(sql);
 ps.setString(1, M_ID);
-ps.setString(2, M_Name);
-ps.setString(3, M_Tittle);
-ps.setString(4, M_Description);
 
 
-int i=ps.executeUpdate();
-if(i > 0)
-{
-out.print("Record Updated Successfully");
-}
-else
-{
-out.print("There is a problem in updating Record.");
-}
+
+
+ps.executeUpdate();
+out.println("Dette fungerer eller ikke ");
 }
 
 catch(SQLException sql)
@@ -70,13 +63,14 @@ catch(SQLException sql)
 request.setAttribute("error", sql);
 out.println(sql);
 }
-}
+
 
 %> 
-        </center>
+        
        </ul>
-   </div>
+   
+   </center>
              <p>
-        <center><form name="Go back" action="index.jsp">
+         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
     </body>

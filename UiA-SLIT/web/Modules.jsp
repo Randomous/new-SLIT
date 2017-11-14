@@ -72,17 +72,13 @@
               <TD>  <%= rs.getString("M_Description")%></TD>
               <TD>   
                   <br>
-                    <a href='Update.jsp'>Gå til Modul</a>
+                    <a href='Update.jsp'>Oppdatere Moduler</a>
                     
                     
            <% } %>
              </table>    
         
         </center>
-             <p>
-           
-        <center><form name="Go back" action="index.jsp">
-                <input type="submit" value="Gå tilbake"/> </form></center>
-    </p>
+      
     </body>
 </HTML>
