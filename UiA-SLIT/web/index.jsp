@@ -8,12 +8,13 @@
     
 
         <title>UiA-SLIT</title>
-        <jsp:include page="Teacher.jsp" />
+       
     </head>
 
-    
-      
-    
+        <jsp:include page="Teacher.jsp" /> 
+
+    <div class="wrapperofwrapper"> 
+    <div class="wrapper">
     <div id="second">
     </div>
 
@@ -71,6 +72,8 @@
 
     <button id="hidestudent" onclick="asd(1, 'student')">Registrer ny student</button>
 </center>
+    </div>
+    </div>
 
 </body>
 

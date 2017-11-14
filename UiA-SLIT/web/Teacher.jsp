@@ -22,6 +22,8 @@ Med rolle: <% out.println(request.getSession().getAttribute("role")); %>
 Og brukerID <% out.println(request.getSession().getAttribute("userID")); %>
 </center>
 <div style="text-align: right"><a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a></div>
+<div id="container">
 <jsp:include page="SidenavMenu.jsp" />
+</div>
 </body>
 </html>
