@@ -39,6 +39,7 @@
             
 PreparedStatement statement = connection.prepareStatement(query);
 ResultSet rs = statement.executeQuery();
+String M_ID = request.getParameter("M_ID");
 while(rs.next()){
 %>
 

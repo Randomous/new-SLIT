@@ -20,11 +20,8 @@
     </head>
    <body>
     <center>
- 
-<%
-    
-    
-   InitialContext initialContext = new InitialContext();
+   <%
+            InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
             //The JDBC Data source that we just created
             DataSource ds = (DataSource) context.lookup("Randobase");
@@ -35,37 +32,45 @@
                 throw new SQLException("Error establishing connection!");
             }
            
+            %>
 
-            
-            
-String M_ID=request.getParameter("M_ID");
-
-
-
+            <%
+String M_ID = request.getParameter("M_ID");
+String M_Name=request.getParameter("M_Name");
+String M_Tittle=request.getParameter("M_Tittle");
+String M_Description=request.getParameter("M_Description");
+                
+                
+if(M_ID != null)
+{
 PreparedStatement ps = null;
+int ModuleID = Integer.parseInt(M_ID);
 try
-{    
-
-String sql="update Module where M_ID=?"+M_ID;
+{
+String sql="Update Module set M_ID=?,M_Name=?,M_Tittle=?,M_Description=? where M_ID="+M_ID;
 ps = connection.prepareStatement(sql);
 ps.setString(1, M_ID);
-
-
-
-
-ps.executeUpdate();
-out.println("Dette fungerer eller ikke ");
+ps.setString(2, M_Name);
+ps.setString(3, M_Tittle);
+ps.setString(4, M_Description);
+int i = ps.executeUpdate(sql);
+if(i > 0)
+{
+out.print("Record Updated Successfully");
 }
-
+else
+{
+out.print("There is a problem in updating Record.");
+}
+}
 catch(SQLException sql)
 {
-
 request.setAttribute("error", sql);
 out.println(sql);
 }
-
-
+}
 %> 
+
         
        </ul>
    
