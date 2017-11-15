@@ -16,14 +16,22 @@
 
 </head>
 <body>
-<center><h2>UiA-SLIT for Lærer</h2></center>
-<center>Logget inn som <%=request.getAttribute("userName") %>
+    <div id="banner">
+        <img id="bannerimg" src="UiALogo.png">
+            <h2 class="header">UiA-SLIT for Lærer</h2>
+    </div>
+            <div id="rolecheck">
+                <p>
+Logget inn som <%=request.getAttribute("userName") %>
+<br>
 Med rolle: <% out.println(request.getSession().getAttribute("role")); %>
+<br>
 Og brukerID <% out.println(request.getSession().getAttribute("userID")); %>
-</center>
-<div style="text-align: right"><a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a></div>
-<div id="container">
+<br>
+<a id="logout" href="<%=request.getContextPath()%>/LogoutServlet">Logout</a>
+                </p>
+            </div>
 <jsp:include page="SidenavMenu.jsp" />
-</div>
+
 </body>
 </html>
