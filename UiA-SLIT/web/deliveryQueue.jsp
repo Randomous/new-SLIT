@@ -168,6 +168,15 @@
                     %>
                     <br>
                     Kommentar til student <br> <input class="textboxLarge" type="text" name="Number" />
+<!--                    <textarea name='txtarea0' class="textboxLarge" placeholder="testing func">
+                      <br>
+                          
+                     <br>
+                    </textarea>-->
+                    <br>
+                 
+                         <jsp:include page="textEditor.jsp"/>                         
+                
                     <br>
                     Intern kommentar (Ikke synlig for student) <br> <input class="textboxLarge" type="text" name="Goal" />
                     <br>
