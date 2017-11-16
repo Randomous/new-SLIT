@@ -11,7 +11,8 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <br>
   <br>
-  <a href="index.jsp"> Hjem </a>
+  
+  <a href="index.jsp"> Hjem </a>    
     <p> Moduler</p>
     <a href="deliveryQueue.jsp">Leveringskø</a>
       <a href="Modules.jsp">Moduler</a> 

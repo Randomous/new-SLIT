@@ -56,8 +56,18 @@
                 <TH><font size="4"</font>Navn</TH>
                 <TH><font size="4"</font>Tittel</TH>
                 <TH><font size="4"</font>Forklaring</TH>
+                               <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
+        // Lager variabel for senere kall i kode
+        
+        String sesRole = request.getSession().getAttribute("role").toString();
+                String checkRole = "Lærer";                
+                String checkRoleTA = "Hjelpelærer";
+            if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
+        %>
+                <TH>Endre Modul</TH>
                 
                
+                <% } %>
             </TR>
             
             <%
@@ -70,20 +80,25 @@
               <TD>  <%= rs.getString("M_Name") %></TD>
               <TD>  <%= rs.getString("M_Tittle") %></TD>
               <TD>  <%= rs.getString("M_Description")%></TD>
-              <TD> <form name="ChangeModule" action="module.jsp" value='<%= M_ID%>'>
-                <input type="submit" value="Rediger" /> </form>
+               <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
+        // Lager variabel for senere kall i kode
+
+            if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
+        %>
+              <TD> <form name="<%= M_ID%>" action="module.jsp" />
+                <input type="submit" value="Endre" /> </form>
                   
                  
                 </tr>   
-               
+               <% 
+               }
+               %>
            <% } %>
              </table>    
         
         </center>
              <p>
            
-        <center><form name="Go back" action="index.jsp">
-                <input type="submit" value="Gå tilbake"/> </form></center>
     </p>
     </body>
 </HTML>
