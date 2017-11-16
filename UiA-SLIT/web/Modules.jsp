@@ -51,7 +51,8 @@
             %>
             <center>
             <TABLE class="ModuleTable">
-            <TR>
+            <TR>    <br>
+                <br>
                 <TH><font size="4"</font>ID</TH>
                 <TH><font size="4"</font>Navn</TH>
                 <TH><font size="4"</font>Tittel</TH>
