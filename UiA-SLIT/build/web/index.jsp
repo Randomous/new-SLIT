@@ -1,19 +1,19 @@
-
+ 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+ 
     <head>
-
+ 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-
+ 
         <title>UiA-SLIT</title>
-        <jsp:include page="UserInfo.jsp" />
+       
     </head>
-<jsp:include page="Teacher.jsp" /> 
+<jsp:include page="UserInfo.jsp" /> 
     <div class="wrapperofwrapper"> 
     <div class="wrapper">
-
+ 
     <body>
         <div id="title">
             <jsp:useBean id="mybean2" scope="session" class="WebInput.Input"/>
@@ -26,7 +26,7 @@
         <input type="submit" name="Search" value="Søk" /></center>
     <br>
 </form>-->
-
+ 
      
     
 <form name="userSearch" method="post" action="UserSearch.jsp">
@@ -36,6 +36,6 @@
       </div>
     </div>
     </div>
-
+ 
 </body>
-
+ 
