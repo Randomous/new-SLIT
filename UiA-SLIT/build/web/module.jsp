@@ -15,7 +15,8 @@
         <title>Moduler</title>
     </head>
     <body>
-        <h1 class="TextFormat"><center>Her er modulene og alt du kan gjøre med dem</center></h1>
+        
+        <h1 class="TextFormat">Her er modulene og alt du kan gjøre med dem</h1>
 
         
         
@@ -23,7 +24,7 @@
     <center>
         <br>
         <div id="editModule" style="display:none">
-            <form action="${pageContext.request.contextPath}/EditModule" method="post"> 
+           <!--<form action="${pageContext.request.contextPath}/EditModule" method="post"> 
                 Modul Navn <input type="text" name="ModuleName" />
                 Modul Tittel <input type="text" name="ModuleTittle" />
                 <br>
@@ -42,7 +43,22 @@
                 <br>
                 <input type="Submit" name="AddStudent" value="Bekreft Endering" />
 
-            </form>
+            </form>-->
+                <form class="form1" action="${pageContext.request.contextPath}/EditModule" method="post">
+    <label for="mname">Module Name</label>
+    <input type="text" name="ModuleName" />
+    <br>
+    <label for="mdesc">Module Description</label>
+    <input type="text" name="ModuleDescription" />
+    <br>
+    <label for="lgoals">Learning Goals</label>
+    <input type="text" name="LearningGoalsTittle" />
+    <br>
+    <label for="mnumber">Module Number</label>
+    <input type="text" name="ModuleNumber" />
+    <br>
+    <input type="submit" name="AddStudent" value="Bekreft Endring" />
+  </form>
             <br>
             <button onclick="asd(2, 'editModule')">Avbryt Endring</button>
         </div>
