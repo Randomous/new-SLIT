@@ -3,6 +3,7 @@
     Created on : Oct 25, 2017, 1:45:21 PM
     Author     : root
 --%>
+<%@page import="java.sql.Statement"%>
 <%@page import="javax.naming.Context"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -16,15 +17,24 @@
     <head>
          <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>UiA-SLIT</title>
+        <jsp:include page="Teacher.jsp" />
     </head>
-   <body>
-       <h1>Update data from database in jsp</h1>
+
 
 <ul>
+    <%   
+     
+      
+       
+        Connection con= null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        
+        %>
     
 <%
-
+    String M_ID = request.getParameter("M_ID"); 
     InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
             //The JDBC Data source that we just created
@@ -35,34 +45,40 @@
             {
                 throw new SQLException("Error establishing connection!");
             }
-            String query = "SELECT * FROM Module";
+           
             
-PreparedStatement statement = connection.prepareStatement(query);
-ResultSet rs = statement.executeQuery();
-String M_ID = request.getParameter("M_ID");
-while(rs.next()){
+statement=connection.createStatement();
+String sql ="select * from Module";
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
 %>
 
-<form action="UpdateModule.jsp" method = "post">
-<input type="text" name="M_ID" value="<%=rs.getInt("M_ID") %>">
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+<h1>Update data from database in jsp</h1>
+<form method="post" action="UpdateModule.jsp">
+<input type="hidden" name="M_ID" value="<%=resultSet.getString("M_ID") %>">
+<input type="text" name="M_ID" value="<%=resultSet.getString("M_ID") %>">
 <br>
-Module Name:<br>
-<input type="text" name="Module Name" value="<%=rs.getString("M_Name") %>">
+First name:<br>
+<input type="text" name="M_Name" value="<%=resultSet.getString("M_Name") %>">
 <br>
-Module Tittle:<br>
-<input type="text" name="Module Tittle" value="<%=rs.getString("M_Tittle") %>">
+Last name:<br>
+<input type="text" name="M_Tittle" value="<%=resultSet.getString("M_Tittle") %>">
 <br>
-Module Description:<br>
-<input type="text" name="Module Description" value="<%=rs.getString("M_Description") %>">
+City name:<br>
+<input type="text" name="M_Description" value="<%=resultSet.getString("M_Description") %>">
 <br>
 <input type="submit" value="submit">
+</center>
 </form>
 <%
 }
 %>
 </ul>
  
- <center><form name="Go back" action="index.jsp">
-                <input type="submit" value="Gå tilbake"/> </form></center>
+
 </body>
 </html>
