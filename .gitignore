@@ -35,13 +35,13 @@ nbactions.xml
 nb-configuration.xml
 
 # Build Files #
-UiA-SLIT/build.xml
-UiA-SLIT/nbproject/build-impl.xml
-UiA-SLIT/nbproject/genfiles.properties
-UiA-SLIT/nbproject/jaxws-build.xml
-UiA-SLIT/nbproject/project.properties
-UiA-SLIT/build.xml
-UiA-SLIT/nbproject/project.xml
+*build.xml
+*build-impl.xml
+*genfiles.properties
+*jaxws-build.xml
+*project.properties
+*build.xml
+*project.xml
 
 
 # Class Files #
