@@ -26,12 +26,23 @@ hs_err_pid*
 
 # NetBeans specific #
 nbproject/private/
+UiA-SLIT/nbproject/private/
 build/
 nbbuild/
 dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
+
+# Build Files #
+UiA-SLIT/build.xml
+UiA-SLIT/nbproject/build-impl.xml
+UiA-SLIT/nbproject/genfiles.properties
+UiA-SLIT/nbproject/jaxws-build.xml
+UiA-SLIT/nbproject/project.properties
+UiA-SLIT/build.xml
+UiA-SLIT/nbproject/project.xml
+
 
 # Class Files #
 *.class
