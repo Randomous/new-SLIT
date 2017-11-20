@@ -3,7 +3,8 @@
     Created on : 27.okt.2017, 13:53:30
     Author     : Helll
 --%>
-
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.*" %>
 <%@page import="javax.naming.Context"%>
 <%@page import="java.sql.ResultSet"%>
@@ -20,7 +21,7 @@
          <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <jsp:include page="UserInfo.jsp" />
-        <title>JSP Page</title>
+          <title>UiA-SLIT</title>
     </head>
   
        
@@ -30,26 +31,17 @@
         
         <div id="Textaline">
         <br>
-        
+     <%   
+     
       
-        <%
-            InitialContext initialContext = new InitialContext();
-            Context context = (Context) initialContext.lookup("java:comp/env");
-            //The JDBC Data source that we just created
-            DataSource ds = (DataSource) context.lookup("Randobase");
-            Connection connection = ds.getConnection();
-
-            if (connection == null)
-            {
-                throw new SQLException("Error establishing connection!");
-            }
-            String query = "SELECT * FROM Module ORDER BY M_ID";
-
-            PreparedStatement statement = connection.prepareStatement(query);
-            ResultSet rs = statement.executeQuery("select * from Module");
+       
+        Connection con= null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+        
            
-            %>
-            <center>
+        %>
+        <center>
             <TABLE class="ModuleTable">
             <TR>    <br>
                 <br>
@@ -66,40 +58,53 @@
             if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
         %>
                 <TH>Endre Modul</TH>
-                
-               
+        
+        <% String M_ID = request.getParameter("M_ID");
+            InitialContext initialContext = new InitialContext();
+            Context context = (Context) initialContext.lookup("java:comp/env");
+            //The JDBC Data source that we just created
+            DataSource ds = (DataSource) context.lookup("Randobase");
+            Connection connection = ds.getConnection();
+
                 <% } %>
-            </TR>
-            
-            <%
+            if (connection == null)
+            {
+                throw new SQLException("Error establishing connection!");
+            }
+            statement=connection.createStatement();
+             String sql ="select * from Module";
+             resultSet = statement.executeQuery(sql);
+             while(resultSet.next()){
+            %>
+        
             while (rs.next()){ 
              String M_ID = String.valueOf(rs.getInt("M_ID"));
             %>
             
             <tr> 
               <TD>  <%= M_ID %></TD>
-              <TD>  <%= rs.getString("M_Name") %></TD>
-              <TD>  <%= rs.getString("M_Tittle") %></TD>
-              <TD>  <%= rs.getString("M_Description")%></TD>
+              <TD>  <%= resultSet.getString("M_Name") %></TD>
+              <TD>  <%= resultSet.getString("M_Tittle") %></TD>
+              <TD>  <%= resultSet.getString("M_Description")%></TD>
                <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
+                  <br>
+                    <a href='Update.jsp'>Oppdatere Moduler</a>
         // Lager variabel for senere kall i kode
 
             if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
         %>
               <TD> <form name="<%= M_ID%>" action="module.jsp" />
                 <input type="submit" value="Endre" /> </form>
-                  
-                 
-                </tr>   
+                    
+            </TR>
+            
+           <%
                <% 
                }
                %>
-           <% } %>
              </table>    
         
         </center>
-             <p>
-           
-    </p>
+      
     </body>
 </HTML>
