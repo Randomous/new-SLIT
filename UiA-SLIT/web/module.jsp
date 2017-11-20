@@ -98,7 +98,7 @@
                     <input type="Submit" name ="AddLearningGoals" value="opprett læringsmål" />
                 </form>
                 <br>
-                <button onclick="asd(2, 'AddlearningGoals')">Avbryt registrering</button>
+                <button onclick="asd(2, 'CreateLearningGoals')">Avbryt registrering</button>
             </div>
                 
                 <button id="hideCreateLearningGoals" onclick="asd(1, 'CreateLearningGoals')">Opprett LæringsMål</button>

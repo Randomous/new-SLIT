@@ -22,7 +22,7 @@
     </div>
             <div id="rolecheck">
                 <p>
-Logget inn som <%=request.getAttribute("userName") %>
+Logget inn som <%=request.getSession().getAttribute("userName") %>
 <br>
 Med rolle: <% out.println(request.getSession().getAttribute("role")); %>
 <br>

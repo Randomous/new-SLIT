@@ -18,7 +18,7 @@
          <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>UiA-SLIT</title>
-        <jsp:include page="Teacher.jsp" />
+        <jsp:include page="UserInfo.jsp" />
     </head>
 
 
@@ -34,7 +34,8 @@
         %>
     
 <%
-    String M_ID = request.getParameter("M_ID"); 
+    String M_ID = request.getParameter("name"); 
+    System.out.println(M_ID);
     InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
             //The JDBC Data source that we just created
@@ -48,7 +49,12 @@
            
             
 statement=connection.createStatement();
-String sql ="select * from Module";
+
+String sql ="SELECT * FROM Module";
+        /* WHERE M_ID =" + M_ID;
+https://stackoverflow.com/questions/3797285/how-can-i-pass-a-parameter-via-submit-button
+Can be applied to get specific module
+*/
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>

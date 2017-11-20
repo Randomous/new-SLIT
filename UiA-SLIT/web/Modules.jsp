@@ -49,7 +49,7 @@
                 <TH><font size="4"</font>Navn</TH>
                 <TH><font size="4"</font>Tittel</TH>
                 <TH><font size="4"</font>Forklaring</TH>
-                               <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
+                                      <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
         // Lager variabel for senere kall i kode
         
         String sesRole = request.getSession().getAttribute("role").toString();
@@ -57,16 +57,17 @@
                 String checkRoleTA = "Hjelpelærer";
             if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
         %>
-                <TH>Endre Modul</TH>
+                                <TH><font size="4"</font>Modul</TH>
+                  <TH><font size="4"</font>Læringsmål</TH>
         
-        <% String M_ID = request.getParameter("M_ID");
+        <% } 
             InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
             //The JDBC Data source that we just created
             DataSource ds = (DataSource) context.lookup("Randobase");
             Connection connection = ds.getConnection();
 
-                <% } %>
+               
             if (connection == null)
             {
                 throw new SQLException("Error establishing connection!");
@@ -75,10 +76,8 @@
              String sql ="select * from Module";
              resultSet = statement.executeQuery(sql);
              while(resultSet.next()){
-            %>
-        
-            while (rs.next()){ 
-             String M_ID = String.valueOf(rs.getInt("M_ID"));
+     
+             String M_ID = resultSet.getString("M_ID");
             %>
             
             <tr> 
@@ -86,21 +85,28 @@
               <TD>  <%= resultSet.getString("M_Name") %></TD>
               <TD>  <%= resultSet.getString("M_Tittle") %></TD>
               <TD>  <%= resultSet.getString("M_Description")%></TD>
-               <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
-                  <br>
-                    <a href='Update.jsp'>Oppdatere Moduler</a>
+              
+                               <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
         // Lager variabel for senere kall i kode
-
+        
+      
             if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
+System.out.println(M_ID);
         %>
-              <TD> <form name="<%= M_ID%>" action="module.jsp" />
-                <input type="submit" value="Endre" /> </form>
+
+
+                    
+              <TD> <form name="<%= M_ID%>" action="Update.jsp" />
+                  <input type="submit" value="Endre" /> </form> </TD>
+                   <TD> <form name="<%= M_ID%>" action="module.jsp" />
+                  <input type="submit" value="Endre" /> </form> </TD>
                     
             </TR>
             
            <%
-               <% 
                }
+               }
+              
                %>
              </table>    
         
