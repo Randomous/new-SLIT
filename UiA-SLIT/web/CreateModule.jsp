@@ -18,11 +18,11 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <jsp:include page="Teacher.jsp" />
+        <jsp:include page="UserInfo.jsp" />
         <title>JSP Page</title>
     </head>
    <body>
-       <h1> Resultat</h1>
+       <h1 class="TextFormat"> Resultat</h1>
         <br>
         
        <ul>

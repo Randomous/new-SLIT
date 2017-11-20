@@ -20,15 +20,14 @@
     <head>        
          <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       
+        <jsp:include page="UserInfo.jsp" />
           <title>UiA-SLIT</title>
-        <jsp:include page="Teacher.jsp" />
     </head>
   
        
    <body>
          
-        <h1><center>Alle moduler</center></h1>
+        <h1 class="TextFormat"><center>Alle moduler</center></h1>
         
         <div id="Textaline">
         <br>
@@ -40,15 +39,25 @@
         Statement statement = null;
         ResultSet resultSet = null;
         
+           
         %>
         <center>
-            <TABLE BORDER="1">
-            <TR>
+            <TABLE class="ModuleTable">
+            <TR>    <br>
+                <br>
                 <TH><font size="4"</font>ID</TH>
                 <TH><font size="4"</font>Navn</TH>
                 <TH><font size="4"</font>Tittel</TH>
                 <TH><font size="4"</font>Forklaring</TH>
-            </TR>
+                               <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
+        // Lager variabel for senere kall i kode
+        
+        String sesRole = request.getSession().getAttribute("role").toString();
+                String checkRole = "Lærer";                
+                String checkRoleTA = "Hjelpelærer";
+            if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
+        %>
+                <TH>Endre Modul</TH>
         
         <% String M_ID = request.getParameter("M_ID");
             InitialContext initialContext = new InitialContext();
@@ -57,6 +66,7 @@
             DataSource ds = (DataSource) context.lookup("Randobase");
             Connection connection = ds.getConnection();
 
+                <% } %>
             if (connection == null)
             {
                 throw new SQLException("Error establishing connection!");
@@ -67,21 +77,31 @@
              while(resultSet.next()){
             %>
         
+            while (rs.next()){ 
+             String M_ID = String.valueOf(rs.getInt("M_ID"));
+            %>
             
             <tr> 
-              <TD>  <%= resultSet.getInt("M_ID") %></TD>
+              <TD>  <%= M_ID %></TD>
               <TD>  <%= resultSet.getString("M_Name") %></TD>
               <TD>  <%= resultSet.getString("M_Tittle") %></TD>
               <TD>  <%= resultSet.getString("M_Description")%></TD>
-              <TD>   
+               <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
                   <br>
                     <a href='Update.jsp'>Oppdatere Moduler</a>
+        // Lager variabel for senere kall i kode
+
+            if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
+        %>
+              <TD> <form name="<%= M_ID%>" action="module.jsp" />
+                <input type="submit" value="Endre" /> </form>
                     
             </TR>
             
            <%
-            }
-              %>
+               <% 
+               }
+               %>
              </table>    
         
         </center>

@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 
     <head>
-         <jsp:include page="Teacher.jsp" />
+         <jsp:include page="UserInfo.jsp" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -44,7 +44,7 @@
             ResultSet rs = statement.executeQuery("select * from Users");
              %>
             <center>
-            <TABLE BORDER="1">
+            <TABLE class="ModuleTable">
             <TR>
                 <TH><font size="4"</font>BrukerID</TH>
                 <TH><font size="4"</font>Fornavn</TH>

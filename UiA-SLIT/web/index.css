@@ -8,26 +8,46 @@ and open the template in the editor.
     Author     : root
 */
 
-#first {
-  width: 200px;
-  height: 200px;
-  display: block;
-  position: relative;
+.header {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    background-color: lightgray;
+    color: #a498a6;
+    vertical-align: middle;
+    line-height: 80px;
+    height: 75px;
+    align-content: center;
+    text-align: center;
+    margin-right: -8px;
+    margin-top: -8px;
+    margin-left: -8px;
+    box-shadow: 4px 4px 4px #888888;
+    position: relative;
 }
 
-#second {
-  content: "";
-  background: url(UIALogo.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: top;
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
+#banner {
+    position: relative;
+}
+
+#bannerimg {
+    position: absolute;
+    z-index: 10;
+    top: 5px;
+    margin-left: -3px;
+    width: 200px;
+    height: 60px;
+}
+
+#logout {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    float: right;
+}
+
+#rolecheck {
+    float:right;
 }
 
 #title {
@@ -35,78 +55,37 @@ and open the template in the editor.
     display: inline-block;
 }
 
- /* The sidenav */
-.sidenav {
-  height: 100%;
-  width: 230px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(45, 59, 69);
-  overflow-x: hidden;
-  padding-top: 20px;
-}
 
-/* Page content */
-.main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-} 
-
-/* The navigation menu links */
-.sidenav a {
-    font-family: "LatoWeb","Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 20px;
-    color: whitesmoke;
-    display: block;
-    transition: 0.3s
-}
-.sidenav p {
-    font-family: "LatoWeb","Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding: 8px 8px 8px 32px;
-    text-decoration: underline;
-    font-size: 25px;
-    color: whitesmoke;
-    display: block;
-    transition: 0.3s
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: white;
-    background-color: rgb(50, 59, 72);
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.vertical-menu {
+    width: 200px;
+    float: left;
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    margin-top: -20px;
+    margin-left: -8px;
+    
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-
+.vertical-menu a:hover {
+    background-color: #ccc;
 }
 
-.textboxLarge
-{
+.vertical-menu a.active {
+    background-color: maroon;
+    color: white;
+}
+
+.textboxLarge {
     height:200px;
     font-size:14pt;
 }
-
 
 #text {
    
@@ -119,4 +98,87 @@ and open the template in the editor.
 #Textaline {
     
     text-align: center;
+}
+
+.ModuleTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    position: relative;
+    margin-left:20%;
+}
+
+.ModuleTable td, ModuleTable th {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.ModuleTable tr:nth-child(even){background-color: #f2f2f2;}
+
+.ModuleTable tr:hover {background-color: #ddd;}
+
+.ModuleTable th {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    text-align: left;
+    background-color: MAROON;
+    color: white;
+}
+
+.TextFormat {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #000000;
+    text-align: center;
+}
+
+input[type=text], select {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit], button {
+    width: 20%;
+    background-color: MAROON;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #ccc;
+}
+
+.backgroundbox {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 60%;
+}
+
+#container {
+    position: absolute;
+    display: inline-block;
+    float: left;
+}
+
+.wrapper {
+    position: relative;
+    float: right;
+}
+
+.wrapperofwrapper {
+    width:80%;
+}
+
+#userSearch {
+    right: 100px;
+    position: relative;
 }
