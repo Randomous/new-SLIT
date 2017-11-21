@@ -93,7 +93,7 @@
                 <form action="LearningGoals.jsp" method="post"> 
                     Læringsmål Tittel <input type="text" name="LearningGoalsTittle"/>
                     Læringsmål Beskrivelse <input type="text" name="LearningGoalsDescription"/>
-                    Modul Nummer <input type="text" name="ModuleNumber"/>
+                    Modul Nummer <input type="text" name="M_ID"/>
                     <br>
                     <input type="Submit" name ="AddLearningGoals" value="opprett læringsmål" />
                 </form>
@@ -109,10 +109,9 @@
             
             
             <div id="deleteModule" style="display:none">
-               <form action="${pageContext.request.contextPath}/DeleteModule" method="post"> 
-                  student navn <input type="text" name="Firstname" />
-                  <br>
-                  Modul Nummer <input type="number" name="ModuleNumber" min="0" step="1"/>
+               <form action="DeleteModule.jsp" method="post"> 
+           
+                  Modul Nummer <input type="text" name="M_ID" min="0" step="1"/>
                   <br>
                   <input type="Submit" name="Delete"  value="slett Modul" />
 
