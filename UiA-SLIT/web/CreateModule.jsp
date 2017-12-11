@@ -25,7 +25,7 @@
        <h1 class="TextFormat"> Resultat</h1>
         <br>
         
-       <ul>
+       <ul class="TextFormat">
            <%
            InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");

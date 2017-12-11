@@ -57,7 +57,7 @@
                 String checkRoleTA = "Hjelpelærer";
             if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
         %>
-                                <TH><font size="4"</font>Modul</TH>
+                  <TH><font size="4"</font>Modul</TH>
                   <TH><font size="4"</font>Læringsmål</TH>
         
         <% } 
@@ -95,11 +95,11 @@ System.out.println(M_ID);
         %>
 
 
-                    
+                  
               <TD> <form name="<%= M_ID%>" action="Update.jsp" />
-                  <input type="submit" value="Endre" /> </form> </TD>
+                  <input class="moduleBtn" type="submit" value="Endre" /> </form> </TD>
                    <TD> <form name="<%= M_ID%>" action="module.jsp" />
-                  <input type="submit" value="Endre" /> </form> </TD>
+                  <input class="moduleBtn" type="submit" value="Endre" /> </form> </TD>
                     
             </TR>
             
