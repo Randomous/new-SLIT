@@ -29,7 +29,7 @@ pageEncoding="ISO-8859-1"%>
                 throw new SQLException("Error establishing connection!");
             }
     
-    
+
 String M_ID = request.getParameter("M_ID");
 String LG_ID = request.getParameter("M_ID");
 if(M_ID != null)
@@ -46,19 +46,16 @@ int i = ps.executeUpdate(sqls);
 int s = ps.executeUpdate(sql);
 if(i > 0)
 {
-out.print("Record Deleted Successfully");
+out.print("Modulen har blitt slettet");
  
 }
 else if (s > 0)
 {
-out.print("Record Deleted Successfully");
-out.println("There is a problem in Deleting Record."); 
-out.print("Check Manually in your Database");
+out.print(""); 
 } 
 else 
 {
-    out.println("There is a problem in Deleting Record."); 
-    out.print("Check Manually in your Database");
+    out.println("ops, Det oppsto et problem.");
 }
     
     }
