@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.login.controller;
+package UiASLIT.login.controller;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

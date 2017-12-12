@@ -1,11 +1,11 @@
 
-package com.login.dao;
+package UiASLIT.login.dao;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import com.login.bean.LoginBean;
-import com.login.util.DBConnection;
+import UiASLIT.login.bean.LoginBean;
+import UiASLIT.login.util.DBConnection;
 public class LoginDao {
 public String authenticateUser(LoginBean loginBean)
 {

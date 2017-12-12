@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 
-package com.login.controller;
+package UiASLIT.login.controller;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import com.login.bean.LoginBean;
-import com.login.dao.LoginDao;
+import UiASLIT.login.bean.LoginBean;
+import UiASLIT.login.dao.LoginDao;
 public class LoginServlet extends HttpServlet {
 private static final long serialVersionUID = 1L;
 
