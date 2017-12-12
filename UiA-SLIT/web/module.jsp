@@ -23,7 +23,7 @@
         <br>
     <center>
         <br>
-        <div id="editModule" style="display:none">
+        <div id="Textaline" style="display:none">
            <!--<form action="${pageContext.request.contextPath}/EditModule" method="post"> 
                 Modul Navn <input type="text" name="ModuleName" />
                 Modul Tittel <input type="text" name="ModuleTittle" />
@@ -61,10 +61,10 @@
   </form>
             <br>
             <button onclick="asd(2, 'editModule')">Avbryt Endring</button>
-        </div>
+       
 
         <button id="hideeditModule" onclick="asd(1, 'editModule')">Endre modul</button>
-
+</center>
         <br>
         <center>
             <br>
@@ -107,7 +107,7 @@
         </center>
             <br>
             
-            
+            <center>
             <div id="deleteModule" style="display:none">
                <form action="DeleteModule.jsp" method="post"> 
            
@@ -120,7 +120,7 @@
                  <button onclick="asd(2, 'deleteModule')">Avbryt sletting</button>
             </div>
                  <button id="hidedeleteModule" onclick="asd(1, 'deleteModule')">Slett Modulen</button> 
-
+              </center>
         <p>
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>

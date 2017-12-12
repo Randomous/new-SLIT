@@ -98,6 +98,7 @@ and open the template in the editor.
 #Textaline {
     
     text-align: center;
+
 }
 
 .ModuleTable {
@@ -181,4 +182,16 @@ input[type=submit]:hover {
 #userSearch {
     right: 100px;
     position: relative;
+}
+
+
+.moduleBtn[type=submit], buttons {
+    width: 20%;
+    background-color: MAROON;
+    color: white;
+    padding: 0 50px 5px 5px; 
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }

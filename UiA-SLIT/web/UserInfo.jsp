@@ -18,7 +18,7 @@
 <body>
     <div id="banner">
         <img id="bannerimg" src="UiALogo.png">
-            <h2 class="header">UiA-SLIT for Lærer</h2>
+            <h2 class="header">UiA-SLIT for <% out.println(request.getSession().getAttribute("role")); %></h2>
     </div>
             <div id="rolecheck">
                 <p>
