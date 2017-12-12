@@ -1,4 +1,14 @@
- 
+
+<%@page import="javax.naming.InitialContext"%>
+<%@ page import="java.sql.*" %>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="javax.naming.Context"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="javax.sql.DataSource"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
  
@@ -26,8 +36,8 @@
         <input type="submit" name="Search" value="Søk" /></center>
     <br>
 </form>-->
- 
-     
+
+
     
 <form name="userSearch" method="post" action="UserSearch.jsp">
             Student navn</font> <input type="text" name="name"/>
@@ -36,6 +46,14 @@
       </div>
     </div>
     </div>
+        <center>
+    Here should be the result:
+    <jsp:useBean id="queuebean" scope="session" class="WebInput.GetQueue"/>
+    <%= queuebean.count %>
+    <br>
+    
+</center>
+       
  
 </body>
  
