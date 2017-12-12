@@ -98,7 +98,7 @@ System.out.println(M_ID);
                     
               <TD> <form name="<%= M_ID%>" action="Update.jsp" />
                   <input type="submit" value="Endre" /> </form> </TD>
-                   <TD> <form name="<%= M_ID%>" action="module.jsp" />
+                   <TD> <form name="<%= M_ID%>" action="UpdateLearningGoals.jsp" />
                   <input type="submit" value="Endre" /> </form> </TD>
                     
             </TR>
