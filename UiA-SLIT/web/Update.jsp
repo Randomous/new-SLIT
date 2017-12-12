@@ -68,13 +68,13 @@ while(resultSet.next()){
 <input type="hidden" name="M_ID" value="<%=resultSet.getString("M_ID") %>">
 <input type="text" name="M_ID" value="<%=resultSet.getString("M_ID") %>">
 <br>
-First name:<br>
+Module Nummer:<br>
 <input type="text" name="M_Name" value="<%=resultSet.getString("M_Name") %>">
 <br>
-Last name:<br>
+Module Title :<br>
 <input type="text" name="M_Tittle" value="<%=resultSet.getString("M_Tittle") %>">
 <br>
-City name:<br>
+Modul Beskrivelse:<br>
 <input type="text" name="M_Description" value="<%=resultSet.getString("M_Description") %>">
 <br>
 <input type="submit" value="submit">
