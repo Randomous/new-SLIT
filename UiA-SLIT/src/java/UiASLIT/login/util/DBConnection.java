@@ -1,4 +1,4 @@
-package com.login.util;
+package UiASLIT.login.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 public class DBConnection {

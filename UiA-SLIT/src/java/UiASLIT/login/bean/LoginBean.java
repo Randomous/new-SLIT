@@ -1,4 +1,4 @@
-package com.login.bean;
+package UiASLIT.login.bean;
 public class LoginBean {
 private String userName;
 private String password;
