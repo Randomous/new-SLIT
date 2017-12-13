@@ -17,15 +17,15 @@ import java.util.List;
 
 public class SeleniumDataBaseTestingExample {
 
-    //Test to verify Employee ID '1' has employee name 'Jack'
+    //Test to verify User ID '1' has employee name 'Tiddle'
     @Test(priority = 1)
     public void testVerifySpecificRecord() {
-        String sqlQuery  = "select EmpName from employee WHERE EmpId="1"";
-        String expectedEmpName = "Jack";
+        String sqlQuery  = "select U_UserName from Users WHERE UserID=1";
+        String expectedU_UserName = "tiddle";
         //Getting employee name by Id
-        String actualEmpNameById = DataBaseConnector.executeSQLQuery("QA", sqlQuery);
-        System.out.println("Employee name retrieved from database :" + actualEmpNameById);
-        Assert.assertEquals(expectedEmpName, actualEmpNameById);
+        String actualU_UserNameById = DataBaseConnector.executeSQLQuery("QA", sqlQuery);
+        System.out.println("UserName retrieved from database :" + actualU_UserNameById);
+        Assert.assertEquals(expectedU_UserName, actualU_UserNameById);
     }
 
     //Test to verify Employee table has a record with employee name 'Jack'
@@ -33,8 +33,8 @@ public class SeleniumDataBaseTestingExample {
     public void tesVerifyListOfRecords() {
         boolean flag = false;
         List<String> listOfDBValues = new ArrayList<>();
-        String expEmployeeName = "Jack";
-        String sqlQuery = "select EmpName from employee";
+        String expEmployeeName = "tiddle";
+        String sqlQuery = "select U_UserName from Users";
         //Getting list of employee names from employee table
         listOfDBValues = DataBaseConnector.executeSQLQuery_List("QA", sqlQuery);
         for (String strName : listOfDBValues) {
