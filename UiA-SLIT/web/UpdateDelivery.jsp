@@ -43,11 +43,35 @@
         String userID =request.getParameter("userID");
         String asignedPoints = request.getParameter("pointList");
         String commentStudent = request.getParameter("commentStudent");
-        System.out.println(commentStudent);
+//        System.out.println(commentStudent);
         String commentInternal = request.getParameter("commentInternal");
-        System.out.println(commentInternal);
+//        System.out.println(commentInternal);
 
         //String str = Arrays.toString(asignedPoints);
+        Statement statement = null;
+        ResultSet resultSet = null;
+        statement=connection.createStatement();
+
+        String sqlSelect ="SELECT D_CommentStudent, D_CommentInternal FROM Deliverable WHERE D_ID =" + deliveryID;
+        StringBuilder studentComment = new StringBuilder();
+         StringBuilder internalComment = new StringBuilder();
+        resultSet = statement.executeQuery(sqlSelect);
+        while(resultSet.next()){
+         
+        studentComment.append(resultSet.getString("D_CommentStudent"));
+//        System.out.println(studentComment);
+        studentComment
+                .append(" ")
+                .append(commentStudent);
+//        System.out.println(studentComment);
+        internalComment.append(resultSet.getString("D_CommentInternal"));
+//        System.out.println(internalComment);
+        internalComment
+                .append(" ")
+                .append(commentInternal);
+//        System.out.println(internalComment);
+        
+        }
 
 
         if(deliveryID != null)
@@ -75,12 +99,12 @@
         ps.setInt(1,points);
         ps.setInt(2, approved);
         ps.setString(3, rater);
-        ps.setString(4, commentStudent);
-        ps.setString(5, commentInternal);
+        ps.setString(4, studentComment.toString());
+        ps.setString(5, internalComment.toString());
         int i = ps.executeUpdate();
         if(i > 0)
         {
-        out.print("Record Updated Successfully");
+        out.print("Sender forespørsel til databasen");
         %>
              <script>
 //       window.onload="setTimeout(function() {alert('hello');},1250);">;
@@ -92,7 +116,7 @@
         }
         else
         {
-        out.print("There is a problem in updating Record.");
+        out.print("Det skjedde noe feil!");
 %>
 <script>
 //       window.onload="setTimeout(function() {alert('hello');},1250);">;

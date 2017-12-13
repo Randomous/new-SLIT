@@ -50,19 +50,36 @@
                 <TH><font size="4"</font>ID</TH>
                 <TH><font size="4"</font>Module Navn</TH>
                 <TH><font size="4"</font>Status:</TH>
-                <TH><font size="4"</font>Godkjent av</TH>
-               
+                <TH><font size="4"</font>Poeng</TH>
+                <TH><font size="4"</font>Se på modul</TH>
+               <%
+            while (rs.next()){ 
+                String status = "";
+            if (rs.getInt("D_DeliverableStatus") == 1) {
+                status = "Godkjent";
+            } else {
+                status = "Ikke godkjent";
+            }
+            String points = "Ikke vurdert";
+            if (status.equals("Godkjent")) {
+                points = rs.getString("D_Points");
+            }
+            int deliveryID = rs.getInt("D_ID");
+               %>
+                
             </TR>
                
-            <%
-            while (rs.next()){ %>
+            
             
             <tr> 
-              <TD>  <%= rs.getInt("D_ID") %></TD>
+              <TD>  <%= deliveryID %></TD>
               <TD>  <%= rs.getString("D_ModuleName")%></TD>
-              <TD>  <%= rs.getString("D_DeliverableStatus")%></TD>
-              <TD>  <%= rs.getString("D_RatedBy")%></TD>
-              <TD>   
+              <TD>  <%= status%></TD>
+              <TD>  <%= points%></TD>
+           
+              <TD> <form name="chose" action="Update.jsp" />
+                   <input type="hidden" name="deliveryNumber" value=<%= deliveryID%> />
+                  <input type="submit" value="Velg" /> </form> </TD>
                  
                 </tr>   
                

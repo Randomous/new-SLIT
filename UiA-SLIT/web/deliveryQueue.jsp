@@ -66,7 +66,7 @@
             }
 
 //            String query = "SELECT Users.UserID, Users.U_FirstName, Users.U_SurName, Module.M_Description, Module.M_ID, Module.M_Tittle, Deliverable.D_DeliverableStatus, Deliverable.D_ID, Deliverable.D_UploadDate FROM StoredData LEFT JOIN Users ON StoredData.UserID=Users.UserID LEFT JOIN Module ON StoredData.M_ID=Module.M_ID LEFT JOIN Deliverable ON StoredData.D_ID = Deliverable.D_ID WHERE D_DeliverableStatus = 0 ORDER BY D_UploadDate;";
-            String query = "SELECT Users.UserID, Users.U_FirstName, Users.U_SurName, Module.M_Description, Module.M_ID, Module.M_Tittle, Deliverable.D_DeliverableStatus, Deliverable.D_ID, Deliverable.D_UploadDate, D_Text, D_YouTubeLink, D_GitHubLink FROM StoredData LEFT JOIN Users ON StoredData.UserID=Users.UserID LEFT JOIN Module ON StoredData.M_ID=Module.M_ID LEFT JOIN Deliverable ON StoredData.D_ID = Deliverable.D_ID WHERE D_DeliverableStatus = 0 ORDER BY D_UploadDate;";
+            String query = "SELECT Users.UserID, Users.U_FirstName, Users.U_SurName, Module.M_Description, Module.M_ID, Module.M_Tittle, Deliverable.D_DeliverableStatus, Deliverable.D_ID, Deliverable.D_UploadDate, D_Text, D_YouTubeLink, D_GitHubLink, D_CommentStudent, D_CommentInternal FROM StoredData LEFT JOIN Users ON StoredData.UserID=Users.UserID LEFT JOIN Module ON StoredData.M_ID=Module.M_ID LEFT JOIN Deliverable ON StoredData.D_ID = Deliverable.D_ID WHERE D_DeliverableStatus = 0 ORDER BY D_UploadDate;";
 
             //String query = "SELECT * FROM Deliverable ORDER BY D_UploadDate";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -89,6 +89,8 @@
                 String delText = rs.getString("D_Text");
                 String delYTLink = rs.getString("D_YouTubeLink");
                 String delGitLink = rs.getString("D_GitHubLink");
+                String commentStudent = rs.getString("D_CommentStudent");
+                String commentInternal = rs.getString("D_CommentInternal");
 
                 String divID = String.valueOf(id);
         %>
@@ -136,7 +138,7 @@
                     Tekst:  <%= delText%>
                     <br>
                     <%
-                        if (delGitLink != "NULL") {
+                        if (delGitLink != null) {
                     %>
                     GitHub repo link:
                     <a id ="repo1" target="_blank"> Studentens repo</a>
@@ -154,7 +156,7 @@
                     <%}
                     %>
                     <%
-                        if (delYTLink != "NULL") {
+                        if (delYTLink != null) {
                     %>
                     Studenten har lastet opp følgende YouTube video
                     <br>
@@ -173,6 +175,16 @@
                         }
                     %>
                     <br>
+                    <% if (commentStudent != null) {
+                    %>
+                    
+                    Tidligere kommentar på leveringen <br>
+                    <textarea rows="6" cols="75" placeholder="<%= commentStudent%>" readonly="true"></textarea>
+                    <br>
+                    
+                    <%
+                    }
+                    %>
                     Kommentar til student <br>
 <!--                    <input class="textboxLarge" type="text" name="Number" />-->
                                   
@@ -181,6 +193,16 @@
 
 
                     <br>
+                    <% if (commentStudent != null && checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) {
+                    %>
+                    
+                    Tidligere intern kommentar på leveringen <br>
+                    <textarea rows="6" cols="75" placeholder="<%= commentInternal%>" readonly="true"></textarea>
+                    <br>
+                    
+                    <%
+                    }
+                    %>
                     Intern kommentar (Ikke synlig for student) <br> 
                     <!--<input class="textboxLarge" type="text" name="Goal" />-->
                     <textarea name="commentInternal" rows="6" cols="75"></textarea>
@@ -206,8 +228,8 @@
                         </select>
                      </p>
                     <br>
-                    <input type="radio" name="delivery" value="Approved" checked> Godkjent<br>
-                    <input type="radio" name="delivery" value="NotApproved"> Ikke godkjent<br>
+<!--                    <input type="radio" name="delivery" value="Approved" checked> Godkjent<br>
+                    <input type="radio" name="delivery" value="NotApproved"> Ikke godkjent<br>-->
                     
                     <input type="Submit" name="AddStudent" value="Bekreft Endering" />
 
