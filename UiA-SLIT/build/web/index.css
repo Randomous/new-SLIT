@@ -182,3 +182,24 @@ input[type=submit]:hover {
     right: 100px;
     position: relative;
 }
+
+#frontQueue, tr:nth-child(even) {
+    background-color: #f2f2f2;
+    text-align: center;
+    margin-left: 200%;
+} 
+
+#frontqueueTH { 
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: #a498a6;
+    text-align: center;
+    background-color: lightgray;
+    padding: 7px;
+    margin-left: 200%;
+}
+
+
+
+
