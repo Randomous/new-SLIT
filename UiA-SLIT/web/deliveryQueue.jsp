@@ -16,6 +16,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <jsp:include page="UserInfo.jsp" />
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
     <title>Delivery Queue</title>
     <link rel="stylesheet" type="text/css" href="index.css">
 
@@ -174,18 +175,16 @@
                     <br>
                     Kommentar til student <br>
 <!--                    <input class="textboxLarge" type="text" name="Number" />-->
+                                  
+                         <%--<jsp:include page="textEditor.jsp"/>--%>                         
                     <textarea name="commentStudent" rows="6" cols="75"></textarea>
-<!--                    <textarea name='txtarea0' class="textboxLarge" placeholder="testing func">
-                      <br>
-                          
--->                     <br>
-                    </textarea>                 
-                         <jsp:include page="textEditor.jsp"/>                         
-                
+
+
                     <br>
                     Intern kommentar (Ikke synlig for student) <br> 
                     <!--<input class="textboxLarge" type="text" name="Goal" />-->
-                    <textarea name="commentTeacher" rows="6" cols="75"></textarea>
+                    <textarea name="commentInternal" rows="6" cols="75"></textarea>
+    
                     <br>
 <!--                    Godkjenner navn <input type="text" name="Name" placeholder="Blir USER fra ROLE"/>
                     <br>-->

@@ -20,11 +20,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
 
-  
+        <script> CKEDITOR.instances[content].getData() </script>
 <center>
 <%
             InitialContext initialContext = new InitialContext();
@@ -41,7 +42,11 @@
         String deliveryID =request.getParameter("deliveryID");
         String userID =request.getParameter("userID");
         String asignedPoints = request.getParameter("pointList");
-        System.out.println(asignedPoints);
+        String commentStudent = request.getParameter("commentStudent");
+        System.out.println(commentStudent);
+        String commentInternal = request.getParameter("commentInternal");
+        System.out.println(commentInternal);
+
         //String str = Arrays.toString(asignedPoints);
 
 
@@ -65,11 +70,13 @@
 
         //String sql="UPDATE Deliverable SET D_Points=" + points + ",D_DeliverableStatus=" + approved +",D_RatedBy=" + rater + "WHERE D_ID=" + delivery;
 
-        String sql="UPDATE Deliverable SET D_Points=?,D_DeliverableStatus=?,D_RatedBy=?WHERE D_ID=" + delivery;
+        String sql="UPDATE Deliverable SET D_Points=?,D_DeliverableStatus=?,D_RatedBy=?,D_CommentStudent=?,D_CommentInternal=? WHERE D_ID=" + delivery;
         ps = connection.prepareStatement(sql);
         ps.setInt(1,points);
         ps.setInt(2, approved);
         ps.setString(3, rater);
+        ps.setString(4, commentStudent);
+        ps.setString(5, commentInternal);
         int i = ps.executeUpdate();
         if(i > 0)
         {
