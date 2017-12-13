@@ -16,6 +16,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <jsp:include page="UserInfo.jsp" />
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
     <title>Delivery Queue</title>
     <link rel="stylesheet" type="text/css" href="index.css">
 
@@ -99,18 +100,23 @@
                 %>
             <div id=<%= divID%> , 
                  style="display:none">
-                <form action="${pageContext.request.contextPath}/EditModule" method="post">
+                <form action="${pageContext.request.contextPath}/UpdateDelivery.jsp" method="post">
                     <p>
                         Her er informasjon om modulen: <%= moduleName%> 
                         <br>
                         Modul nummer <%= moduleID%>
+                          <input type="hidden" name="moduleID" value=<%= moduleID%> /> 
                         <br>
                         Lastet opp <%= uplDate%>
                         LeveringsID: <%= id%>
+                         <input type="hidden" name="deliveryID" value=<%= id%> /> 
+
                         <br>
                         Levert av: <%= firstname%>&nbsp; <%= surneame%>
                         <br>
                         Med studentID: <%= userID%>
+                        <input type="hidden" name="userID" value=<%= userID%> /> 
+
                         <br>
                         Modul Tittel: <%= moduleTitle%>
                         <br>
@@ -167,26 +173,27 @@
                         }
                     %>
                     <br>
-                    Kommentar til student <br> <input class="textboxLarge" type="text" name="Number" />
-<!--                    <textarea name='txtarea0' class="textboxLarge" placeholder="testing func">
-                      <br>
-                          
-                     <br>
-                    </textarea>-->
+                    Kommentar til student <br>
+<!--                    <input class="textboxLarge" type="text" name="Number" />-->
+                                  
+                         <%--<jsp:include page="textEditor.jsp"/>--%>                         
+                    <textarea name="commentStudent" rows="6" cols="75"></textarea>
+
+
                     <br>
-                 
-                         <jsp:include page="textEditor.jsp"/>                         
-                
+                    Intern kommentar (Ikke synlig for student) <br> 
+                    <!--<input class="textboxLarge" type="text" name="Goal" />-->
+                    <textarea name="commentInternal" rows="6" cols="75"></textarea>
+    
                     <br>
-                    Intern kommentar (Ikke synlig for student) <br> <input class="textboxLarge" type="text" name="Goal" />
-                    <br>
-                    Godkjenner navn <input type="text" name="Name" placeholder="Blir USER fra ROLE"/>
-                    <br>
+<!--                    Godkjenner navn <input type="text" name="Name" placeholder="Blir USER fra ROLE"/>
+                    <br>-->
                     <!--Antall poeng <input type="number" name="Points" min="0" step="1"/>-->
                      <p>
                         <label>Poeng</label>
-                        <select id = "pointList">
-                          <option value = "1">1 Nesten stryk</option>
+                        <select id = "pointList" name="pointList">
+                          <option value = "0"> Ikke godkjent</option>
+                          <option value = "1">1</option>
                           <option value = "2">2</option>
                           <option value = "3">3</option>
                           <option value = "4">4</option>
