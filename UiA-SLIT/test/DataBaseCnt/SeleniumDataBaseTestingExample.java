@@ -9,6 +9,7 @@ package DataBaseCnt;
  *
  * @author danie
  */
+import DataBaseCnt.DataBaseConnector;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class SeleniumDataBaseTestingExample {
 
     //Test to verify Employee table has a record with employee name 'Jack'
     @Test(priority = 2)
-    public void tesVerifyListOfRecords() {
+    public void testVerifyListOfRecords() {
         boolean flag = false;
         List<String> listOfDBValues = new ArrayList<>();
         String expEmployeeName = "tiddle";
