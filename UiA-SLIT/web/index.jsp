@@ -41,7 +41,7 @@
     
 
         <table id="frontQueue">
-            <tr>
+            <tr id="frontChild">
                 <th id="frontqueueTH">Innleveringer i kø:</th>
             </tr>
             <c:forEach var="Deliverable" items="${list_Deliverables.rows}">
