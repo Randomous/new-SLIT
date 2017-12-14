@@ -10,26 +10,26 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
+
     <head>
          <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>UiA-SLIT</title>
         <jsp:include page="UserInfo.jsp" />
     </head>
-    <Body>
+
+    <body>
+        
 
 
-<ul>
+
     <%   
-     
-      
-       
         Connection con= null;
         Statement statement = null;
-        ResultSet resultSet = null;
-        
+        ResultSet resultSet = null;  
         %>
-    
+        
+        
 <%
     String M_ID = request.getParameter("name"); 
     System.out.println(M_ID);
@@ -42,9 +42,10 @@
             if (connection == null)
             {
                 throw new SQLException("Error establishing connection!");
+                
             }
-           
             
+                   
 statement=connection.createStatement();
 
 String sql ="SELECT * FROM Module";
@@ -69,13 +70,18 @@ Modul Beskrivelse:<br>
 <input type="text" name="M_Description" value="<%=resultSet.getString("M_Description") %>">
 <br>
 <input type="submit" value="submit">
+
 <br>
 </center>
+
 </form>
+</center>
+
+
 <%
 }
 %>
-</ul>
+
  
 
 </body>

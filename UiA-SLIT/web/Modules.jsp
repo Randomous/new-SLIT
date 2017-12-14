@@ -22,6 +22,7 @@
   
        
    <body>
+       
          
         <h1 class="TextFormat"><center>Alle moduler</center></h1>
         
@@ -34,7 +35,7 @@
         Connection con= null;
         Statement statement = null;
         ResultSet resultSet = null;
-        
+            
            
         %>
         <center>
@@ -45,18 +46,28 @@
                 <TH><font size="4"</font>Navn</TH>
                 <TH><font size="4"</font>Tittel</TH>
                 <TH><font size="4"</font>Forklaring</TH>
+                
+                
                                       <% //Sjekker om rollen er lærer, hvis den er kjøres koden for vurderingsknapper   
         // Lager variabel for senere kall i kode
         
         String sesRole = request.getSession().getAttribute("role").toString();
                 String checkRole = "Lærer";                
                 String checkRoleTA = "Hjelpelærer";
+                String checkRoleST = "Student"; 
             if( checkRole.equals(sesRole) || checkRoleTA.equals(sesRole)) { 
         %>
                   <TH><font size="4"</font>Modul</TH>
                   <TH><font size="4"</font>Læringsmål</TH>
+              
         
         <% } 
+
+            if(checkRoleST.equals(sesRole)) { 
+              %>
+          
+                  <TH><font size="4"</font>Innlevering</TH>
+           <% } 
             InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
             //The JDBC Data source that we just created
@@ -74,8 +85,16 @@
              while(resultSet.next()){
      
              String M_ID = resultSet.getString("M_ID");
+             String moduleName = resultSet.getString("M_Name");
             %>
             
+         <%
+         String ModuleID = request.getParameter("M_ID");        
+         %>
+         
+       
+    
+     
             <tr> 
               <TD>  <%= M_ID %></TD>
               <TD>  <%= resultSet.getString("M_Name") %></TD>
@@ -98,15 +117,26 @@ System.out.println(M_ID);
                   <input type="submit" value="Endre" /> </form> </TD>
 
                     
+                  <% 
+                                     
+             }
+            if(checkRoleST.equals(sesRole)) { 
+           System.out.println(M_ID);
+              %>
+              
+             
+               <TD> <form name="<%= M_ID%>" action="DeliveryModule.jsp" />
+                  <input  type="hidden" name="modulenumber" value="<%= M_ID%>">
+                  <input  type="hidden" name="moduleName" value="<%= moduleName %>">
+                  <input class="moduleBtn" type="submit" value="Innlevering" /> </form> </TD>
             </TR>
+           
             
            <%
                }
-               }
-              
+               }   
                %>
              </table>    
-        
         </center>
       
     </body>
