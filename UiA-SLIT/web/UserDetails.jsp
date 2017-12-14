@@ -84,8 +84,7 @@
             
                <% } %>             
                </table>
-        </div>
-               <div class="userDetailscontainer">
+       
            <%
                Connection connection2 = ds.getConnection(); 
             
@@ -107,6 +106,7 @@
                 <TH><font size="4"</font>Modul</TH>
                 <TH><font size="4"</font>Status</TH>
                 <TH><font size="4"</font>Rettet av</TH>
+                <TH><font size="4"</font>Gå til</TH>
               </TR>     
                <% while(rsD_ID.next()){  
                
@@ -118,7 +118,7 @@
               <TD> <%= rsD_ID.getString("D_RatedBy")%></TD>  
               <TD><form action="ShowDelivery.jsp" /> 
                   <input type ="hidden" name="UserID" value="<%= rsD_ID.getInt("D_ID")%>"/>
-              <input type="submit" value="Gå til" /> </form></TD>
+              <input type="submit" value="Gå til" /></form></TD>
                 </tr> 
              <% } %>
             </table>
