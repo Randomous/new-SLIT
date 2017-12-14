@@ -69,8 +69,6 @@ LearningGoal Description:<br>
 <br>
 <input type="submit" value="submit">
 <br>
-<TD> <form method="post" action="UpdateLearningGoals.jsp" />
- <input type="submit" value="Slett" /> </form> </TD>
 </center>
 </form>
 <%

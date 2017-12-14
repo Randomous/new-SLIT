@@ -1,6 +1,5 @@
 <%@page import="javax.naming.InitialContext"%>
-pageEncoding="ISO-8859-1"%>
-<%@ page import="java.sql.*" %>
+<%@page import="java.sql.*" %>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="javax.naming.Context"%>
@@ -9,16 +8,15 @@ pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="javax.sql.DataSource"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1"%>
-<%@ page import="java.sql.*" %>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
+<%@page import="java.sql.*" %>
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Delete Data</title>
 </head>
 <body>
-    
+<center>
 
     
     
@@ -75,4 +73,6 @@ out.println(sqe);
 <p>
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
+
+</center>
 </body>
