@@ -12,12 +12,17 @@ pageEncoding="ISO-8859-1"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Delete Data</title>
 </head>
+<body>
+    
+
+    
+    
+    <ul class="TextFormat">
 <%
     InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
@@ -31,7 +36,7 @@ pageEncoding="ISO-8859-1"%>
     
 
 String M_ID = request.getParameter("M_ID");
-String LG_ID = request.getParameter("M_ID");
+
 if(M_ID != null)
 {
 PreparedStatement ps = null;
@@ -51,7 +56,7 @@ out.print("Modulen har blitt slettet");
 }
 else if (s > 0)
 {
-out.print(""); 
+out.print("Modulen har blitt slettet"); 
 } 
 else 
 {
@@ -66,9 +71,8 @@ out.println(sqe);
 }
 }
 %>
-
+</ul>
 <p>
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
 </body>
-</html>?
