@@ -42,11 +42,11 @@ ps.setString(4, M_Description);
 int i = ps.executeUpdate();
 if(i > 0)
 {
-out.print("Record Updated Successfully");
+out.print("Modulen ble Oppdatert");
 }
 else
 {
-out.print("There is a problem in updating Record.");
+out.print("Det oppsto et problem, prøv igjen senere");
 }
 }
 %>
