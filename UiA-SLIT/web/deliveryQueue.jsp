@@ -243,13 +243,14 @@
             %>
 
             <button id=<%=hideID%> , onclick="asd(1, '<%= divID%>')"> Gå til evaluering </button>
-        </li>
-        <%
+             <%
             } else {
             %>
        
             <p> Vennligst vent i kø på din tur. Du rykker stadig bakover i køen </p>
             <br>
+        </li>
+       
             
             <%
 }
