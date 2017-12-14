@@ -88,6 +88,8 @@
              while(resultSet.next()){
      
              String M_ID = resultSet.getString("M_ID");
+             session.setAttribute("M_ID", M_ID);
+                
             %>
             
             
@@ -119,16 +121,19 @@ System.out.println(M_ID);
             if(checkRoleST.equals(sesRole)) { 
            System.out.println(M_ID);
               %>
+              
+             <input type=hidden id="modulenumber" name="<%= M_ID%>">
                <TD> <form name="<%= M_ID%>" action="DeliveryModule.jsp" />
                   <input class="moduleBtn" type="submit" value="Innlevering" /> </form> </TD>
             </TR>
+           
             
            <%
                }
                }   
                %>
              </table>    
-        
+         System.out.println(M_ID);
         </center>
       
     </body>

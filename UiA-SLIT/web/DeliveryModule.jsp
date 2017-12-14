@@ -13,6 +13,8 @@
     </head>
     <body>
         
+       
+     
         <center>
            
             <div>
@@ -25,12 +27,13 @@
                     <br>
                     Upload date <input type="text" name="D_UploadDate"/> 
                     <br>
+                    Comments <input type="text" name="D_CommentStudent"/> 
+                    <br>
+                    
                     <input type="Submit" name="AddDelivery" value="Lever Modul" />
                 </form>
                 <br>
-                <button onclick="asd(2, 'deliverModule')">Avbryt Levering</button>
             </div>
-            <button id="hidedeliverModule" onclick="asd(1, 'deliverModule')">lever Modul</button>
             <br>
         </center>
     <br>

@@ -1,8 +1,4 @@
-<%-- 
-    Document   : index
-    Created on : Oct 25, 2017, 1:45:21 PM
-    Author     : root
---%>
+
 <%@page import="java.sql.Statement"%>
 <%@page import="javax.naming.Context"%>
 <%@page import="java.sql.ResultSet"%>
@@ -14,25 +10,22 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
+
     <head>
          <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>UiA-SLIT</title>
         <jsp:include page="UserInfo.jsp" />
     </head>
-
-
-<ul>
+    <body>
+        
     <%   
-     
-      
-       
         Connection con= null;
         Statement statement = null;
-        ResultSet resultSet = null;
-        
+        ResultSet resultSet = null;  
         %>
-    
+        
+        
 <%
     String M_ID = request.getParameter("name"); 
     System.out.println(M_ID);
@@ -45,23 +38,18 @@
             if (connection == null)
             {
                 throw new SQLException("Error establishing connection!");
+                
             }
-           
             
+                   
 statement=connection.createStatement();
 
 String sql ="SELECT * FROM Module";
-        /* WHERE M_ID =" + M_ID;
-https://stackoverflow.com/questions/3797285/how-can-i-pass-a-parameter-via-submit-button
-Can be applied to get specific module
-*/
+        
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
 
-<!DOCTYPE html>
-<html>
-<body>
 <center>
 <h1>Update data from database in jsp</h1>
 <form method="post" action="UpdateModule.jsp">
@@ -78,13 +66,15 @@ Modul Beskrivelse:<br>
 <input type="text" name="M_Description" value="<%=resultSet.getString("M_Description") %>">
 <br>
 <input type="submit" value="submit">
-</center>
 </form>
+</center>
+
+
 <%
 }
 %>
-</ul>
+
  
 
 </body>
-</html>
+
