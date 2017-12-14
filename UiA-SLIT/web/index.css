@@ -11,7 +11,7 @@ and open the template in the editor.
 .header {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     background-color: lightgray;
-    color: #a498a6;
+    color: #333333;
     vertical-align: middle;
     line-height: 80px;
     height: 75px;
@@ -55,7 +55,7 @@ and open the template in the editor.
 }
 
 #title {
-    position: relative;
+    position: fixed;
     display: inline-block;
 }
 
@@ -184,8 +184,10 @@ input[type=submit]:hover {
 }
 
 #userSearch {
-    right: 100px;
     position: relative;
+    align-content: center;
+    right: 90%;
+    top: 100%;
 }
 
 
@@ -206,18 +208,18 @@ ul{
 #frontQueue, #frontChild:nth-child(even) {
     background-color: #f2f2f2;
     text-align: center;
-    margin-left: 200%;
+    margin-left: 500px;
 }
 
 #frontqueueTH {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: normal;
-    color: #a498a6;
+    color: #333333;
     text-align: center;
     background-color: lightgray;
     padding: 7px;
-    margin-left: 200%;
+    margin-left: 500px;
 }
 
 .UserDetails {
