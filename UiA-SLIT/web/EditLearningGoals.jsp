@@ -41,11 +41,11 @@ ps.setString(3, LG_Description);
 int i = ps.executeUpdate();
 if(i > 0)
 {
-out.print("Record Updated Successfully");
+out.print("Læringsmål har blitt oppdatert");
 }
 else
 {
-out.print("There is a problem in updating Record.");
+out.print("Det oppsto et problem, prøv igjen senere");
 }
 }
 %>
