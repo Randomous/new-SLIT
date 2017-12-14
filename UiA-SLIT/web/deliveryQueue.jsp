@@ -179,7 +179,7 @@
                     %>
                     
                     Tidligere kommentar på leveringen <br>
-                    <textarea rows="6" cols="75" placeholder="<%= commentStudent%>" readonly="true"></textarea>
+                    <textarea rows="6" cols="75" placeholder="<%= commentStudent%>" readonly=""></textarea>
                     <br>
                     
                     <%
@@ -197,7 +197,7 @@
                     %>
                     
                     Tidligere intern kommentar på leveringen <br>
-                    <textarea rows="6" cols="75" placeholder="<%= commentInternal%>" readonly="true"></textarea>
+                    <textarea rows="6" cols="75" placeholder="<%= commentInternal%>" readonly=""></textarea>
                     <br>
                     
                     <%

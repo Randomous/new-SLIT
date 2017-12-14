@@ -128,7 +128,7 @@ System.out.println(M_ID);
                <TD> <form name="<%= M_ID%>" action="DeliveryModule.jsp" />
                   <input  type="hidden" name="modulenumber" value="<%= M_ID%>">
                   <input  type="hidden" name="moduleName" value="<%= moduleName %>">
-                  <input class="moduleBtn" type="submit" value="Innlevering" /> </form> </TD>
+                  <input class="moduleBtn" type="submit" value="Lever" /> </form> </TD>
             </TR>
            
             

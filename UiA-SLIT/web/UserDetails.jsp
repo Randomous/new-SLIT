@@ -117,7 +117,7 @@
               <TD> <%= rsD_ID.getString("D_DeliverableStatus")%></TD>
               <TD> <%= rsD_ID.getString("D_RatedBy")%></TD>  
               <TD><form action="ShowDelivery.jsp" /> 
-                  <input type ="hidden" name="UserID" value="<%= rsD_ID.getInt("D_ID")%>"/>
+                  <input type ="hidden" name="deliveryNumber" value="<%= rsD_ID.getInt("D_ID")%>"/>
               <input type="submit" value="Gå til" /> </form></TD>
                 </tr> 
              <% } %>

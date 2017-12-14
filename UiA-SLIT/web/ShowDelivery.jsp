@@ -17,10 +17,11 @@
         <title>Detaljer for modul</title>
     </head>
     <body>
+        <div id="Textaline">
         <h1>Informasjon om modulen</h1>
         <br>
         
-    <div id="Textaline">
+    
             
         <%
             InitialContext initialContext = new InitialContext();
