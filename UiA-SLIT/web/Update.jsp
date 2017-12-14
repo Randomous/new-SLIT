@@ -52,9 +52,7 @@ statement=connection.createStatement();
 
 String sql ="SELECT * FROM Module";
        
-https://stackoverflow.com/questions/3797285/how-can-i-pass-a-parameter-via-submit-button
-Can be applied to get specific module
-*/
+
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
