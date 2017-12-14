@@ -1,8 +1,4 @@
-<%-- 
-    Document   : CreateModule
-    Created on : Nov 9, 2017, 11:13:15 AM
-    Author     : Daniel
---%>
+
 
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>

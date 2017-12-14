@@ -1,8 +1,4 @@
-<%-- 
-    Document   : module
-    Created on : Oct 2, 2017, 5:18:31 PM
-    Author     : root
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
