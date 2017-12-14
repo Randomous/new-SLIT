@@ -19,7 +19,7 @@
    <body>
        <h1 class="TextFormat"> Resultat</h1>
         <br>
-        
+   <center>
        <ul>
            <%
             try {
@@ -61,7 +61,7 @@
         
         
           </ul>
-   
+   </center>
              <p>
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
