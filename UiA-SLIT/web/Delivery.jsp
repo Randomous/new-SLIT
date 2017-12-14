@@ -22,17 +22,7 @@
       
        <h1 class="TextFormat"> Resultat</h1>
         <br>
-        
-      <
-            <h2 class="header">UiA-SLIT for <% out.println(request.getSession().getAttribute("role")); %></h2>
-    
-            <div id="rolecheck">
-                <p>
 
-<br>
-<a id="logout" href="<%=request.getContextPath()%>/LogoutServlet">Logout</a>
-                </p>
-            </div>
            <%
            InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
@@ -47,8 +37,8 @@
                 Statement st = connection.createStatement();
                 String moduleID = request.getParameter("modulenumber"); 
                 
-         String UserName = request.getSession().getAttribute("userName").toString(); 
-         String role = request.getSession().getAttribute("role").toString();
+//         String UserName = request.getSession().getAttribute("userName").toString(); 
+//         String role = request.getSession().getAttribute("role").toString();
          
          java.util.Date dt = new java.util.Date();
 
@@ -76,7 +66,7 @@
 
                   
          String sql2 ="SELECT LG_ID FROM LearningGoals WHERE M_ID="+moduleID;
-         PreparedStatement pst = connection.prepareStatement(sql2); 
+//         PreparedStatement pst = connection.prepareStatement(sql2); 
          
         int learningGoalsID = 0; 
         Statement statement = connection.createStatement();    
@@ -89,7 +79,7 @@
         
         
          String getD_ID = "SELECT * FROM Deliverable ORDER BY D_ID DESC LIMIT 1";   
-        PreparedStatement ptt = connection.prepareStatement(getD_ID); 
+//        PreparedStatement ptt = connection.prepareStatement(getD_ID); 
          
         int deliveryID = 0; 
         Statement statement2 = connection.createStatement();    
@@ -109,28 +99,27 @@
          System.out.println(deliveryID);
          System.out.println(learningGoalsID);
          
-         int module = Integer.parseInt(moduleID);
-         int User = Integer.parseInt(UserID);        
+//         int module = Integer.parseInt(moduleID);
+//         int User = Integer.parseInt(UserID);        
         
         
          
         
-         String sql ="INSERT INTO StoredData (UserID=?, M_ID=?, D_ID=?, LG_ID=?)"; 
         Statement statement3 = connection.createStatement();    
          
          statement3.executeUpdate("INSERT INTO StoredData (UserID, M_ID, D_ID, LG_ID )values('"+UserID+"','"+moduleID+"','"+deliveryID+"' , '"+learningGoalsID+"')");
          
 //         ps.executeUpdate();
          
-         out.println("Innleveringen har blitt lagret i systemet");
+         
          
          
          
         %>
       
-       
+     <center>Innleveringen har blitt lagret i systemet</center>
    
              <p>
-        <center><form name="Go back" action="index.jsp">
-                <input type="submit" value="Gå tilbake"/> </form></center>
+        <center><form name="Go back" action="deliveryQueue.jsp">
+                <input type="submit" value="Gå til leveringskø"/> </form></center>
    </body>
