@@ -18,8 +18,8 @@
         <jsp:include page="UserInfo.jsp" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" type="text/css" href="index.css">
     </head>
+    
    <body>
         <h1><center class="TextFormat">Alle moduler</center></h1>
 
@@ -77,7 +77,7 @@
               <TD>  <%= status%></TD>
               <TD>  <%= points%></TD>
            
-              <TD> <form name="chose" action="Update.jsp" />
+              <TD> <form name="chose" action="ShowDelivery.jsp" />
                    <input type="hidden" name="deliveryNumber" value=<%= deliveryID%> />
                   <input type="submit" value="Velg" /> </form> </TD>
                  
