@@ -50,6 +50,7 @@
                 <TH><font size="4"</font>Fornavn</TH>
                 <TH><font size="4"</font>Etternavn</TH>
                 <TH><font size="4"</font>Epost</TH>
+                <TH><font size="4"</font>Gå til</TH>
               
             </TR>
             
