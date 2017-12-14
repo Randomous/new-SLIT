@@ -43,11 +43,15 @@ and open the template in the editor.
     display: block;
     padding: 12px;
     text-decoration: none;
-    float: right;
+    float: left;
+    align-content: center;
 }
 
 #rolecheck {
-    float:right;
+    float:left;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 #title {
