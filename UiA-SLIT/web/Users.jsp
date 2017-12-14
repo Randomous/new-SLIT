@@ -50,7 +50,6 @@
                 <TH><font size="4"</font>Fornavn</TH>
                 <TH><font size="4"</font>Etternavn</TH>
                 <TH><font size="4"</font>Epost</TH>
-                <TH><font size="4"</font>Moduler</TH>
               
             </TR>
             
@@ -62,8 +61,9 @@
               <TD>  <%= rs.getString("U_FirstName") %></TD>
               <TD>  <%= rs.getString("U_SurName") %></TD>
               <TD>  <%= rs.getString("U_Email")%></TD> 
-              <TD>   
-                  <a href='Modules.jsp'> Gå til Modul</a>
+                  <TD> <form name="<%= rs.getInt("UserID") %>" action="UserDetails.jsp" />
+                      <input type ="hidden" name="UserID" value="<%= rs.getInt("UserID") %>"/>
+                  <input type="submit" value="Gå til" /> </form> </TD>
                 </tr>   
                
                             
