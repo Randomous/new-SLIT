@@ -1,8 +1,12 @@
 
-package Delivery.Bean;
+package WebInput;
 public class DeliveryBean {
-private int M_ID;
+public int M_ID;
     
+
+    public DeliveryBean() {  
+        
+}
 
     public DeliveryBean(int M_ID) {
         this.M_ID = M_ID;

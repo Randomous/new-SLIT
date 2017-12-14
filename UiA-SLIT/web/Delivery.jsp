@@ -16,9 +16,10 @@
         <jsp:include page="UserInfo.jsp" />
         <title>JSP Page</title>
     </head>
-     <jsp:useBean id="ModuleID" class="Delivery.Bean.DeliveryBean" />
-       Message is: <jsp:getProperty name="ModuleID" property="M_ID" /> 
-       <body>
+     <body>
+        
+    
+      
        <h1 class="TextFormat"> Resultat</h1>
         <br>
         
@@ -72,23 +73,21 @@
            
         %>
         
-        
+        <jsp:useBean id="Modulere" class="WebInput.DeliveryBean"  />
         
         <%  
         
-        //ModuleID M_ID <jsp:getProperty name="ModuleID" property="M_ID"/>
+         int M_ID = Modulere.getM_ID();
          String UserID = request.getParameter("UserID");         
-         String ModuleID = request.getParameter("M_ID");
          String DeliverableID = request.getParameter("D_ID");
          String LearningGoalsID = request.getParameter("LG_ID");
          
          System.out.println(UserID);
-         System.out.println(ModuleID);
+         System.out.println(M_ID);
          System.out.println(DeliverableID);
          System.out.println(LearningGoalsID);
          
-         int User = Integer.parseInt(UserID);
-         int Module = Integer.parseInt(ModuleID);
+         int User = Integer.parseInt(UserID);        
          int Deliverable = Integer.parseInt(DeliverableID);
          int LearningGoals = Integer.parseInt(LearningGoalsID);
          
@@ -96,7 +95,7 @@
          String sql ="INSERT INTO StoredData (UserID=?, M_ID=?, D_ID=?, LG_ID=?"; 
          PreparedStatement ps = connection.prepareStatement(sql);    
          ps.setInt(1, User);
-         ps.setInt(2, Module);
+         ps.setInt(2, M_ID);
          ps.setInt(3, Deliverable);
          ps.setInt(4, LearningGoals);
          

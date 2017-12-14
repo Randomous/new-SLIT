@@ -26,6 +26,7 @@
   
        
    <body>
+       
          
         <h1 class="TextFormat"><center>Alle moduler</center></h1>
         
@@ -88,12 +89,17 @@
              while(resultSet.next()){
      
              String M_ID = resultSet.getString("M_ID");
-             session.setAttribute("M_ID", M_ID);
-                
             %>
             
-            
-            
+         <%
+         String ModuleID = request.getParameter("M_ID");        
+         %>
+         
+         <jsp:useBean id="Modulere" class="WebInput.DeliveryBean" scope="request" />
+     Message is: <jsp:setProperty name="Modulere" property="M_ID" value="<%=ModuleID%>"/>
+     <%=Modulere.M_ID %>       
+     
+     
             <tr> 
               <TD>  <%= M_ID %></TD>
               <TD>  <%= resultSet.getString("M_Name") %></TD>
@@ -122,8 +128,9 @@ System.out.println(M_ID);
            System.out.println(M_ID);
               %>
               
-             <input type=hidden id="modulenumber" name="<%= M_ID%>">
+             
                <TD> <form name="<%= M_ID%>" action="DeliveryModule.jsp" />
+                  <input type=hidden id="modulenumber" name="<%= M_ID%>">
                   <input class="moduleBtn" type="submit" value="Innlevering" /> </form> </TD>
             </TR>
            
