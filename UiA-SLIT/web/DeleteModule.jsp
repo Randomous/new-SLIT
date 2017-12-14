@@ -12,12 +12,17 @@ pageEncoding="ISO-8859-1"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Delete Data</title>
 </head>
+<body>
+    
+
+    
+    
+    <ul class="TextFormat">
 <%
     InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
@@ -29,9 +34,9 @@ pageEncoding="ISO-8859-1"%>
                 throw new SQLException("Error establishing connection!");
             }
     
-    
+
 String M_ID = request.getParameter("M_ID");
-String LG_ID = request.getParameter("M_ID");
+
 if(M_ID != null)
 {
 PreparedStatement ps = null;
@@ -46,19 +51,16 @@ int i = ps.executeUpdate(sqls);
 int s = ps.executeUpdate(sql);
 if(i > 0)
 {
-out.print("Record Deleted Successfully");
+out.print("Modulen har blitt slettet");
  
 }
 else if (s > 0)
 {
-out.print("Record Deleted Successfully");
-out.println("There is a problem in Deleting Record."); 
-out.print("Check Manually in your Database");
+out.print("Modulen har blitt slettet"); 
 } 
 else 
 {
-    out.println("There is a problem in Deleting Record."); 
-    out.print("Check Manually in your Database");
+    out.println("ops, Det oppsto et problem.");
 }
     
     }
@@ -69,9 +71,8 @@ out.println(sqe);
 }
 }
 %>
-
+</ul>
 <p>
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
 </body>
-</html>?

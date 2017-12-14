@@ -23,30 +23,29 @@
                 throw new SQLException("Error establishing connection!");
             }
     
-String M_ID = request.getParameter("M_ID");
-String M_Name=request.getParameter("M_Name");
-String M_Tittle=request.getParameter("M_Tittle");
-String M_Description=request.getParameter("M_Description");
-if(M_ID != null)
+String LG_ID = request.getParameter("LG_ID");
+String LG_Tittle=request.getParameter("LG_Tittle");
+String LG_Description=request.getParameter("LG_Description");
+
+if(LG_ID != null)
 {
 
 PreparedStatement ps = null;
-int ModuleID = Integer.parseInt(M_ID);
+int LearningGoalID = Integer.parseInt(LG_ID);
 
-String sql="Update Module set M_ID=?,M_Name=?,M_Tittle=?,M_Description=? where M_ID="+M_ID;
+String sql="Update LearningGoals set LG_ID=?,LG_Tittle=?,LG_Description=? where LG_ID="+LG_ID;
 ps = connection.prepareStatement(sql);
-ps.setString(1,M_ID);
-ps.setString(2, M_Name);
-ps.setString(3, M_Tittle);
-ps.setString(4, M_Description);
+ps.setString(1,LG_ID);
+ps.setString(2, LG_Tittle);
+ps.setString(3, LG_Description);
 int i = ps.executeUpdate();
 if(i > 0)
 {
-out.print("Modulen ble Oppdatert");
+out.print("Record Updated Successfully");
 }
 else
 {
-out.print("Det oppsto et problem, prøv igjen senere");
+out.print("There is a problem in updating Record.");
 }
 }
 %>

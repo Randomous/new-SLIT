@@ -10,7 +10,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-
     <head>
          <link rel="stylesheet" type="text/css" href="index.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,21 +17,21 @@
         <jsp:include page="UserInfo.jsp" />
     </head>
 
-    <body>
-        
 
-
-
+<ul>
     <%   
+     
+      
+       
         Connection con= null;
         Statement statement = null;
-        ResultSet resultSet = null;  
+        ResultSet resultSet = null;
+        
         %>
-        
-        
+    
 <%
-    String M_ID = request.getParameter("name"); 
-    System.out.println(M_ID);
+    String LG_ID = request.getParameter("name"); 
+    System.out.println(LG_ID);
     InitialContext initialContext = new InitialContext();
             Context context = (Context) initialContext.lookup("java:comp/env");
             //The JDBC Data source that we just created
@@ -42,46 +41,43 @@
             if (connection == null)
             {
                 throw new SQLException("Error establishing connection!");
-                
             }
+           
             
-                   
 statement=connection.createStatement();
 
-String sql ="SELECT * FROM Module";
-
+String sql ="SELECT * FROM LearningGoals";
+       
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
 
+<!DOCTYPE html>
+<html>
+<body>
 <center>
 <h1>Update data from database in jsp</h1>
-<form method="post" action="UpdateModule.jsp">
-<input type="hidden" name="M_ID" value="<%=resultSet.getString("M_ID") %>">
-<input type="text" name="M_ID" value="<%=resultSet.getString("M_ID") %>">
+<form method="post" action="EditLearningGoals.jsp">
+<input type="hidden" name="LG_ID" value="<%=resultSet.getString("LG_ID") %>">
+<input type="text" name="LG_ID" value="<%=resultSet.getString("LG_ID") %>">
 <br>
-Module Nummer:<br>
-<input type="text" name="M_Name" value="<%=resultSet.getString("M_Name") %>">
+LearningGoal Tittle:<br>
+<input type="text" name="LG_Tittle" value="<%=resultSet.getString("LG_Tittle") %>">
 <br>
-Module Title :<br>
-<input type="text" name="M_Tittle" value="<%=resultSet.getString("M_Tittle") %>">
-<br>
-Modul Beskrivelse:<br>
-<input type="text" name="M_Description" value="<%=resultSet.getString("M_Description") %>">
+LearningGoal Description:<br>
+<input type="text" name="LG_Description" value="<%=resultSet.getString("LG_Description") %>">
 <br>
 <input type="submit" value="submit">
-
 <br>
+<TD> <form method="post" action="UpdateLearningGoals.jsp" />
+ <input type="submit" value="Slett" /> </form> </TD>
 </center>
-
 </form>
-</center>
-
-
 <%
 }
 %>
-
+</ul>
  
 
 </body>
+</html>

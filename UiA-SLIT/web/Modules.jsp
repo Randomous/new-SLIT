@@ -1,8 +1,4 @@
-<%-- 
-    Document   : Modules
-    Created on : 27.okt.2017, 13:53:30
-    Author     : Helll
---%>
+
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.*" %>
@@ -116,9 +112,10 @@ System.out.println(M_ID);
 
                   
               <TD> <form name="<%= M_ID%>" action="Update.jsp" />
-                  <input class="moduleBtn" type="submit" value="Endre" /> </form> </TD>
-                   <TD> <form name="<%= M_ID%>" action="module.jsp" />
-                  <input class="moduleBtn" type="submit" value="Endre" /> </form> </TD>
+                  <input type="submit" value="Endre" /> </form> </TD>
+                   <TD> <form name="<%= M_ID%>" action="UpdateLearningGoals.jsp" />
+                  <input type="submit" value="Endre" /> </form> </TD>
+
                     
                   <% 
                                      

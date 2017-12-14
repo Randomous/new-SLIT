@@ -1,8 +1,4 @@
-<%-- 
-    Document   : module
-    Created on : Oct 2, 2017, 5:18:31 PM
-    Author     : root
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,47 +19,10 @@
         <br>
     <center>
         <br>
-        <div id="Textaline" style="display:none">
-           <!--<form action="${pageContext.request.contextPath}/EditModule" method="post"> 
-                Modul Navn <input type="text" name="ModuleName" />
-                Modul Tittel <input type="text" name="ModuleTittle" />
-                <br>
-                <br>
-                Modul Beskrivelse      <input type="text" name="ModuleDescription" />
-                <br>
-                <br>
-                Læringsmål Tittel      <input type="text" name="LearningGoalsTittle" />
-                <br>
-                <br>
-                Læringsmål Beskrivelse <input type="text" name="LearningGoalsDescription"/>
-                <br>
-                <br>
-                Modul Nummer           <input type="text" name="ModuleNumber" />
-                <br>
-                <br>
-                <input type="Submit" name="AddStudent" value="Bekreft Endering" />
-
-            </form>-->
-                <form class="form1" action="${pageContext.request.contextPath}/EditModule" method="post">
-    <label for="mname">Module Name</label>
-    <input type="text" name="ModuleName" />
-    <br>
-    <label for="mdesc">Module Description</label>
-    <input type="text" name="ModuleDescription" />
-    <br>
-    <label for="lgoals">Learning Goals</label>
-    <input type="text" name="LearningGoalsTittle" />
-    <br>
-    <label for="mnumber">Module Number</label>
-    <input type="text" name="ModuleNumber" />
-    <br>
-    <input type="submit" name="AddStudent" value="Bekreft Endring" />
-  </form>
-            <br>
-            <button onclick="asd(2, 'editModule')">Avbryt Endring</button>
-       
-
-        <button id="hideeditModule" onclick="asd(1, 'editModule')">Endre modul</button>
+     
+        <div> Velg en funksjon </div>
+        
+           
 </center>
         <br>
         <center>
@@ -122,10 +81,11 @@
                  <button id="hidedeleteModule" onclick="asd(1, 'deleteModule')">Slett Modulen</button> 
               </center>
         <p>
+           
+
         <center><form name="Go back" action="index.jsp">
                 <input type="submit" value="Gå tilbake"/> </form></center>
     </p>
-
 </body>
 </html>
 
