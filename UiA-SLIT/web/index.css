@@ -11,7 +11,7 @@ and open the template in the editor.
 .header {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     background-color: lightgray;
-    color: #a498a6;
+    color: #333333;
     vertical-align: middle;
     line-height: 80px;
     height: 75px;
@@ -215,7 +215,7 @@ ul{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: normal;
-    color: #a498a6;
+    color: #333333;
     text-align: center;
     background-color: lightgray;
     padding: 7px;
