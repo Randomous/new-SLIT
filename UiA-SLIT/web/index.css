@@ -55,7 +55,7 @@ and open the template in the editor.
 }
 
 #title {
-    position: relative;
+    position: fixed;
     display: inline-block;
 }
 
@@ -184,8 +184,10 @@ input[type=submit]:hover {
 }
 
 #userSearch {
-    right: 100px;
     position: relative;
+    align-content: center;
+    right: 90%;
+    top: 100%;
 }
 
 
@@ -206,7 +208,7 @@ ul{
 #frontQueue, #frontChild:nth-child(even) {
     background-color: #f2f2f2;
     text-align: center;
-    margin-left: 200%;
+    margin-left: 500px;
 }
 
 #frontqueueTH {
@@ -217,7 +219,7 @@ ul{
     text-align: center;
     background-color: lightgray;
     padding: 7px;
-    margin-left: 200%;
+    margin-left: 500px;
 }
 
 .UserDetails {
