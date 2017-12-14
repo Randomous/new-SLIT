@@ -1,8 +1,4 @@
-<%-- 
-    Document   : index
-    Created on : Oct 25, 2017, 1:45:21 PM
-    Author     : root
---%>
+
 <%@page import="java.sql.Statement"%>
 <%@page import="javax.naming.Context"%>
 <%@page import="java.sql.ResultSet"%>
@@ -20,6 +16,7 @@
         <title>UiA-SLIT</title>
         <jsp:include page="UserInfo.jsp" />
     </head>
+    <Body>
 
 
 <ul>
@@ -51,15 +48,11 @@
 statement=connection.createStatement();
 
 String sql ="SELECT * FROM Module";
-       
 
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
 
-<!DOCTYPE html>
-<html>
-<body>
 <center>
 <h1>Update data from database in jsp</h1>
 <form method="post" action="UpdateModule.jsp">
@@ -86,4 +79,3 @@ Modul Beskrivelse:<br>
  
 
 </body>
-</html>

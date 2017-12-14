@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Teacher
+    Document   : UserInfo
     Created on : 10.nov.2017, 10:01:13
     Author     : Helle K. Trygsland
 --%>
