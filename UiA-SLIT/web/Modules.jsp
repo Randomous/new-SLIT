@@ -39,7 +39,7 @@
         Connection con= null;
         Statement statement = null;
         ResultSet resultSet = null;
-        
+            
            
         %>
         <center>
@@ -95,10 +95,8 @@
          String ModuleID = request.getParameter("M_ID");        
          %>
          
-         <jsp:useBean id="Modulere" class="WebInput.DeliveryBean" scope="request" />
-     Message is: <jsp:setProperty name="Modulere" property="M_ID" value="<%=ModuleID%>"/>
-     <%=Modulere.M_ID %>       
-     
+       
+    
      
             <tr> 
               <TD>  <%= M_ID %></TD>
@@ -130,7 +128,7 @@ System.out.println(M_ID);
               
              
                <TD> <form name="<%= M_ID%>" action="DeliveryModule.jsp" />
-                  <input type=hidden id="modulenumber" name="<%= M_ID%>">
+                  <input type=hidden name="modulenumber" value="<%= M_ID%>">
                   <input class="moduleBtn" type="submit" value="Innlevering" /> </form> </TD>
             </TR>
            
@@ -140,7 +138,6 @@ System.out.println(M_ID);
                }   
                %>
              </table>    
-         System.out.println(M_ID);
         </center>
       
     </body>

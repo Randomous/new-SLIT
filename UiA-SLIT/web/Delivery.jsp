@@ -45,65 +45,82 @@
                 throw new SQLException("Error establishing connection!");
             }
                 Statement st = connection.createStatement();
-               
+                String moduleID = request.getParameter("modulenumber"); 
                 
          String UserName = request.getSession().getAttribute("userName").toString(); 
          String role = request.getSession().getAttribute("role").toString();
-         String brukerID = request.getSession().getAttribute("userID").toString();
+
          String ModulText = request.getParameter("D_Text");         
          String YoutubeLink = request.getParameter("D_YouTubeLink");
          String GithubLink = request.getParameter("D_GitHubLink");
          String UploadDate = request.getParameter("D_UploadDate");
-         String Comments = request.getParameter("D_CommentStudent");
+        
          
          System.out.println(ModulText);
           System.out.println(YoutubeLink);
            System.out.println(GithubLink);
             System.out.println(UploadDate);
-             System.out.println(Comments);
-         //String LearningGoalsTittle = request.getParameter("LearningGoalsTittle");
-         //String LearningGoalsDescription = request.getParameter("LearningGoalsDescription");
-       
-            //out.println ("insert into Module (M_ID, M_Name, M_Tittle, M_Description)values('"+ModuleID+",'"+ModuleName+"','"+Tittle+"','"+Description+"')");    
-          
-         // st.executeUpdate("INSERT INTO Deliverable (D_Text, D_YouTubeLink, D_GitHubLink, D_UploadDate, D_CommentStudent)VALUES('"+ModulText+"','"+YoutubeLink+"','"+GithubLink+"','"+UploadDate+"','"+Comments+"')");
+             
+         
+         st.executeUpdate("INSERT INTO Deliverable (D_Text, D_YouTubeLink, D_GitHubLink, D_UploadDate)VALUES('"+ModulText+"','"+YoutubeLink+"','"+GithubLink+"','"+UploadDate+"')");
           
 
                   
-           
-        %>
+         String sql2 ="SELECT LG_ID FROM LearningGoals WHERE M_ID="+moduleID;
+         PreparedStatement pst = connection.prepareStatement(sql2); 
+         
+        int learningGoalsID = 0; 
+        Statement statement = connection.createStatement();    
+        ResultSet lG = statement.executeQuery (sql2);
+        while(lG.next()){
         
-        <jsp:useBean id="Modulere" class="WebInput.DeliveryBean"  />
+          learningGoalsID = lG.getInt ("LG_ID"); 
+        }
         
-        <%  
         
-         int M_ID = Modulere.getM_ID();
-         String UserID = request.getParameter("UserID");         
+        
+         String getD_ID = "SELECT * FROM Deliverable ORDER BY D_ID DESC LIMIT 1";   
+        PreparedStatement ptt = connection.prepareStatement(getD_ID); 
+         
+        int deliveryID = 0; 
+        Statement statement2 = connection.createStatement();    
+        ResultSet d_ID = statement2.executeQuery (getD_ID);
+        while(d_ID.next()){
+        
+          deliveryID = d_ID.getInt ("D_ID"); 
+        }
+        
+        
+         String UserID = request.getSession().getAttribute("userID").toString();         
          String DeliverableID = request.getParameter("D_ID");
-         String LearningGoalsID = request.getParameter("LG_ID");
+         
          
          System.out.println(UserID);
-         System.out.println(M_ID);
+         System.out.println(moduleID);
          System.out.println(DeliverableID);
-         System.out.println(LearningGoalsID);
+         System.out.println(learningGoalsID);
          
+         int module = Integer.parseInt(moduleID);
          int User = Integer.parseInt(UserID);        
-         int Deliverable = Integer.parseInt(DeliverableID);
-         int LearningGoals = Integer.parseInt(LearningGoalsID);
+        
+        
          
         
-         String sql ="INSERT INTO StoredData (UserID=?, M_ID=?, D_ID=?, LG_ID=?"; 
+         String sql ="INSERT INTO StoredData (UserID=?, M_ID=?, D_ID=?, LG_ID=?)"; 
          PreparedStatement ps = connection.prepareStatement(sql);    
          ps.setInt(1, User);
-         ps.setInt(2, M_ID);
-         ps.setInt(3, Deliverable);
-         ps.setInt(4, LearningGoals);
+         ps.setInt(2, module);
+         ps.setInt(3, deliveryID);
+         ps.setInt(4, learningGoalsID);
          
          
          
          ps.executeUpdate();
          
          out.println("Innleveringen har blitt lagret i systemet");
+         
+         
+         
         %>
       
        
