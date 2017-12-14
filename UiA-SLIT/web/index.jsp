@@ -41,6 +41,7 @@
     
 
         <table id="frontQueue">
+
             <tr id="frontChild">
                 <th id="frontqueueTH">Innleveringer i kø:</th>
             </tr>
