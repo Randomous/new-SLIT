@@ -89,6 +89,7 @@
              while(resultSet.next()){
      
              String M_ID = resultSet.getString("M_ID");
+             String moduleName = resultSet.getString("M_Name");
             %>
             
          <%
@@ -128,7 +129,8 @@ System.out.println(M_ID);
               
              
                <TD> <form name="<%= M_ID%>" action="DeliveryModule.jsp" />
-                  <input type=hidden name="modulenumber" value="<%= M_ID%>">
+                  <input  type="hidden" name="modulenumber" value="<%= M_ID%>">
+                  <input  type="hidden" name="moduleName" value="<%= moduleName %>">
                   <input class="moduleBtn" type="submit" value="Innlevering" /> </form> </TD>
             </TR>
            

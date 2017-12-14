@@ -25,10 +25,13 @@
                     <br>
                     Github Link <input type="text" name="D_GitHubLink"/>
                     <br>
-                    Upload date <input type="text" name="D_UploadDate"/> 
+<!--                    Upload date <input type="text" name="D_UploadDate"/> -->
                     <br> 
-                    <% String moduleID = request.getParameter("modulenumber"); %>
+                    <% String moduleID = request.getParameter("modulenumber"); 
+                    String moduleName = request.getParameter("moduleName");
+                    %>
                      <input type=hidden name ="modulenumber" value="<%=moduleID%>">
+                      <input  type="hidden" name="moduleName" value="<%= moduleName %>">
                     <input type="Submit" name="AddDelivery" value="Lever Modul" />
                 </form>
                 <br>

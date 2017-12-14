@@ -49,11 +49,20 @@
                 
          String UserName = request.getSession().getAttribute("userName").toString(); 
          String role = request.getSession().getAttribute("role").toString();
+         
+         java.util.Date dt = new java.util.Date();
+
+            java.text.SimpleDateFormat sdf = 
+                 new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+            String currentTime = sdf.format(dt);
 
          String ModulText = request.getParameter("D_Text");         
          String YoutubeLink = request.getParameter("D_YouTubeLink");
          String GithubLink = request.getParameter("D_GitHubLink");
          String UploadDate = request.getParameter("D_UploadDate");
+         String moduleName = request.getParameter("moduleName");
+         int deliveryStatus = 0;
         
          
          System.out.println(ModulText);
@@ -62,7 +71,7 @@
             System.out.println(UploadDate);
              
          
-         st.executeUpdate("INSERT INTO Deliverable (D_Text, D_YouTubeLink, D_GitHubLink, D_UploadDate)VALUES('"+ModulText+"','"+YoutubeLink+"','"+GithubLink+"','"+UploadDate+"')");
+         st.executeUpdate("INSERT INTO Deliverable (D_DeliverableStatus, D_ModuleName, D_Text, D_YouTubeLink, D_GitHubLink, D_UploadDate)VALUES('"+deliveryStatus+"','"+moduleName+"','"+ModulText+"','"+YoutubeLink+"','"+GithubLink+"','"+currentTime+"')");
           
 
                   
@@ -92,12 +101,12 @@
         
         
          String UserID = request.getSession().getAttribute("userID").toString();         
-         String DeliverableID = request.getParameter("D_ID");
+//         String DeliverableID = request.getParameter("D_ID");
          
          
          System.out.println(UserID);
          System.out.println(moduleID);
-         System.out.println(DeliverableID);
+         System.out.println(deliveryID);
          System.out.println(learningGoalsID);
          
          int module = Integer.parseInt(moduleID);
@@ -107,15 +116,11 @@
          
         
          String sql ="INSERT INTO StoredData (UserID=?, M_ID=?, D_ID=?, LG_ID=?)"; 
-         PreparedStatement ps = connection.prepareStatement(sql);    
-         ps.setInt(1, User);
-         ps.setInt(2, module);
-         ps.setInt(3, deliveryID);
-         ps.setInt(4, learningGoalsID);
+        Statement statement3 = connection.createStatement();    
          
+         statement3.executeUpdate("INSERT INTO StoredData (UserID, M_ID, D_ID, LG_ID )values('"+UserID+"','"+moduleID+"','"+deliveryID+"' , '"+learningGoalsID+"')");
          
-         
-         ps.executeUpdate();
+//         ps.executeUpdate();
          
          out.println("Innleveringen har blitt lagret i systemet");
          
