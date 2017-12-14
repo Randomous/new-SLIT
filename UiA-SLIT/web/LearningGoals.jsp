@@ -1,8 +1,3 @@
-<%-- 
-    Document   : LearningGoals
-    Created on : Nov 9, 2017, 11:14:30 AM
-    Author     : Daniel
---%>
 
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
