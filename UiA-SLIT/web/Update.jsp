@@ -48,7 +48,7 @@
 statement=connection.createStatement();
 
 String sql ="SELECT * FROM Module";
-       
+
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>

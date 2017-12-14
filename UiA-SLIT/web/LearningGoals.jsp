@@ -1,8 +1,3 @@
-<%-- 
-    Document   : LearningGoals
-    Created on : Nov 9, 2017, 11:14:30 AM
-    Author     : Daniel
---%>
 
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -46,9 +41,9 @@
          String ModuleNumber = request.getParameter("M_ID");
          
 
-          //out.println ("insert into LearningGoals (LG_Tittle, LG_Description, M_ID)values('"+LearningGoalsTittle+"', '"+LearningGoalsDescription+"', '"+ModuleNumber+"')"); 
+          
           st.executeUpdate("insert into LearningGoals (LG_Tittle, LG_Description, M_ID)values('"+LearningGoalsTittle+"', '"+LearningGoalsDescription+"', '"+ModuleNumber+"')");
-         // st.executeUpdate("insert into Module (M_Name, M_Tittle, M_Description)values('"+Number+"', '"+Name+"','"+Tittle+"','"+Description+"')");
+        
           
         
           out.println ("Læringsmål har blitt lagt til modulen du har valgt");

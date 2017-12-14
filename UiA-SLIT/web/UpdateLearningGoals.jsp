@@ -1,8 +1,4 @@
-<%-- 
-    Document   : index
-    Created on : Oct 25, 2017, 1:45:21 PM
-    Author     : root
---%>
+
 <%@page import="java.sql.Statement"%>
 <%@page import="javax.naming.Context"%>
 <%@page import="java.sql.ResultSet"%>

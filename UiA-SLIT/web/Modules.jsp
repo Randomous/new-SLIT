@@ -1,8 +1,4 @@
-<%-- 
-    Document   : Modules
-    Created on : 27.okt.2017, 13:53:30
-    Author     : Helll
---%>
+
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.*" %>
