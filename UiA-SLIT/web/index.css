@@ -104,7 +104,7 @@ and open the template in the editor.
 .ModuleTable {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 90%;
+    width: 65%;
     position: relative;
     margin-left:20%;
 }
@@ -143,11 +143,11 @@ input[type=text], select {
 }
 
 input[type=submit], button {
-    width: 20%;
+    width: auto;
     background-color: MAROON;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 8px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -214,5 +214,14 @@ ul{
     background-color: lightgray;
     padding: 7px;
     margin-left: 200%;
+}
+
+.UserDetails {
+    text-align: center;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.userDetailscontainer {
+    align-content: center;
 }
 

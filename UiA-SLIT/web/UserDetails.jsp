@@ -80,7 +80,6 @@
               <TD>  <%= rsU_ID.getString("U_FirstName") %></TD>
               <TD>  <%= rsU_ID.getString("U_SurName") %></TD>
               <TD>  <%= rsU_ID.getString("U_Email")%></TD>
-              <TD>
                 </tr>   
             
                <% } %>             
